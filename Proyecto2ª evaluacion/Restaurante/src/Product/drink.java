@@ -1,6 +1,6 @@
 package Product;
 
-public class drink extends Product implements iProduct {
+public class drink extends Product {
 	boolean Alcoholic;
 	
 	public drink() {

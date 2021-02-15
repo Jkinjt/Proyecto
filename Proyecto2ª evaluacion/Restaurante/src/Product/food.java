@@ -2,7 +2,7 @@ package Product;
 
 import java.util.UUID;
 
-public class food extends Product implements iProduct {
+public class food extends Product {
 	boolean forVegans;
 	
 	public food() {

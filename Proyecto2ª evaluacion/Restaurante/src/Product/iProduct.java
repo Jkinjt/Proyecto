@@ -4,9 +4,9 @@ public interface iProduct {
 	
 	public void getBundlePack();
 	
-	public void getName();
+	public String getName();
 	
-	public int getPrice();
+	public double getPrice();
 	
-	public void getsIsForCeliac();
+	public boolean getsIsForCeliac();
 }
