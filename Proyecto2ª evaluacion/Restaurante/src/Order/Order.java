@@ -1,26 +1,27 @@
 package Order;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import Product.Product;
+import Product.AbstractProduct;
 import client.Client;
 
 public class Order {
-	Client client;
-	Product Product[];
-	double total;
-	String date;
-	String address;
-	boolean delivered;
-	boolean payed;
+	private Client client;
+	private AbstractProduct Product[];
+	private double total;
+	private LocalDateTime date;
+	private String address;
+	private boolean delivered;
+	private boolean payed;
 
-	public Order(Client client, Product[] product, double total, String date, String address, boolean delivered,
+	public Order(Client client, AbstractProduct[] product, double total, String address, boolean delivered,
 			boolean payed) {
 		super();
 		this.client = client;
 		Product = product;
 		this.total = total;
-		this.date = date;
+		this.date = LocalDateTime.now();
 		this.address = address;
 		this.delivered = delivered;
 		this.payed = payed;
@@ -30,7 +31,7 @@ public class Order {
 		this.client = null;
 		Product = null;
 		this.total = 0;
-		this.date = "0/0/0";
+		this.date = LocalDateTime.now();
 		this.address = null;
 		this.delivered = false;
 		this.payed = false;
@@ -44,11 +45,11 @@ public class Order {
 		this.client = client;
 	}
 
-	public Product[] getProduct() {
+	public AbstractProduct[] getProduct() {
 		return Product;
 	}
 
-	public void setProduct(Product[] product) {
+	public void setProduct(AbstractProduct[] product) {
 		Product = product;
 	}
 
@@ -60,11 +61,11 @@ public class Order {
 		this.total = total;
 	}
 
-	public String getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 
@@ -94,10 +95,8 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "+------------------------------------------+\n"+
-				"| Cliente=" + client + " | Productos=" + Arrays.toString(Product) + " | Total=" + total + " | Fecha="
-				+ date + " | Direccion=" + address + " | Enviado=" + delivered + " | Pagado=" + payed + "] \n"+
-				"+------------------------------------------+";
+		return "| Cliente=" + client + " | Productos=" + Arrays.toString(Product) + " | Total=" + total + " | Fecha="
+				+ date + " | Direccion=" + address + " | Enviado=" + delivered + " | Pagado=" + payed + "] ";
 	}
 
 }
