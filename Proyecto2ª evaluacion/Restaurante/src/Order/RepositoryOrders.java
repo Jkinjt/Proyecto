@@ -67,11 +67,25 @@ public class RepositoryOrders {
 		}
 	}
 	
+	//mostrar todos los pedidos pagados
 	public void AllInput() {
+		if(order!=null) {
+			for (int i = 0; i < order.length; i++) {
+				if(order[i].isPayed()==true ) {
+					System.out.println(order[i]);
+				}
+			}
+		}
 		
 	}
-	
-	public void getInputByDate(/*LocalDate ini, LocalDate end*/) {
-		
+	//mostrar todos los pedidos entre dos fechas
+	public void getInputByDate(LocalDateTime ini, LocalDateTime end) {
+		if(order!=null) {
+			for (int i = 0; i < order.length; i++) {
+				if((order[i].getDate().isBefore(end) || order[i].getDate().isAfter(ini)) && order[i].isPayed()==true ) {
+					System.out.println(order[i]);
+				}
+			}
+		}
 	}
 }
