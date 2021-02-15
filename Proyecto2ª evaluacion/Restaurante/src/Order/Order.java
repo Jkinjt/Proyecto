@@ -3,7 +3,7 @@ package Order;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import Product.AbstractProduct;
+import Product.Product;
 import client.Client;
 
 public class Order {
