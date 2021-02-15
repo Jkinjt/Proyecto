@@ -2,19 +2,19 @@ package Order;
 
 import java.util.Arrays;
 
-import Product.AbstractProduct;
+import Product.Product;
 import client.Client;
 
 public class Order {
 	Client client;
-	AbstractProduct Product[];
+	Product Product[];
 	double total;
 	String date;
 	String address;
 	boolean delivered;
 	boolean payed;
 
-	public Order(Client client, AbstractProduct[] product, double total, String date, String address, boolean delivered,
+	public Order(Client client, Product[] product, double total, String date, String address, boolean delivered,
 			boolean payed) {
 		super();
 		this.client = client;
@@ -44,11 +44,11 @@ public class Order {
 		this.client = client;
 	}
 
-	public AbstractProduct[] getProduct() {
+	public Product[] getProduct() {
 		return Product;
 	}
 
-	public void setProduct(AbstractProduct[] product) {
+	public void setProduct(Product[] product) {
 		Product = product;
 	}
 

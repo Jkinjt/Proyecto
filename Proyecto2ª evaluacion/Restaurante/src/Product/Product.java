@@ -5,11 +5,11 @@ import java.util.UUID;
 public abstract class Product implements iProduct {
 	protected static UUID id;
 	protected static String name;
-	protected static int price;
+	protected static double price;
 	protected static String forCeliac;
 	
 	
-	public Product(UUID id, String name, int price, String forCeliac) {
+	public Product(UUID id, String name, double price, String forCeliac) {
 		this.id=id;
 		this.name=name;
 		this.price=price;
@@ -17,7 +17,7 @@ public abstract class Product implements iProduct {
 	
 	}
 	
-	public Product(UUID id, String name, int price) {
+	public Product(UUID id, String name, double price) {
 		
 	}
 	
