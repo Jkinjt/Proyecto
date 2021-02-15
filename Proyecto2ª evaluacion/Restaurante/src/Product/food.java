@@ -5,7 +5,7 @@ import java.util.UUID;
 public class food extends Product {
 	boolean forVegans;
 	
-	public food(UUID id,String name,double price,boolean forVegans) {
+	public food(int id,String name,double price,boolean forVegans) {
 		super(id, name, price,forVegans);
 		this.forVegans=forVegans;
 	}
@@ -13,7 +13,7 @@ public class food extends Product {
 	
 	
 	
-	public boolean isForVegans(UUID id) {
+	public boolean isForVegans(int id) {
 		boolean forVegans=false;
 		this.id=id;
 		if(forVegans!=false) {
@@ -37,7 +37,7 @@ public class food extends Product {
 	@Override
 	public String toString() {
 		return "Is for vegans=" + forVegans +"/n"+
-			   "Is For Vegans=" + isForVegans(null)
+			   "Is For Vegans=" + isForVegans(0)
 			   + super.toString();
 	}
 	

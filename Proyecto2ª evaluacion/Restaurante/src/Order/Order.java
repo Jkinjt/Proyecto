@@ -3,19 +3,19 @@ package Order;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 
-import Product.AbstractProduct;
+import Product.Product;
 import client.Client;
 
 public class Order {
 	private Client client;
-	private AbstractProduct Product[];
+	private Product Product[];
 	private double total;
 	private LocalDateTime date;
 	private String address;
 	private boolean delivered;
 	private boolean payed;
 
-	public Order(Client client, AbstractProduct[] product, double total, String address, boolean delivered,
+	public Order(Client client, Product[] product, double total, String address, boolean delivered,
 			boolean payed) {
 		super();
 		this.client = client;
@@ -45,11 +45,11 @@ public class Order {
 		this.client = client;
 	}
 
-	public AbstractProduct[] getProduct() {
+	public Product[] getProduct() {
 		return Product;
 	}
 
-	public void setProduct(AbstractProduct[] product) {
+	public void setProduct(Product[] product) {
 		Product = product;
 	}
 
