@@ -1,10 +1,12 @@
 package Product;
 
+import java.util.UUID;
+
 public class drink extends Product {
 	boolean Alcoholic;
 	
-	public drink() {
-		super(id, name, price);
+	public drink(int i, String string, double d, boolean alcoholic) {
+		super(id, name, price, alcoholic);
 		this.Alcoholic=Alcoholic;
 	}
 	
@@ -16,8 +18,8 @@ public class drink extends Product {
 
 	@Override
 	public void getBundlePack() {
-		// TODO Auto-generated method stub
 		
+		return;
 	}
 
 

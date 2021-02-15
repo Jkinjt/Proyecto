@@ -6,7 +6,7 @@ public abstract class Product implements iProduct {
 	protected static UUID id;
 	protected static String name;
 	protected static double price;
-	protected static boolean forCeliac;
+	protected boolean forCeliac;
 	
 	
 	public Product(UUID id, String name, double price, boolean forCeliac) {
@@ -17,23 +17,19 @@ public abstract class Product implements iProduct {
 	
 	}
 	
-	public Product(UUID id, String name, double price) {
-		
-	}
-	
+
 	public String getName() {
 		return this.name;
 	}
 	
 	public double getPrice() {
 		
-		
 		return this.price;
 	}
 	
 	public boolean getsIsForCeliac() {
 	
-			return this.forCeliac;
+		return this.forCeliac;
 	}
 
 	@Override

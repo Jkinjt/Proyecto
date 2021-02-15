@@ -5,8 +5,8 @@ import java.util.UUID;
 public class food extends Product {
 	boolean forVegans;
 	
-	public food() {
-		super(id, name, price);
+	public food(UUID id,String name,double price,boolean forVegans) {
+		super(id, name, price,forVegans);
 		this.forVegans=forVegans;
 	}
 
@@ -26,9 +26,9 @@ public class food extends Product {
 
 	@Override
 	public void getBundlePack() {
-		// TODO Auto-generated method stub
 		
-	
+		
+		return;
 	}
 
 
