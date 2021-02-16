@@ -10,6 +10,11 @@ public class RepositoryClients {
 	}
 	public void setClient(List<Client> client) {
 		this.client = client;
+	
+	}
+	@Override
+	public String toString() {
+		return "RepositoryClients [client=" + client.toString() + "]";
 	}
 	/*
 	 * @Param Nombre del cliente que se quiere buscar
