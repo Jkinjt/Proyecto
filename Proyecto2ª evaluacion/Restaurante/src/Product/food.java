@@ -5,7 +5,7 @@ import java.util.UUID;
 public class food extends Product {
 	boolean forVegans;
 	
-	public food(int id,String name,double price,boolean forVegans) {
+	public food(UUID id,String name,double price,boolean forVegans) {
 		super(id, name, price,forVegans);
 		this.forVegans=forVegans;
 	}
@@ -15,10 +15,9 @@ public class food extends Product {
 	
 	public boolean isForVegans(int id) {
 		boolean forVegans=false;
-		this.id=id;
+		this.id=UUID.randomUUID();;
 		if(forVegans!=false) {
 			forVegans=true;
-			System.out.println("This food"+name+" is for vegans");
 		}
 		
 		return forVegans;

@@ -3,14 +3,14 @@ package Product;
 import java.util.UUID;
 
 public abstract class Product implements iProduct {
-	protected static int id;
+	protected static UUID id;
 	protected static String name;
 	protected static double price;
 	protected boolean forCeliac;
 	
 	
-	public Product(int id, String name, double price, boolean forCeliac) {
-		this.id=id;
+	public Product(UUID id, String name, double price, boolean forCeliac) {
+		this.id=UUID.randomUUID();;
 		this.name=name;
 		this.price=price;
 		this.forCeliac=forCeliac;

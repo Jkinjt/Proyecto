@@ -5,7 +5,7 @@ import java.util.UUID;
 public class drink extends Product {
 	boolean Alcoholic;
 	
-	public drink(int i, String string, double d, boolean alcoholic) {
+	public drink(UUID id, String name, double price, boolean alcoholic) {
 		super(id, name, price, alcoholic);
 		this.Alcoholic=Alcoholic;
 	}
