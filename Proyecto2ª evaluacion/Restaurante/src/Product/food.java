@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class food extends Product {
 	boolean forVegans;
-	
+	int [] food;
 	public food(UUID id,String name,double price,boolean forVegans) {
 		super(id, name, price,forVegans);
 		this.forVegans=forVegans;
@@ -24,10 +24,10 @@ public class food extends Product {
 	}
 
 	@Override
-	public void getBundlePack() {
+	public int [] getBundlePack() {
 		
 		
-		return;
+		return food;
 	}
 
 
