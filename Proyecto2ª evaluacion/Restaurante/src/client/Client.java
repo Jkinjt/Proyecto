@@ -28,11 +28,13 @@ public class Client extends Person {
 	public void setPoints(int points) {
 		this.points = points;
 	}
+	
 	@Override
 	public String toString() {
 		return "Client [address=" + Arrays.toString(address) + ", orders=" + Arrays.toString(orders) + ", points="
 				+ points + "]";
 	}
+	
 	
 
 }

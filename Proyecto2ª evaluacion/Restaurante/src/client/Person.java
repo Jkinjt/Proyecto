@@ -28,6 +28,21 @@ public class Person {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean result=false;
+		if(this==obj)
+			result=true;
+		else if(this.getClass()==obj.getClass())
+		{
+			Person p=(Person)obj;
+			if(p.getDni().equalsIgnoreCase(this.dni)){
+				result=true;
+			}
+		}
+		return result;
+	}
 	@Override
 	public String toString() {
 		return "Person [dni=" + dni + ", name=" + name + ", age=" + age + "]";

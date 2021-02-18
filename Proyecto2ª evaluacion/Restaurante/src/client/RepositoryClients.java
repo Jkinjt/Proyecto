@@ -1,14 +1,20 @@
 package client;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RepositoryClients {
 	private List<Client> client;
 	
+	
+	
+	public RepositoryClients() {
+		this.client = new ArrayList<Client>();
+	}
 	public List<Client> getClient() {
 		return client;
 	}
-	public void setClient(List<Client> client) {
+	private void setClient(List<Client> client) {
 		this.client = client;
 	
 	}
@@ -38,12 +44,18 @@ public class RepositoryClients {
 	 * @Param Actualiza un cliente pasado por  parametro
 	 * 
 	 */
-	public void aupdateClient(Client c) {
+	public boolean aupdateClient(Client c) {
+		boolean result=false;
 		if(c!=null) {
 			int position=searchClientByDni(c.getDni());
-			client.set(position, c);
+			if(position>-1) {
+				client.set(position, c);
+				result=true;
+			}
+			
+			
 		}
-		
+		return result;
 	}
 	/*
 	 * @Param cliente que se quiere añadir
@@ -53,9 +65,15 @@ public class RepositoryClients {
 	public boolean addClient(Client c) {
 		boolean result=false;
 		if(c!=null) {
-			if(searchClientByDni(c.getDni())>-1)			
+			if(client.size()>0) {
+			if(searchClientByDni(c.getDni())==-1) {			
 			client.add(c);
 			result=true;
+			}
+			}else {
+				client.add(c);
+				result=true;
+			}
 		}
 		return result;
 	}
@@ -66,8 +84,10 @@ public class RepositoryClients {
 	public boolean deleteClient(Client c) {
 		boolean result=false;
 		if(c!=null) {
+			if(client.size()>0&&client.contains(c)) {
 			client.remove(c);
 			result=true;
+			}
 		}
 		return result;
 	}
@@ -78,12 +98,15 @@ public class RepositoryClients {
 	public int searchClientByDni(String dni) {
 		int result=-1;
 		if(dni!=null) {
-			for (int i = 0; i < client.size(); i++) {
-				if(client.get(i).getDni().equalsIgnoreCase(dni)) {
-					result=i;
-					i=client.size();
-				}				
+			if(client!=null) {
+				for (int i = 0; i < client.size(); i++) {
+					if(client.get(i).getDni().equalsIgnoreCase(dni)) {
+						result=i;
+						i=client.size();
+					}				
+				}
 			}
+			
 		}
 		return result;
 	}
