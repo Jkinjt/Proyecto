@@ -5,10 +5,16 @@ import java.util.UUID;
 
 public class Repository {
 
+	//el repositorio no debe tener main, si quieres hacer pruebas hazlo en Junit
 	public static void main(String[] args) {
-		ArrayList<Product> products= new ArrayList<>();
 		
+		ArrayList<Product> products= new ArrayList<>();
+		//no creo que en esta clase haga falta una UUID pero no es mala idea
 		UUID uuid = UUID.randomUUID();
+		
+		
+		//no hace falta meterlo directamente en esta clase
+		
 		
 		drink cocacola=new drink (uuid,"Coca Cola",1.50,false);
 		drink cerveza=new drink (uuid,"Cerveza",1.70,true);
@@ -29,7 +35,7 @@ public class Repository {
 		products.add(hamburguesaVegana);
 		
 	}
-	
+	//no imprimas en los metodos que te devuelva la lista
 	public void getAllProducts(ArrayList products) {
 		for(int i=0;i<products.size();i++) {
 			System.out.println(products.get(i));
@@ -37,7 +43,7 @@ public class Repository {
 		
 	}
 	
-	
+	//devuelve una lista y no hace falta que metas bebida por parametro
 	public void getAllDrinks(ArrayList products, drink d) {
 		for(int i=0;i<products.size();i++) {
 			if(products.contains(d)) {

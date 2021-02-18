@@ -4,18 +4,20 @@ import java.util.UUID;
 
 public class drink extends Product {
 	boolean Alcoholic;
+	//no es un array de enteros, es mejor hacer una lista de  productos
 	 int [] Drinks;
+	 //lo mismo que en producto y comida con el UUID
 	public drink(UUID id, String name, double price, boolean alcoholic) {
 		super(id, name, price, alcoholic);
-		this.Alcoholic=Alcoholic;
+		this.Alcoholic=alcoholic;
 	}
 	
-	
+	//el de vegano puedes hacerlo asi
 	public boolean isAlcoholic() {
 		return Alcoholic;
 	}
 
-
+	//que duevuelva el 
 	@Override
 	public int[] getBundlePack() {
 		for(int i=0;i<Drinks.length;i++) {
