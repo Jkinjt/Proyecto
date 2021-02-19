@@ -12,7 +12,7 @@ public abstract class Product implements iProduct {
 	protected static double price;
 	protected boolean forCeliac;
 	
-	//si vas a meter la UUID de modo random no hace falta que la pases por parámetro
+	
 	public Product(UUID id, String name, double price, boolean forCeliac) {
 		this.id=UUID.randomUUID();;
 		this.name=name;

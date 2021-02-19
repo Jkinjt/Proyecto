@@ -10,20 +10,20 @@ public class Repository {
 		
 		ArrayList<Product> products= new ArrayList<>();
 		//no creo que en esta clase haga falta una UUID pero no es mala idea
-		UUID uuid = UUID.randomUUID();
+		UUID id = UUID.randomUUID();
 		
 		
 		//no hace falta meterlo directamente en esta clase
 		
 		
-		drink cocacola=new drink (uuid,"Coca Cola",1.50,false);
-		drink cerveza=new drink (uuid,"Cerveza",1.70,true);
-		drink agua=new drink (uuid,"Agua",1.00,false);
+		drink cocacola=new drink (id,"Coca Cola",1.50,false);
+		drink cerveza=new drink (id,"Cerveza",1.70,true);
+		drink agua=new drink (id,"Agua",1.00,false);
 		
 		
-		food kebab=new food(uuid,"Kebab",4.50,false);
-		food patatas=new food(uuid,"Patatas",3.50,false);
-		food hamburguesaVegana=new food(uuid,"Hamburguesa Vegana de la casa",5.00,true);
+		food kebab=new food(id,"Kebab",4.50,false);
+		food patatas=new food(id,"Patatas",3.50,false);
+		food hamburguesaVegana=new food(id,"Hamburguesa Vegana de la casa",5.00,true);
 		
 		
 		
@@ -35,27 +35,33 @@ public class Repository {
 		products.add(hamburguesaVegana);
 		
 	}
-	//no imprimas en los metodos que te devuelva la lista
-	public void getAllProducts(ArrayList products) {
+	
+	public ArrayList getAllProducts(ArrayList products) {
 		for(int i=0;i<products.size();i++) {
-			System.out.println(products.get(i));
+			
 		}
-		
+		return products;
+
 	}
 	
 	//devuelve una lista y no hace falta que metas bebida por parametro
-	public void getAllDrinks(ArrayList products, drink d) {
+	public boolean getAllDrinks(ArrayList products) {
+		drink d = null;
+		boolean valid=false;
 		for(int i=0;i<products.size();i++) {
 			if(products.contains(d)) {
-				System.out.println(products.get(i));	
+					valid=true;
 			}
-			
 		}
-		
+		return products.contains(d);
 	}
 	
 		
-	public void AllFood() {
+	public boolean AllFood() {
+		
+		
+		
+		return false;
 		
 	}
 	
