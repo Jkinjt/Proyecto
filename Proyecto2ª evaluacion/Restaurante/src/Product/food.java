@@ -7,9 +7,10 @@ public class food extends Product {
 	
 	int [] food;
 	
-	public food(UUID id,String name,double price,boolean forVegans) {
-		super(id, name, price,forVegans);
+	public food(UUID id, String name,double price,boolean forVegans) {
+		super(name, price,forVegans);
 		this.forVegans=forVegans;
+		this.id=UUID.randomUUID();
 	}
 
 	

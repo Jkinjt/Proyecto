@@ -9,8 +9,9 @@ public class drink extends Product {
 	 
 	 
 	public drink(UUID id, String name, double price, boolean alcoholic) {
-		super(id, name, price, alcoholic);
+		super(name, price, alcoholic);
 		this.Alcoholic=alcoholic;
+		this.id=UUID.randomUUID();
 	}
 	
 	

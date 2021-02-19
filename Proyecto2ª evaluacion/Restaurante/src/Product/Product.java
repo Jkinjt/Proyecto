@@ -3,18 +3,18 @@ package Product;
 import java.util.UUID;
 
 public abstract class Product implements iProduct {
-	protected static UUID id;
+	protected UUID id;
 	/*
 	 * Al poner los metodos estáticos todos los productos conservan en memoria el último valor metido
 	 *Un producto nuevo puede tener valores del último producto introducido si no se sobreescribe
 	 */
-	protected static String name;
-	protected static double price;
+	protected String name;
+	protected double price;
 	protected boolean forCeliac;
 	
 	
-	public Product(UUID id, String name, double price, boolean forCeliac) {
-		this.id=UUID.randomUUID();;
+	public Product(String name, double price, boolean forCeliac) {
+		this.id=UUID.randomUUID();
 		this.name=name;
 		this.price=price;
 		this.forCeliac=forCeliac;

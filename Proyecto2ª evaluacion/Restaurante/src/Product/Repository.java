@@ -10,7 +10,7 @@ public class Repository {
 		
 		ArrayList<Product> products= new ArrayList<>();
 		//no creo que en esta clase haga falta una UUID pero no es mala idea
-		UUID id = UUID.randomUUID();
+		UUID id = null;
 		
 		
 		//no hace falta meterlo directamente en esta clase
@@ -57,15 +57,28 @@ public class Repository {
 	}
 	
 		
-	public boolean AllFood() {
-		
-		
-		
-		return false;
+	public boolean AllFood(ArrayList products) {
+		food f = null;
+		boolean valid=false;
+		for(int i=0;i<products.size();i++) {
+			if(products.contains(f)) {
+					valid=true;
+			}
+		}
+		return products.contains(f);
 		
 	}
 	
-	public void NoAlcoholicDrinks() {
+	public boolean NoAlcoholicDrinks(ArrayList products) {
+		
+		food f = null;
+		boolean valid=false;
+		for(int i=0;i<products.size();i++) {
+			if(products.contains(f)) {
+					valid=true;
+			}
+		}
+		return products.contains(f);
 		
 	}
 	
