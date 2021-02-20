@@ -26,14 +26,15 @@ public class RepositoryClientTest {
 	}
 	@Test
 	public void testSearchClientByName() {
-		assertEquals(0, rc.searchClientByName(c1.getName()));
-		assertEquals(1, rc.searchClientByName(c2.getName()));
-		System.out.println(rc.toString());
+		assertEquals(c1, rc.searchClientByName(c1.getName()));
+		assertEquals(c2, rc.searchClientByName(c2.getName()));
+		assertEquals(null, rc.searchClientByDni(c3.getName()));
 	}
 	@Test
 	public void testSearchClientByDni() {
-		assertEquals(0, rc.searchClientByDni(c1.getDni()));
-		assertEquals(1, rc.searchClientByDni(c2.getDni()));
+		assertEquals(c1, rc.searchClientByDni(c1.getDni()));
+		assertEquals(c2, rc.searchClientByDni(c2.getDni()));
+		assertEquals(null, rc.searchClientByDni(c3.getDni()));
 	}
 
 	@Test

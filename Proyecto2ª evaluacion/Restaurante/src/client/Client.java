@@ -1,15 +1,27 @@
 package client;
 
 import java.util.Arrays;
+import java.util.UUID;
 
 public class Client extends Person {
 	protected String[] address;
 	protected int[] orders;
 	protected int points;
+	UUID id;
 	public Client(String dni, String name, int age, String[] address) {
 		super(dni, name, age);
 		this.address = address;
+		id=UUID.randomUUID();
 	}
+	
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
 	public String[] getAddress() {
 		return address;
 	}
@@ -29,6 +41,22 @@ public class Client extends Person {
 		this.points = points;
 	}
 	
+	
+	
+	@Override
+	public boolean equals(Object obj) {
+		boolean result=false;
+		if(this==obj)
+			result=true;
+		else if(this.getClass()==obj.getClass()) {
+			Client c=(Client)obj;
+			if(c.getId().equals(this.id)) {
+				result=true;
+			}
+		}
+		
+		return result;
+	}
 	@Override
 	public String toString() {
 		return "Client [name=" + name + ", orders=" + Arrays.toString(orders) + ", points="

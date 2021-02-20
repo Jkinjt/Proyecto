@@ -15,6 +15,8 @@ public class ClientTest {
 	public void equalsClient() {
 		assertFalse(c1.equals(c2));
 		assertTrue(c1.equals(c1));
+		assertTrue(c2.equals(c2));
+		assertTrue(c3.equals(c3));
 	}
 
 }
