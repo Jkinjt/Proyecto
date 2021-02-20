@@ -5,11 +5,18 @@ import java.util.List;
 
 public class RepositoryClients {
 	private List<Client> client;
+	public static RepositoryClients  pointer;
 	
 	
 	
-	public RepositoryClients() {
+	private  RepositoryClients() {
 		this.client = new ArrayList<Client>();
+	}
+	public static RepositoryClients getSingletonInstance() {
+		if(pointer==null) {
+			pointer=new RepositoryClients();
+		}
+		return pointer;
 	}
 	public List<Client> getClient() {
 		return client;

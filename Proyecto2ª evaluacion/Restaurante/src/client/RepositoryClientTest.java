@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class RepositoryClientTest {
-	RepositoryClients rc = new RepositoryClients();
+	RepositoryClients rc =RepositoryClients.getSingletonInstance();
 	String[] a = { "Calle falsa 1234", "Plaza Ocurrencia  87" };
 	String[] b = { "Plaza Ocurrencia  87" };
 	Client c1 = new Client("1A", "Juan", 15, a);
@@ -28,6 +28,7 @@ public class RepositoryClientTest {
 	public void testSearchClientByName() {
 		assertEquals(0, rc.searchClientByName(c1.getName()));
 		assertEquals(1, rc.searchClientByName(c2.getName()));
+		System.out.println(rc.toString());
 	}
 	@Test
 	public void testSearchClientByDni() {

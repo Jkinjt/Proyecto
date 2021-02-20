@@ -31,8 +31,8 @@ public class Client extends Person {
 	
 	@Override
 	public String toString() {
-		return "Client [address=" + Arrays.toString(address) + ", orders=" + Arrays.toString(orders) + ", points="
-				+ points + "]";
+		return "Client [name=" + name + ", orders=" + Arrays.toString(orders) + ", points="
+				+ points + ", address=" + Arrays.toString(address)+ ", dni=" + dni    + ", age=" + age + "]";
 	}
 	
 	
