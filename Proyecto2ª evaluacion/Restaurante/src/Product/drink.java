@@ -1,48 +1,59 @@
 package Product;
 import Product.Repository;
+
+import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * 
+ * @author JGL
+ *
+ */
+
+	//Clase drink heredada de product
 public class drink extends Product {
-	boolean Alcoholic;
-	//no es un array de enteros, es mejor hacer una lista de  productos
-	 int [] Drinks;
+	
+	//atributos de la clase drink
+	boolean Alcoholic=true;
+	boolean bundlePacks=true;
+	ArrayList<Product> bundlePack= new ArrayList<>();
+	
+	
+
 	 
-	 
+	 //Constructor de drink
 	public drink(UUID id, String name, double price, boolean alcoholic) {
 		super(name, price, alcoholic);
 		this.Alcoholic=alcoholic;
 		this.id=UUID.randomUUID();
 	}
 	
-	
+	//Metodo que verifica si la bebida es alcoholica
 	public boolean isAlcoholic() {
 		return Alcoholic;
 	}
-
 	
-	@Override
-	public int[] getBundlePack() {
-		for(int i=0;i<Drinks.length;i++) {
-			
+	
+	//Método que enlazan productos para generar pack que hacen ofertas.
+	public boolean getBundlePack() {
+		
+		return bundlePacks;
+	}
+
+	//Método para añadir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
+	public boolean anadirObejeto(Product p) {
+		boolean valid=false;
+		if(p!=null) {
+			bundlePack.add(p);
+			valid=true;
 		}
 		
-		
-		/*crear un array de enteros, en comida y en bebida,
-		una vez creado el array en ambos buscamos la pocision de los objetos en el arraylist
-		una vez sepamos la posicion hacemos la combinacion con los puestos del array
-		esas combinaciones las hacemos en el array de enteros de cada clase
-		finalmente en este metodo hacemos que devuelva ese array de enteros.
-		*/
-		return Drinks;
+		return valid;
 	}
 
-
-	@Override
+	//toString para imprimir la clase bebida
 	public String toString() {
-		return "Drink Is Alcoholic? =" + Alcoholic+"/n"+ 
+		return "Alcoholic=" + isAlcoholic()+"/n"+ 
 				super.toString();
 	}
-	
-	
-
 }
