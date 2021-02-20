@@ -7,18 +7,20 @@ public class Client extends Person {
 	protected String[] address;
 	protected int[] orders;
 	protected int points;
-	UUID id;
+	protected static int  nClient=0;
+	protected int id;
 	public Client(String dni, String name, int age, String[] address) {
 		super(dni, name, age);
 		this.address = address;
-		id=UUID.randomUUID();
+		id=nClient;
+		nClient++;
 	}
 	
-	public UUID getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(UUID id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -50,7 +52,7 @@ public class Client extends Person {
 			result=true;
 		else if(this.getClass()==obj.getClass()) {
 			Client c=(Client)obj;
-			if(c.getId().equals(this.id)) {
+			if(c.getDni().equals(this.dni)) {
 				result=true;
 			}
 		}

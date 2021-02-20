@@ -15,7 +15,6 @@ public class RepositoryClientTest {
 
 	@Before
 	public void createRepository() {
-
 	}
 
 	@Before
@@ -26,9 +25,14 @@ public class RepositoryClientTest {
 	}
 	@Test
 	public void testSearchClientByName() {
+		System.out.println(c1.getId());
+		Client cp=rc.searchClientByName(c1.getName());
+		System.out.println(cp.getId());
 		assertEquals(c1, rc.searchClientByName(c1.getName()));
 		assertEquals(c2, rc.searchClientByName(c2.getName()));
 		assertEquals(null, rc.searchClientByDni(c3.getName()));
+		
+		
 	}
 	@Test
 	public void testSearchClientByDni() {
