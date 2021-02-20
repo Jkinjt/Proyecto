@@ -2,7 +2,7 @@ package Product;
 
 public interface iProduct {
 	
-	public int [] getBundlePack();
+	public boolean getBundlePack();
 	
 	public String getName();
 	
