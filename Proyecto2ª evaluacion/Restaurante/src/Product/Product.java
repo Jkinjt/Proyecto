@@ -1,5 +1,6 @@
 package Product;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -16,6 +17,9 @@ public abstract class Product implements iProduct {
 	protected String name;
 	protected double price;
 	protected boolean forCeliac;
+	boolean yesOffer=false;
+	
+	
 	
 	//constructor de la clase producto
 	public Product(String name, double price, boolean forCeliac) {
@@ -25,6 +29,8 @@ public abstract class Product implements iProduct {
 		this.forCeliac=forCeliac;
 	
 	}
+	
+	
 	
 	//metodo para obtener el id del producto
 	public UUID getId() {
@@ -58,14 +64,4 @@ public abstract class Product implements iProduct {
 				"id="+id;
 				
 	}
-
-	
-	
-	
-	
-	
-	
-	
-
-	
 }
