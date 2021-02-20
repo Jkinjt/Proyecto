@@ -5,11 +5,18 @@ import java.util.List;
 
 public class RepositoryClients {
 	private List<Client> client;
+	public static RepositoryClients  pointer;
 	
 	
 	
-	public RepositoryClients() {
+	private  RepositoryClients() {
 		this.client = new ArrayList<Client>();
+	}
+	public static RepositoryClients getSingletonInstance() {
+		if(pointer==null) {
+			pointer=new RepositoryClients();
+		}
+		return pointer;
 	}
 	public List<Client> getClient() {
 		return client;
@@ -27,12 +34,12 @@ public class RepositoryClients {
 	 * @Return Posición del cliente en la lista
 	 * -1 si no se ha encontrado
 	 */
-	public int searchClientByName(String name) {
-		int result=-1;
+	public Client searchClientByName(String name) {
+		Client result=null;
 		if(name!=null) {
 			for (int i = 0; i < client.size(); i++) {
 				if(client.get(i).getName().equalsIgnoreCase(name)) {
-					result=i;
+					result=client.get(i);
 					i=client.size();
 				}				
 			}
@@ -95,13 +102,13 @@ public class RepositoryClients {
 	 * @Param DNI del cliente que se quiera buscar
 	 * @Return posición del cliente que se busca si es -1 no se a encotrado
 	 */
-	public int searchClientByDni(String dni) {
-		int result=-1;
+	public Client searchClientByDni(String dni) {
+		Client result=null;
 		if(dni!=null) {
 			if(client!=null) {
 				for (int i = 0; i < client.size(); i++) {
 					if(client.get(i).getDni().equalsIgnoreCase(dni)) {
-						result=i;
+						result=client.get(i);
 						i=client.size();
 					}				
 				}
