@@ -10,6 +10,18 @@ import java.util.UUID;
 
 //Clase repositorio donde se guardan los productos y todo lo relacionado con ello
 public class Repository {
+		// crea un repositorio unico
+		private Repository() {
+		}
+		public static Repository unico;
+		public static Repository getSingletonInstance() {
+		
+		if (unico == null) {
+			unico = new Repository();
+		}
+		return unico;
+		}
+		
 	
 		//atributos de la clase producto
 		ArrayList<Product> products= new ArrayList<Product>();
