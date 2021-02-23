@@ -28,26 +28,7 @@ public class Repository {
 		ArrayList<Product> products= new ArrayList<Product>();
 		UUID id = null;
 		
-		//Creación de los productos, tanto de comida como de bebida
-		drink cocacola=new drink (id,"Coca Cola",1.50,false);
-		drink cerveza=new drink (id,"Cerveza",1.70,true);
-		drink agua=new drink (id,"Agua",1.00,false);
 		
-		
-		food kebab=new food(id,"Kebab",4.50,false);
-		food patatas=new food(id,"Patatas",3.50,false);
-		food hamburguesaVegana=new food(id,"Hamburguesa Vegana de la casa",5.00,true);
-		
-		
-		
-		/*
-		    products.add(cocacola);
-		    products.add(cerveza)
-			products.add(agua)
-			products.add(kebab)
-			products.add(patatas)
-			products.add(hamburguesaVegana)
-		 */
 		
 		
 		
@@ -217,16 +198,12 @@ public class Repository {
 		return f1;
 	}
 
-	//toString para imprimir los productos y el tamaño de la lista, es decir, cuantos productos hay en la lista.
+	@Override
 	public String toString() {
-		return "Repository [products=" + products.size() 
-		+ ", cocacola="+ cocacola 
-		+ ", cerveza=" + cerveza
-		+ ", agua=" + agua 
-		+ ", kebab=" + kebab 
-		+ ", patatas=" + patatas 
-		+ ", hamburguesaVegana="+ hamburguesaVegana + "]";
+		return "Repository [products=" + products + "]";
 	}
+
+	
 	
 	
 }
