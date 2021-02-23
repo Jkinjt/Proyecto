@@ -20,7 +20,7 @@ public class food extends Product {
 	boolean yesOffer=false;
 	
 	//Constructor de food
-	public food(UUID id, String name,double price,boolean forVegans) {
+	public food( String name,double price,boolean forVegans) {
 		super(name, price,forVegans);
 		this.forVegans=forVegans;
 		this.id=UUID.randomUUID();

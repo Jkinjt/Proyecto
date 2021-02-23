@@ -20,7 +20,7 @@ public class drink extends Product {
 	boolean yesOffer=false;
 	 
 	 //Constructor de drink
-	public drink(UUID id, String name, double price, boolean alcoholic) {
+	public drink( String name, double price, boolean alcoholic) {
 		super(name, price, alcoholic);
 		this.Alcoholic=alcoholic;
 		
