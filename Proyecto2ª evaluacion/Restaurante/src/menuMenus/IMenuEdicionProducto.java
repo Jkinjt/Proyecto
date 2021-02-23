@@ -1,9 +1,11 @@
-package Product;
+package menuMenus;
 
 import java.util.List;
 import java.util.UUID;
 
-public interface IMenuProduct {
+import Product.Product;
+
+public interface IMenuEdicionProducto {
 	//recibe un producto y devuelve el id
 	public  UUID showId (Product p);
 	
@@ -25,7 +27,7 @@ public interface IMenuProduct {
 	//recibe un producto y muestre una packs
 	public List<String> showBundlePack(Product p);
 	
-	//recibe un producto y lo añade a la lista de bundlepack
+	//recibe un producto y lo aÃ±ade a la lista de bundlepack
 	public void addToBudlePAck(Product p);
 	
 	//recibe un producto y lo elimina de la lista de bundlepack
