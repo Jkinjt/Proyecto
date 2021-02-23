@@ -35,16 +35,20 @@ public class Repository {
 		
 	//Método que nos va a permitir ingresar un nuevo producto a la lista de productos (ArrayList)
 	public boolean addProduct (Product p) {
-		
 		boolean valid=false;
-		
-		for(int i=0;i<products.size();i++) {
-			if(products.get(i)==null && !valid) {
-				products.add(p);
-				p=(Product) products.get(i);
-				valid=true;
+		if(p!=null) {
+			if(searchProduct(p.getName())==null) {
+				
+			}
+			for(int i=0;i<products.size();i++) {
+				if(products.get(i)==null && !valid) {
+					products.add(p);
+					p=(Product) products.get(i);
+					valid=true;
+				}
 			}
 		}
+		
 		
 		return valid;
 		
