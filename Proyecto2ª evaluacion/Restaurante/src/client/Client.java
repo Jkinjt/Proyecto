@@ -9,6 +9,7 @@ public class Client extends Person {
 	protected int points;
 	protected static int  nClient=0;
 	protected int id;
+	
 	public Client(String dni, String name, int age, String[] address) {
 		super(dni, name, age);
 		this.address = address;
