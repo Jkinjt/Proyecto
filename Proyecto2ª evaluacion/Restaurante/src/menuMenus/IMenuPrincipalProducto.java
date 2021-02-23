@@ -1,10 +1,14 @@
-package Product;
+package menuMenus;
 
 import java.util.List;
 import java.util.UUID;
 
-public interface IMainMenuRepostoryProducts {
-	//recibe un producto y añadir producto
+import Product.Product;
+import Product.drink;
+import Product.food;
+
+public interface IMenuPrincipalProducto {
+	//recibe un producto y aÃ±adir producto
 	public Product addProduct(Product p);
 	
 	//recibe un producto y quitar producto
