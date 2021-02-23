@@ -25,10 +25,10 @@ public class RepositoryOrders {
 		return unico;
 	}
 
-	// añadir orden al repositorio
-	public void añadirorden(Order p) {
+	// aÃ±adir orden al repositorio
+	public void aÃ±adirorden(Order p) {
 		registro.add(p);
-		//al añadir la order al repositorio se actualiza el total que hay que pagar
+		//al aÃ±adir la order al repositorio se actualiza el total que hay que pagar
 		p.setTotal(calculototal(p));
 	}
 
@@ -62,12 +62,12 @@ public class RepositoryOrders {
 	}
 
 	// mostrar todas las ordenes de una fecha
-	public Order getOrdersByDate(String date) {
-		Order result = null;
+	public List<Order> getOrdersByDate(String date) {
+		List<Order> result = null;
 		if (date != null && registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).getDate().equals(date)) {
-					result = registro.get(i);
+					result.add(registro.get(i));
 				}
 			}
 		}
@@ -97,12 +97,12 @@ public class RepositoryOrders {
 	}
 
 	// mostrar todas las ordenes no enviadas
-	public Order getOrdersNoDelivered() {
-		Order result = null;
+	public List<Order> getOrdersNoDelivered() {
+		List<Order> result = null;
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).isDelivered() == false) {
-					result = registro.get(i);
+					result.add(registro.get(i));
 				}
 			}
 		}
@@ -110,12 +110,12 @@ public class RepositoryOrders {
 	}
 
 	// mostrar todos los pedidos no pagados
-	public Order getOrdersNoPayed() {
-		Order result = null;
+	public List<Order> getOrdersNoPayed() {
+		List<Order> result = null;
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).isPayed() == false) {
-					result = registro.get(i);
+					result.add(registro.get(i));
 				}
 			}
 		}
@@ -124,12 +124,12 @@ public class RepositoryOrders {
 	}
 
 	// mostrar todos los pedidos pagados
-	public Order AllInput() {
-		Order result = null;
+	public List<Order> AllInput() {
+		List<Order> result = null;
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).isPayed() == true) {
-					result = registro.get(i);
+					result.add(registro.get(i));
 				}
 			}
 		}
@@ -137,13 +137,13 @@ public class RepositoryOrders {
 	}
 
 	// mostrar todos los pedidos entre dos fechas
-	public Order getInputByDate(LocalDateTime ini, LocalDateTime end) {
-		Order result = null;
+	public List<Order> getInputByDate(LocalDateTime ini, LocalDateTime end) {
+		List<Order> result = null;
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if ((registro.get(i).getDate().isBefore(end) || registro.get(i).getDate().isAfter(ini))
 						&& registro.get(i).isPayed() == true) {
-					result = registro.get(i);
+					result.add(registro.get(i));
 				}
 			}
 		}
@@ -165,8 +165,6 @@ public class RepositoryOrders {
 				}
 			}
 		}
-		
-		
 		return total;
 	}
 }
