@@ -37,4 +37,12 @@ public interface IMenuPrincipalProducto {
 	
 	//recibe un uuid busca una bebida
 	public drink searhDrink(UUID id);
+	// recibe un producto y devuelve el id
+	public UUID showId(Product p);
+
+	// recibe un producto y devuelve el precio de ese producto
+	public double showPrice(Product p);
+
+	// recibe un producto y muestre una packs
+	public List<String> showBundlePack(Product p);
 }
