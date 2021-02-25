@@ -15,7 +15,6 @@ import java.util.UUID;
 public class Repository {
 	// atributos de la clase producto
 	ArrayList<Product> products = new ArrayList<Product>();
-	UUID id = null;
 	public static Repository unico;
 
 	// crea un repositorio unico
@@ -103,7 +102,18 @@ public class Repository {
 
 	// Método que nos va a permitir obtener todas las comidas que se encuentren en
 	// la lista
-	public boolean getAllFood() {
+	public ArrayList<food> getAllFood() {
+		ArrayList<food> result=new ArrayList<food>();
+		for (int i = 0; i < products.size(); i++) {
+			if(products.get(i) instanceof food) {
+				result.add((food)products.get(i));
+			}
+			
+		}
+		
+		return result;
+		
+		/*
 		food f = null;
 		boolean valid = false;
 		for (int i = 0; i < products.size(); i++) {
@@ -113,7 +123,7 @@ public class Repository {
 		}
 
 		return products.contains(f);
-
+	*/
 	}
 
 	// Método que nos va a permitir obtener todas las bebidas no alcohólicas que se

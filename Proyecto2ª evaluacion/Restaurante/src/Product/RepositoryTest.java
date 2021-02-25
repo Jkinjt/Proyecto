@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class RepositoryTest {
@@ -24,7 +25,6 @@ public class RepositoryTest {
 		rp.addProduct(d2);
 		rp.addProduct(f2);
 	}
-
 	@Test
 	public void addProducttest() {
 		assertTrue(rp.addProduct(f3));
@@ -34,6 +34,7 @@ public class RepositoryTest {
 		assertFalse(rp.addProduct(f2));
 		assertFalse(rp.addProduct(f1));
 	}
+
 	@Test
 	public void deleteProductTest() {
 		assertTrue(rp.deleteProduct(f1));
@@ -43,11 +44,22 @@ public class RepositoryTest {
 		assertFalse(rp.deleteProduct(f3));
 		assertFalse(rp.deleteProduct(d3));
 	}
+	
+	
 	@Test
 	public void getAllProductsTest() {
-		ArrayList<Product> p=rp.getAllProducts();
-		System.out.println(rp.toString());
+		ArrayList<Product> p=new ArrayList<Product>();
+		p.add(d1);
+		p.add(f1);
+		p.add(d2);
+		p.add(f2);
+		p.add(d3);
+		p.add(f3);
+		assertEquals(p, rp.getAllProducts());
+		
 	}
+	
+	
 	@Test
 	public void getAllDrinksTest() {
 		ArrayList<Product> p=new ArrayList<Product>();
