@@ -128,7 +128,18 @@ public class Repository {
 
 	// Método que nos va a permitir obtener todas las bebidas no alcohólicas que se
 	// encuentren en la lista
-	public boolean NoAlcoholicDrinks() {
+	public ArrayList<drink> getNoAlcoholicDrinks() {
+		ArrayList<drink> result=new ArrayList<drink>();
+		for (int i = 0; i < products.size(); i++) {
+			if(products.get(i)instanceof drink) {
+				drink d=(drink) products.get(i);
+				if(!d.getAlcoholic())
+				result.add(d);
+			}
+			
+		}
+		return result;
+		/*
 		drink d = null;
 
 		boolean valid = false;
@@ -140,26 +151,52 @@ public class Repository {
 		}
 
 		return products.equals(!d.isAlcoholic());
+		*/
 	}
 
 	// Método que nos va a permitir obtener todas las bebidas alcohólicas que se
 	// encuentren en la lista
-	public boolean AlcoholicDrinks() {
+	public ArrayList<drink> getAlcoholicDrinks() {
+		
+		ArrayList<drink> result=new ArrayList<drink>();
+		for (int i = 0; i < products.size(); i++) {
+			if(products.get(i)instanceof drink) {
+				drink d=(drink) products.get(i);
+				if(d.getAlcoholic())
+				result.add(d);
+			}
+			
+		}
+		return result;
+		/*
 		drink d = null;
 
 		boolean valid = false;
 		for (int i = 0; i < products.size(); i++) {
-			if (products.equals(d.isAlcoholic())) {
+			if (products.equals(d.getAlcoholic())) {
 				valid = true;
 			}
 		}
 
-		return products.equals(d.isAlcoholic());
+		return products.equals(d.getAlcoholic());
+		*/
 	}
 
 	// Método que nos va a permitir obtener todas las comidas veganas que se
 	// encuentren en la lista
-	public boolean AllForVeganFood() {
+	public ArrayList<food> AllForVeganFood() {
+		ArrayList<food> result=new ArrayList<food>();
+		for (int i = 0; i < products.size(); i++) {
+			if(products.get(i) instanceof food) {
+				food f=(food)products.get(i);
+				if(f.isForVegans())
+				result.add(f);
+			}
+			
+		}
+		
+		return result;
+		/*
 		food f = null;
 
 		boolean valid = false;
@@ -170,6 +207,7 @@ public class Repository {
 		}
 
 		return products.equals(f.isForVegans());
+		*/
 	}
 
 	// Método que nos va a permitir obtener todas las productos que hagan ofertas

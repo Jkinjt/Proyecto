@@ -16,7 +16,7 @@ public class drink extends Product {
 	ArrayList<Product> bundlePack= new ArrayList<>();
 	
 	//atributos de la clase drink
-	boolean Alcoholic=true;
+	boolean Alcoholic;
 	boolean yesOffer=false;
 	 
 	 //Constructor de drink
@@ -27,7 +27,7 @@ public class drink extends Product {
 	}
 	
 	//Metodo que verifica si la bebida es alcoholica
-	public boolean isAlcoholic() {
+	public boolean getAlcoholic() {
 		return Alcoholic;
 	}
 	
@@ -80,7 +80,7 @@ public class drink extends Product {
 
 	//toString para imprimir la clase bebida
 	public String toString() {
-		return "Alcoholic=" + isAlcoholic()+"/n"+ 
+		return "Alcoholic=" + getAlcoholic()+"/n"+ 
 				super.toString();
 	}
 }

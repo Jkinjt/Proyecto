@@ -26,6 +26,59 @@ public class RepositoryTest {
 		rp.addProduct(f2);
 	}
 	@Test
+	public void getAllProductsTest() {
+		ArrayList<Product> p=new ArrayList<Product>();
+		p.add(d1);
+		p.add(f1);
+		p.add(d2);
+		p.add(f2);
+		p.add(f3);
+		p.add(d3);		
+		assertEquals(p, rp.getAllProducts());
+		
+	}
+	@Test
+	public void getAllDrinksTest() {
+		ArrayList<Product> p=new ArrayList<Product>();
+		p.add(d1);
+		p.add(d2);
+		p.add(d3);		
+		assertEquals(p, rp.getAllDrinks());
+		
+	}
+	@Test
+	public void getAllFood() {
+		ArrayList<Product> p=new ArrayList<Product>();
+		p.add(f1);
+		p.add(f2);
+		p.add(f3);
+		assertEquals(p, rp.getAllFood());
+		
+	}
+	@Test
+	public void noAlcoholicDrinksTest() {
+		ArrayList<Product> p=new ArrayList<Product>();
+		p.add(d1);
+		p.add(d2);
+		assertEquals(p, rp.getNoAlcoholicDrinks());
+	}
+	@Test
+	public void AlcoholicDrinksTest() {
+		ArrayList<Product> p=new ArrayList<Product>();
+		p.add(d3);		
+		assertEquals(p, rp.getAlcoholicDrinks());
+	}
+	@Test
+	public void AllForVegan() {
+		ArrayList<Product> p=new ArrayList<Product>();
+		rp.addProduct(f3);
+		p.add(f3);
+		assertEquals(p, rp.AllForVeganFood());
+		rp.deleteProduct(f3);
+		
+		
+	}
+	@Test
 	public void addProducttest() {
 		assertTrue(rp.addProduct(f3));
 		assertTrue(rp.addProduct(d3));
@@ -46,37 +99,9 @@ public class RepositoryTest {
 	}
 	
 	
-	@Test
-	public void getAllProductsTest() {
-		ArrayList<Product> p=new ArrayList<Product>();
-		p.add(d1);
-		p.add(f1);
-		p.add(d2);
-		p.add(f2);
-		p.add(d3);
-		p.add(f3);
-		assertEquals(p, rp.getAllProducts());
-		
-	}
+
 	
 	
-	@Test
-	public void getAllDrinksTest() {
-		ArrayList<Product> p=new ArrayList<Product>();
-		p.add(d1);
-		p.add(d2);
-				
-		assertEquals(p, rp.getAllDrinks());
-		
-	}
-	@Test
-	public void getAllFood() {
-		ArrayList<Product> p=new ArrayList<Product>();
-		p.add(f1);
-		p.add(f2);
-		
-		assertEquals(p, rp.getAllDrinks());
-		
-	}
+	
 
 }

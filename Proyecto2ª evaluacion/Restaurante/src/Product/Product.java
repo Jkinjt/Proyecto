@@ -3,6 +3,8 @@ package Product;
 import java.util.ArrayList;
 import java.util.UUID;
 
+import client.Person;
+
 /**
  * 
  * @author JGL
@@ -64,4 +66,17 @@ public abstract class Product implements iProduct {
 				"id="+id;
 				
 	}
+	public boolean equals(Object obj) {
+		boolean result=false;
+		if(this==obj)
+			result=true;
+		else if(this.getClass()==obj.getClass())
+		{
+			Product p=(Product)obj;
+			if(p.getName().equals(this.name)){
+				result=true;
+			}
+		}
+		return result;
+}
 }
