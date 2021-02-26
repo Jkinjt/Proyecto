@@ -13,11 +13,10 @@ import java.util.UUID;
 	//Clase drink heredada de product
 public class drink extends Product {
 	
-	ArrayList<Product> bundlePack= new ArrayList<>();
+	
 	
 	//atributos de la clase drink
 	boolean Alcoholic;
-	boolean yesOffer=false;
 	 
 	 //Constructor de drink
 	public drink( String name, double price, boolean alcoholic) {
@@ -31,29 +30,22 @@ public class drink extends Product {
 		return Alcoholic;
 	}
 	
-	
-	//Método que enlazan productos para generar pack que hacen ofertas.
-	public boolean getBundlePack() {
-		
-		return yesOffer;
-	}
-	
-	//Metodo para comprobar si un producto y otro hacer oferta
-			public boolean matchOffer(ArrayList products) {
-				double descuento;
-				boolean valid=false;
-				for(int i=0;i<products.size();i++) {
-					for(int j=0;j<bundlePack.size();j++) {
-						if(products.get(i).equals(bundlePack.get(j))) {
-							valid=true;
-							i=products.size();
-							j=bundlePack.size();
-							yesOffer=true;
-						}	
-					}
+
+//Metodo para comprobar si un producto y otro hacer oferta
+	public boolean matchOffer(ArrayList bp) {
+		boolean valid=false;
+		for(int i=0;i<bp.size();i++) {
+			for(int j=0;j<bundlePack.size();j++) {
+				if(bp.get(i).equals(bundlePack.get(j))) {
+					valid=true;
+						i=bp.size();
+						j=bundlePack.size();
+						yesOffer=true;
+					}	
 				}
-				return valid;
 			}
+				return valid;
+		}
 
 	
 	//Método para añadir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack

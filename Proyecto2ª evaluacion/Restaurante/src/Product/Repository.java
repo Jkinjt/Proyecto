@@ -212,7 +212,15 @@ public class Repository {
 
 	// Método que nos va a permitir obtener todas las productos que hagan ofertas
 	// entre ellos que se encuentren en la lista
-	public boolean getBundleProducts(Product p) {
+	public ArrayList<Product> getBundleProducts(Product p) {
+		ArrayList<Product> result=new ArrayList<Product>();
+		if(p!=null&&p.getName()!=null) {
+			Product pr = searchProduct(p.getName());
+			result=p.getBundlePack();			
+		}
+		return result;
+		
+		/*
 		boolean valid = false;
 
 		for (int i = 0; i < products.size(); i++) {
@@ -222,6 +230,7 @@ public class Repository {
 		}
 
 		return products.contains(p.getBundlePack());
+	*/
 	}
 
 	// Método que nos va a permitir buscar en la lista un determinado producto por
@@ -249,7 +258,7 @@ public class Repository {
 
 	// Método que nos va a permitir buscar en la lista una determinada bebida por su
 	// nombre
-	public Product searhDrinks(String name) {
+	public drink searhDrinks(String name) {
 		boolean valid = false;
 		drink d1 = null;
 
@@ -264,7 +273,7 @@ public class Repository {
 
 	// Método que nos va a permitir buscar en la lista una determinada comida por su
 	// nombre
-	public Product searchFood(String name) {
+	public food searchFood(String name) {
 		boolean valid = false;
 		food f1 = null;
 

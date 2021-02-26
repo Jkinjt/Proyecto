@@ -1,8 +1,10 @@
 package Product;
 
+import java.util.ArrayList;
+
 public interface iProduct {
 	
-	public boolean getBundlePack();
+	public ArrayList<Product> getBundlePack();
 	
 	public String getName();
 	
