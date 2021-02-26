@@ -113,16 +113,24 @@ public abstract class Product implements iProduct {
 
 	public boolean matchOffer(ArrayList products) {
 		boolean valid = false;
-		for (int i = 0; i < products.size(); i++) {
-			for (int j = 0; j < bundlePack.size(); j++) {
-				if (products.get(i).equals(bundlePack.get(j))) {
-					valid = true;
-					i = products.size();
-					j = bundlePack.size();
-					yesOffer = true;
+		if(!yesOffer&& products!=null) {
+			for (int i = 0; i < products.size(); i++) {
+				Product temporal=(Product)products.get(i);
+				if(!temporal.isYesOffer()) {
+					for (int j = 0; j < bundlePack.size(); j++) {
+						if (products.get(i).equals(bundlePack.get(j))) {
+							valid = true;
+							i = products.size();
+							j = bundlePack.size();
+							temporal.setYesOffer(true);
+							yesOffer = true;
+						}
+					}
 				}
+				
 			}
 		}
+		
 		return valid;
 	}
 	

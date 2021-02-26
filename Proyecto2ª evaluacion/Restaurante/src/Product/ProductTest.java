@@ -5,127 +5,50 @@ package Product;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
+import org.junit.Before;
 import org.junit.Test;
 
-/**
- * @author Joaquin
- *
- */
+
+
 public class ProductTest {
-	Repository rp=Repository.getSingletonInstance();
+	ArrayList<Product> bP=new ArrayList<Product>();
 	food f1=new food("kebab", 5, false);
 	food f2=new food("Hamburguesa", 3, false);
 	food f3=new food( "Ensalada",3,true);
 	drink d1=new drink( "Coca cola", 1, false);
 	drink d2=new drink("Fanta", 1, false);
 	drink d3=new drink( "JB", 8.50, true);
-	@Test
-	public void testProduct() {
-		fail("Not yet implemented");
-	}
+	
 
 	/**
 	 * Test method for {@link Product.Product#getBundlePack()}.
 	 */
+	@Before
+	public void setBundlePack() {
+		bP.add(d1);
+		bP.add(d2);
+		bP.add(f1);
+		bP.add(f2);
+		f3.setBundlePack(bP);
+	}
 	@Test
 	public void testGetBundlePack() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#getId()}.
-	 */
-	@Test
-	public void testGetId() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#getName()}.
-	 */
-	@Test
-	public void testGetName() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#getPrice()}.
-	 */
-	@Test
-	public void testGetPrice() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#getsIsForCeliac()}.
-	 */
-	@Test
-	public void testGetsIsForCeliac() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#isYesOffer()}.
-	 */
-	@Test
-	public void testIsYesOffer() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#setId(java.util.UUID)}.
-	 */
-	@Test
-	public void testSetId() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#setName(java.lang.String)}.
-	 */
-	@Test
-	public void testSetName() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#setPrice(double)}.
-	 */
-	@Test
-	public void testSetPrice() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#setForCeliac(boolean)}.
-	 */
-	@Test
-	public void testSetForCeliac() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#setYesOffer(boolean)}.
-	 */
-	@Test
-	public void testSetYesOffer() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#setBundlePack(java.util.ArrayList)}.
-	 */
-	@Test
-	public void testSetBundlePack() {
-		fail("Not yet implemented");
-	}
-
-	/**
-	 * Test method for {@link Product.Product#toString()}.
-	 */
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
+		
+	assertEquals(bP, f3.getBundlePack());
+	//probar si borrar funciona	
+	ArrayList<Product> temporal=new ArrayList<Product>();
+	temporal.add(f3);
+	temporal.add(d3);
+	f3.anadirObejeto(f3);
+	f3.anadirObejeto(d3);
+	assertNotEquals(temporal, f3.getBundlePack());
+	f3.eliminarObejeto(d1);
+	f3.eliminarObejeto(f1);
+	f3.eliminarObejeto(d2);
+	f3.eliminarObejeto(f2);
+	assertEquals(temporal, f3.getBundlePack());
 	}
 
 	/**
@@ -133,7 +56,14 @@ public class ProductTest {
 	 */
 	@Test
 	public void testEqualsObject() {
-		fail("Not yet implemented");
+		assertTrue(f3.equals(f3));
+		assertTrue(f2.equals(f2));
+		assertFalse(f1.equals(f2));
+		assertFalse(f3.equals(f1));
+		assertFalse(d1.equals(f2));
+		assertTrue(d2.equals(d2));
+		assertTrue(d1.equals(d1));
+		
 	}
 
 	/**
@@ -141,23 +71,26 @@ public class ProductTest {
 	 */
 	@Test
 	public void testMatchOffer() {
-		fail("Not yet implemented");
+		assertFalse(f1.isYesOffer());
+		assertFalse(f2.isYesOffer());
+		assertFalse(f3.isYesOffer());
+		assertFalse(d1.isYesOffer());
+		assertFalse(d2.isYesOffer());
+		assertFalse(d3.isYesOffer());
+		ArrayList<Product> temporal=new ArrayList<Product>();
+		temporal.add(f3);
+		temporal.add(d3);
+		assertFalse(f3.matchOffer(temporal));
+		temporal.add(d1);
+		assertTrue(f3.matchOffer(temporal));
+		assertTrue(f3.isYesOffer());
+		assertTrue(d1.isYesOffer());
+		
+		
+		
+		
 	}
 
-	/**
-	 * Test method for {@link Product.Product#anadirObejeto(Product.Product)}.
-	 */
-	@Test
-	public void testAnadirObejeto() {
-		fail("Not yet implemented");
-	}
 
-	/**
-	 * Test method for {@link Product.Product#eliminarObejeto(Product.Product)}.
-	 */
-	@Test
-	public void testEliminarObejeto() {
-		fail("Not yet implemented");
-	}
 
 }
