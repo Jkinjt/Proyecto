@@ -26,7 +26,7 @@ public class RepositoryOrders {
 	}
 
 	// añadir orden al repositorio
-	public void annadirorden(Order p) {
+	public void a�adirorden(Order p) {
 		registro.add(p);
 		//al añadir la order al repositorio se actualiza el total que hay que pagar
 		p.setTotal(calculototal(p));
