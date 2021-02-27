@@ -130,6 +130,12 @@ public class Order {
 				+ address + ", delivered=" + delivered + ", payed=" + payed + ", codigo=" + codigo + "]";
 	}
 	
-	
+	//to string limitado
+	public String toStringbasic() {
+		return  "+-------------------------+"+"\n"+
+				"| Client=" + client +"\n"+  
+				"| Codigo=" + codigo +"\n"+
+				"+-------------------------+";
+	}
 
 }
