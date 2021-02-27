@@ -8,6 +8,7 @@ import java.util.List;
 
 import Product.Product;
 import client.Client;
+import menuMenus.menuOrdenes;
 import repositoryUtils.herramientas;
 
 public class RepositoryOrders {
@@ -25,7 +26,7 @@ public class RepositoryOrders {
 		return unico;
 	}
 
-	// aÃ±adir orden al repositorio
+	// añadir orden al repositorio
 	public void añadirorden(Order p) {
 		registro.add(p);
 		//al aÃ±adir la order al repositorio se actualiza el total que hay que pagar
@@ -74,12 +75,12 @@ public class RepositoryOrders {
 		return result;
 	}
 
-	// modificar una orden existentente
-	public void modificarorden(Order o) {
+	// modificar una orden por cliente
+	public void modificarorden(String dnicliente) {
 		boolean encontrado = false;
 		for (int i = 0; i < registro.size() && encontrado == false; i++) {
-			if (registro.get(i) == o) {
-				Interfazrepositorio.menumodificaciones(registro.get(i));
+			if (registro.get(i).getClient().getDni() == dnicliente) {
+				menuOrdenes.menumodificaciones(registro.get(i));
 				encontrado = true;
 			}
 		}
@@ -90,7 +91,7 @@ public class RepositoryOrders {
 		boolean encontrado = false;
 		for (int i = 0; i < registro.size() && encontrado == false; i++) {
 			if (registro.get(i).getCodigo() == o) {
-				Interfazrepositorio.menumodificaciones(registro.get(i));
+				menuOrdenes.menumodificaciones(registro.get(i));
 				encontrado = true;
 			}
 		}
