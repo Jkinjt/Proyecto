@@ -1,3 +1,7 @@
 /menuClientes.class
 /menuProductos.class
 /menuOrdenes.class
+/IMenuEdicionCliente.class
+/IMenuEdicionProducto.class
+/IMenuPrincipalCliente.class
+/IMenuPrincipalProducto.class
