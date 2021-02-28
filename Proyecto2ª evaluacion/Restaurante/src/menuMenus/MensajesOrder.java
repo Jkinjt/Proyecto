@@ -42,6 +42,8 @@ public class MensajesOrder {
 	// opcion3
 	public static void menuverordenes() {
 		System.out.println("+------------------------------------------------------+");
+		System.out.println("|               Elija una opcion                       |");
+		System.out.println("+------------------------------------------------------+");
 		System.out.println("| 1-Mostrar todas las ordenes                          |");
 		System.out.println("+------------------------------------------------------+");
 		System.out.println("| 2-Mostrar todas las ordenes pagadas                  |");
@@ -125,10 +127,17 @@ public class MensajesOrder {
 		System.out.println("| 0-Salir          |");
 		System.out.println("+------------------+");
 	}
+	
+	public static void mensajeAddOrRemove() {
+		System.out.println("+-------------------------------+");
+		System.out.println("| Inserte el codigo de la orden |");
+		System.out.println("+-------------------------------+");
+	}
 	// -------------------------------------------------------------
 	// --------------------mostrar orden--------------------------
 	// -------------------------------------------------------------
 
+	
 	// -----------------------------------------------------------
 
 	public static void salida() {
