@@ -27,25 +27,28 @@ public class RepositoryOrders {
 	}
 
 	// añadir orden al repositorio
-	public boolean añadirorden(Order p) {
+	public boolean annadirorden(Order p) {
 		boolean result=false;
 		if(p!=null&&!registro.contains(p)) {
 			registro.add(p);
+			result=true;
 			//al aÃ±adir la order al repositorio se actualiza el total que hay que pagar
-			p.setTotal(calculototal(p));
+			
+			//p.setTotal(calculototal(p));
 		}
 		return result;
 	}
 
 	// borrar una orden del repositorio
-	public void eliminarorde(int codigo) {
+	public boolean eliminarorde(Order p) {
 		boolean eliminado = false;
 		for (int i = 0; i < registro.size() && eliminado == false; i++) {
-			if (registro.get(i).getCodigo()==codigo) {
+			if (registro.get(i).getCodigo()==p.getCodigo()) {
 				registro.remove(i);
 				eliminado = true;
 			}
 		}
+		return eliminado;
 	}
 
 	// mostrar todos los pedidos
@@ -54,12 +57,12 @@ public class RepositoryOrders {
 	}
 
 	// mostrar todas las ordenes de un cliente
-	public Order getOrdersByClient(String dni) {
-		Order result = null;
+	public List<Order> getOrdersByClient(String dni) {
+		List<Order> result =new ArrayList<Order>();
 		if (dni != null && registro != null) {
 			for (int i = 0; i < registro.size() && result == null; i++) {
 				if (registro.get(i).getClient().getDni().equals(dni)) {
-					result = registro.get(i);
+					result.add( registro.get(i));
 				}
 			}
 		}
@@ -103,7 +106,7 @@ public class RepositoryOrders {
 
 	// mostrar todas las ordenes no enviadas
 	public List<Order> getOrdersNoDelivered() {
-		List<Order> result = null;
+		List<Order> result =new ArrayList<Order>();
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).isDelivered() == false) {
@@ -115,7 +118,7 @@ public class RepositoryOrders {
 	}
 	//mostrar todas las ordenes enviadas
 	public List<Order> getOrdersDelivered() {
-		List<Order> result = null;
+		List<Order> result = new ArrayList<Order>();;
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).isDelivered() == true) {
@@ -128,7 +131,7 @@ public class RepositoryOrders {
 
 	// mostrar todos los pedidos no pagados
 	public List<Order> getOrdersNoPayed() {
-		List<Order> result = null;
+		List<Order> result = new ArrayList<Order>();
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).isPayed() == false) {
@@ -142,7 +145,7 @@ public class RepositoryOrders {
 
 	// mostrar todos los pedidos pagados
 	public List<Order> AllInput() {
-		List<Order> result = null;
+		List<Order> result = new ArrayList<Order>();
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).isPayed() == true) {
