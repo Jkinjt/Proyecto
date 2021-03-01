@@ -8,6 +8,7 @@ import java.util.List;
 
 import Product.Product;
 import client.Client;
+import menuMenus.menuOrdenes;
 import repositoryUtils.herramientas;
 
 public class RepositoryOrders {
@@ -25,18 +26,22 @@ public class RepositoryOrders {
 		return unico;
 	}
 
-	// a√±adir orden al repositorio
-	public void annadirorden(Order p) {
-		registro.add(p);
-		//al a√±adir la order al repositorio se actualiza el total que hay que pagar
-		p.setTotal(calculototal(p));
+	// aÒadir orden al repositorio
+	public boolean aÒadirorden(Order p) {
+		boolean result=false;
+		if(p!=null&&!registro.contains(p)) {
+			registro.add(p);
+			//al a√±adir la order al repositorio se actualiza el total que hay que pagar
+			p.setTotal(calculototal(p));
+		}
+		return result;
 	}
 
 	// borrar una orden del repositorio
-	public void eliminarorde(String dni) {
+	public void eliminarorde(int codigo) {
 		boolean eliminado = false;
 		for (int i = 0; i < registro.size() && eliminado == false; i++) {
-			if (registro.get(i).getClient().getDni().equals(dni)) {
+			if (registro.get(i).getCodigo()==codigo) {
 				registro.remove(i);
 				eliminado = true;
 			}
@@ -74,12 +79,12 @@ public class RepositoryOrders {
 		return result;
 	}
 
-	// modificar una orden existentente
-	public void modificarorden(Order o) {
+	// modificar una orden por cliente
+	public void modificarorden(String dnicliente) {
 		boolean encontrado = false;
 		for (int i = 0; i < registro.size() && encontrado == false; i++) {
-			if (registro.get(i) == o) {
-				Interfazrepositorio.menumodificaciones(registro.get(i));
+			if (registro.get(i).getClient().getDni() == dnicliente) {
+				menuOrdenes.menumodificaciones(registro.get(i));
 				encontrado = true;
 			}
 		}
@@ -90,7 +95,7 @@ public class RepositoryOrders {
 		boolean encontrado = false;
 		for (int i = 0; i < registro.size() && encontrado == false; i++) {
 			if (registro.get(i).getCodigo() == o) {
-				Interfazrepositorio.menumodificaciones(registro.get(i));
+				menuOrdenes.menumodificaciones(registro.get(i));
 				encontrado = true;
 			}
 		}
@@ -102,6 +107,18 @@ public class RepositoryOrders {
 		if (registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
 				if (registro.get(i).isDelivered() == false) {
+					result.add(registro.get(i));
+				}
+			}
+		}
+		return result;
+	}
+	//mostrar todas las ordenes enviadas
+	public List<Order> getOrdersDelivered() {
+		List<Order> result = null;
+		if (registro != null) {
+			for (int i = 0; i < registro.size(); i++) {
+				if (registro.get(i).isDelivered() == true) {
 					result.add(registro.get(i));
 				}
 			}
@@ -166,5 +183,16 @@ public class RepositoryOrders {
 			}
 		}
 		return total;
+	}
+	public Order buscarordencodigo(int codigo) {
+		Order order=null;
+		boolean encontrado=false;
+		for (int i = 0; i < registro.size()&& encontrado==false ; i++) {
+			if (registro.get(i).getCodigo()==codigo) {
+				order=registro.get(i);
+				encontrado=true;
+			}
+		}
+		return order;
 	}
 }

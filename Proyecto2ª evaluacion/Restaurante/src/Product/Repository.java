@@ -15,7 +15,6 @@ import java.util.UUID;
 public class Repository {
 	// atributos de la clase producto
 	ArrayList<Product> products = new ArrayList<Product>();
-	UUID id = null;
 	public static Repository unico;
 
 	// crea un repositorio unico
@@ -103,7 +102,18 @@ public class Repository {
 
 	// Método que nos va a permitir obtener todas las comidas que se encuentren en
 	// la lista
-	public boolean getAllFood() {
+	public ArrayList<food> getAllFood() {
+		ArrayList<food> result=new ArrayList<food>();
+		for (int i = 0; i < products.size(); i++) {
+			if(products.get(i) instanceof food) {
+				result.add((food)products.get(i));
+			}
+			
+		}
+		
+		return result;
+		
+		/*
 		food f = null;
 		boolean valid = false;
 		for (int i = 0; i < products.size(); i++) {
@@ -113,12 +123,23 @@ public class Repository {
 		}
 
 		return products.contains(f);
-
+	*/
 	}
 
 	// Método que nos va a permitir obtener todas las bebidas no alcohólicas que se
 	// encuentren en la lista
-	public boolean NoAlcoholicDrinks() {
+	public ArrayList<drink> getNoAlcoholicDrinks() {
+		ArrayList<drink> result=new ArrayList<drink>();
+		for (int i = 0; i < products.size(); i++) {
+			if(products.get(i)instanceof drink) {
+				drink d=(drink) products.get(i);
+				if(!d.getAlcoholic())
+				result.add(d);
+			}
+			
+		}
+		return result;
+		/*
 		drink d = null;
 
 		boolean valid = false;
@@ -130,26 +151,52 @@ public class Repository {
 		}
 
 		return products.equals(!d.isAlcoholic());
+		*/
 	}
 
 	// Método que nos va a permitir obtener todas las bebidas alcohólicas que se
 	// encuentren en la lista
-	public boolean AlcoholicDrinks() {
+	public ArrayList<drink> getAlcoholicDrinks() {
+		
+		ArrayList<drink> result=new ArrayList<drink>();
+		for (int i = 0; i < products.size(); i++) {
+			if(products.get(i)instanceof drink) {
+				drink d=(drink) products.get(i);
+				if(d.getAlcoholic())
+				result.add(d);
+			}
+			
+		}
+		return result;
+		/*
 		drink d = null;
 
 		boolean valid = false;
 		for (int i = 0; i < products.size(); i++) {
-			if (products.equals(d.isAlcoholic())) {
+			if (products.equals(d.getAlcoholic())) {
 				valid = true;
 			}
 		}
 
-		return products.equals(d.isAlcoholic());
+		return products.equals(d.getAlcoholic());
+		*/
 	}
 
 	// Método que nos va a permitir obtener todas las comidas veganas que se
 	// encuentren en la lista
-	public boolean AllForVeganFood() {
+	public ArrayList<food> AllForVeganFood() {
+		ArrayList<food> result=new ArrayList<food>();
+		for (int i = 0; i < products.size(); i++) {
+			if(products.get(i) instanceof food) {
+				food f=(food)products.get(i);
+				if(f.isForVegans())
+				result.add(f);
+			}
+			
+		}
+		
+		return result;
+		/*
 		food f = null;
 
 		boolean valid = false;
@@ -160,11 +207,20 @@ public class Repository {
 		}
 
 		return products.equals(f.isForVegans());
+		*/
 	}
 
 	// Método que nos va a permitir obtener todas las productos que hagan ofertas
 	// entre ellos que se encuentren en la lista
-	public boolean getBundleProducts(Product p) {
+	public ArrayList<Product> getBundleProducts(Product p) {
+		ArrayList<Product> result=new ArrayList<Product>();
+		if(p!=null&&p.getName()!=null) {
+			Product pr = searchProduct(p.getName());
+			result=p.getBundlePack();			
+		}
+		return result;
+		
+		/*
 		boolean valid = false;
 
 		for (int i = 0; i < products.size(); i++) {
@@ -174,6 +230,7 @@ public class Repository {
 		}
 
 		return products.contains(p.getBundlePack());
+	*/
 	}
 
 	// Método que nos va a permitir buscar en la lista un determinado producto por
@@ -201,32 +258,40 @@ public class Repository {
 
 	// Método que nos va a permitir buscar en la lista una determinada bebida por su
 	// nombre
-	public Product searhDrinks(String name) {
-		boolean valid = false;
+	public drink searchDrinks(String name) {
 		drink d1 = null;
-
-		for (int i = 0; i < products.size(); i++) {
-			if (name.equals(d1.getName()) && products.contains(d1)) {
-				valid = true;
+		if(name!=null) {
+			
+			for (int i = 0; i < products.size(); i++) {
+				if (products.get(i) instanceof drink && products.get(i).getName().equalsIgnoreCase(name)) {
+				d1=(drink) products.get(i);
+				i=products.size();
+				}
 			}
+			
 		}
+		
+		
 
 		return d1;
 	}
 
 	// Método que nos va a permitir buscar en la lista una determinada comida por su
 	// nombre
-	public Product searchFood(String name) {
-		boolean valid = false;
-		food f1 = null;
-
-		for (int i = 0; i < products.size(); i++) {
-			if (name.equals(f1.getName()) && products.contains(f1)) {
-				valid = true;
+	public food searchFood(String name) {
+		food f = null;
+		if(name!=null) {
+			for (int i = 0; i < products.size(); i++) {
+				if (products.get(i)instanceof food && products.get(i).getName().equalsIgnoreCase(name)) {
+				f=(food) products.get(i);
+				i=products.size();
+				}
 			}
 		}
 
-		return f1;
+		
+
+		return f;
 	}
 
 	@Override

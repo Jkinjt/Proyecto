@@ -4,3 +4,5 @@
 /ClientTest.class
 /RepositoryClientTest.class
 /MenuRepositoryClient.class
+/IClienteMenu.class
+/IMenuClientRepository.class

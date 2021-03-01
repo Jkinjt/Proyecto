@@ -6,12 +6,19 @@ import java.util.Scanner;
 public class herramientas {
 
 	private static Scanner teclado = new Scanner(System.in);
-
+/**
+ * escribe cualquier objeto
+ * @param f
+ */
+	public static void imprimir(Object f) {
+		System.out.println(f);
+	}
 	/**
 	 * Escribe un texto en consola sin sin salto de linea
 	 * 
 	 * @param f texto a imprimir
 	 */
+	
 	public static void imprimirsinintro(String f) {
 		System.out.print(f);
 	}

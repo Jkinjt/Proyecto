@@ -13,11 +13,9 @@ import java.util.UUID;
 //clase food que hereda de la clase Product
 public class food extends Product {
 	
-	ArrayList<Product> bundlePack= new ArrayList<>();
 	
 	//atributos de la clase comida
 	boolean forVegans=true;
-	boolean yesOffer=false;
 	
 	//Constructor de food
 	public food( String name,double price,boolean forVegans) {
@@ -33,28 +31,27 @@ public class food extends Product {
 	}
 
 	//Método para añadir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack 
-	public boolean getBundlePack() {
+	public ArrayList<Product> getBundlePack() {
 		
 		
-		return yesOffer;
+		return bundlePack;
 		
 	}
 	
 	//Metodo para comprobar si un producto y otro hacer oferta
-	public boolean matchOffer(ArrayList products) {
-		double descuento;
-		boolean valid=false;
+	public Product matchOffer(ArrayList products) {
+		Product result=null;
 		for(int i=0;i<products.size();i++) {
 			for(int j=0;j<bundlePack.size();j++) {
 				if(products.get(i).equals(bundlePack.get(j))) {
-					valid=true;
+					result=(Product) products.get(i);
 					i=products.size();
 					j=bundlePack.size();
 					yesOffer=true;
 				}	
 			}
 		}
-		return valid;
+		return result;
 	}
 
 	//Método para añadir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
@@ -84,5 +81,6 @@ public class food extends Product {
 		return "Is For Vegans=" + isForVegans() +"/n"
 			   + super.toString();
 	}
+	
 	
 }
