@@ -100,7 +100,7 @@ public abstract class Product implements iProduct {
 	public String toStringbasic() {
 		return  "+-------------------------+"+"\n"+
 				"| Product=" +getName()+ "/n"+
-				"| id="+id+"\n"+
+				"| Precio="+getPrice()+"\n"+
 				"+-------------------------+";
 				
 	}
