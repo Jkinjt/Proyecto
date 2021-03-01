@@ -129,6 +129,8 @@ public class Order {
 	public String toStringbasic() {
 		return  "+-------------------------+"+"\n"+
 				"| Client=" + client +"\n"+  
+				"| Product" + product +"\n"+
+				"| address=" + address +"\n"+
 				"| Codigo=" + codigo +"\n"+
 				"+-------------------------+";
 	}

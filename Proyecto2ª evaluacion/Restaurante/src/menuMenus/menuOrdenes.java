@@ -22,7 +22,7 @@ public class menuOrdenes {
 		do {
 			MensajesOrder.menuPrincicipal();
 			// insertar el valor
-			MensajesOrder.insertar();
+			
 			opcion = herramientas.intcontrol();
 			switch (opcion) {
 			case 1:
@@ -83,7 +83,7 @@ public class menuOrdenes {
 			// muestra el menu de opciones
 			MensajesOrder.menueditar();
 			// insertar el valor
-			MensajesOrder.insertar();
+			
 			opcion = herramientas.intcontrol();
 			switch (opcion) {
 

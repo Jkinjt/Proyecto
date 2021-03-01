@@ -4,6 +4,8 @@ public class MensajesOrder {
 	// meter todos los mensajes de los menus aqui
 	public static void menuPrincicipal() {
 		System.out.println("+---------------------------+");
+		System.out.println("|     Elige una opcion      |");
+		System.out.println("+---------------------------+");
 		System.out.println("| 1-Modificar Orden         |");
 		System.out.println("+---------------------------+");
 		System.out.println("| 2-Añadir o eliminar orden |");
@@ -18,6 +20,8 @@ public class MensajesOrder {
 	// opcion1
 	public static void menueditar() {
 		System.out.println("+--------------------------+");
+		System.out.println("|    Elige una opcion      |");
+		System.out.println("+--------------------------+");
 		System.out.println("| 1-Modificar estado pago  |");
 		System.out.println("+--------------------------+");
 		System.out.println("| 2-Modificar estado envio |");
@@ -29,6 +33,8 @@ public class MensajesOrder {
 	// -------------------------------------------------------------
 	// opcion2
 	public static void menuaddorremove() {
+		System.out.println("+------------------+");
+		System.out.println("| Elige una opcion |");
 		System.out.println("+------------------+");
 		System.out.println("| 1-Añadir Orden   |");
 		System.out.println("+------------------+");
@@ -79,11 +85,7 @@ public class MensajesOrder {
 		System.out.println("+-----------------------------+");
 	}
 	// -------------------------------------------------------------
-	public static void insertar() {
-		System.out.println("+----------------------+");
-		System.out.println("| Seleccione una opcion|");
-		System.out.println("+----------------------+");
-	}
+	
 	// -------------------------------------------------------------
 	public static void insertarc() {
 		System.out.println("+------------------------------+");
