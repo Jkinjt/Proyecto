@@ -96,6 +96,14 @@ public abstract class Product implements iProduct {
 				+ id;
 
 	}
+	//tostring basic
+	public String toStringbasic() {
+		return  "+-------------------------+"+"\n"+
+				"| Product=" +getName()+ "/n"+
+				"| id="+id+"\n"+
+				"+-------------------------+";
+				
+	}
 
 	public boolean equals(Object obj) {
 		boolean result = false;
@@ -133,7 +141,7 @@ public abstract class Product implements iProduct {
 		return result;
 	}
 	
-	//Método para añadir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
+	//MÃ©todo para aÃ±adir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
 			public boolean anadirObejeto(Product p) {
 				boolean valid=false;
 				if(p!=null) {
@@ -144,7 +152,7 @@ public abstract class Product implements iProduct {
 				return valid;
 			}
 			
-		//Método para eliminar un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
+		//MÃ©todo para eliminar un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
 				public boolean eliminarObejeto(Product p) {
 					boolean valid=false;
 					if(p!=null) {

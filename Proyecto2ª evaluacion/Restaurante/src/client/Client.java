@@ -66,6 +66,11 @@ public class Client extends Person {
 				+ points + ", address=" + Arrays.toString(address)+ ", dni=" + dni    + ", age=" + age + "]";
 	}
 	
-	
+	public String toStringbasic() {
+		return "+-------------------------+"+"\n"+
+				"| Name="  + name+"\n"+
+				"| Direccion=" + Arrays.toString(address)+  "\n"+
+				"+-------------------------+";
+	}
 
 }

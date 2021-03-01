@@ -5,3 +5,7 @@
 /food.class
 /Almacen.class
 /Repository.class
+/IMainMenuRepostoryProducts.class
+/IMenuProduct.class
+/ProductTest.class
+/RepositoryTest.class
