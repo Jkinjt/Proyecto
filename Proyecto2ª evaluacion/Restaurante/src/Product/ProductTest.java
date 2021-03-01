@@ -71,6 +71,7 @@ public class ProductTest {
 	 */
 	@Test
 	public void testMatchOffer() {
+		
 		assertFalse(f1.isYesOffer());
 		assertFalse(f2.isYesOffer());
 		assertFalse(f3.isYesOffer());
@@ -84,9 +85,6 @@ public class ProductTest {
 		temporal.add(d1);
 		assertTrue(f3.matchOffer(temporal));
 		assertTrue(f3.isYesOffer());
-		assertTrue(d1.isYesOffer());
-		
-		
 		
 		
 	}

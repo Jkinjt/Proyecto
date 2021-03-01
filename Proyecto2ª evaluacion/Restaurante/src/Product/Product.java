@@ -111,18 +111,17 @@ public abstract class Product implements iProduct {
 
 	}
 
-	public boolean matchOffer(ArrayList products) {
-		boolean valid = false;
+	public Product matchOffer(ArrayList products) {
+		Product result=null;
 		if(!yesOffer&& products!=null) {
 			for (int i = 0; i < products.size(); i++) {
-				Product temporal=(Product)products.get(i);
-				if(!temporal.isYesOffer()) {
+				result=(Product)products.get(i);
+				if(!result.isYesOffer()) {
 					for (int j = 0; j < bundlePack.size(); j++) {
 						if (products.get(i).equals(bundlePack.get(j))) {
-							valid = true;
 							i = products.size();
 							j = bundlePack.size();
-							temporal.setYesOffer(true);
+							result.setYesOffer(true);
 							yesOffer = true;
 						}
 					}
@@ -131,7 +130,7 @@ public abstract class Product implements iProduct {
 			}
 		}
 		
-		return valid;
+		return result;
 	}
 	
 	//Método para añadir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
