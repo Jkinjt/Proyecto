@@ -81,9 +81,9 @@ public class ProductTest {
 		ArrayList<Product> temporal=new ArrayList<Product>();
 		temporal.add(f3);
 		temporal.add(d3);
-		assertFalse(f3.matchOffer(temporal));
+		assertEquals(null, f3.matchOffer(temporal));
 		temporal.add(d1);
-		assertTrue(f3.matchOffer(temporal));
+		assertEquals(d1, f3.matchOffer(temporal));
 		assertTrue(f3.isYesOffer());
 		
 		

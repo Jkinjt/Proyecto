@@ -32,19 +32,20 @@ public class drink extends Product {
 	
 
 //Metodo para comprobar si un producto y otro hacer oferta
-	public boolean matchOffer(ArrayList bp) {
-		boolean valid=false;
-		for(int i=0;i<bp.size();i++) {
-			for(int j=0;j<bundlePack.size();j++) {
-				if(bp.get(i).equals(bundlePack.get(j))) {
-					valid=true;
-						i=bp.size();
+	//Metodo para comprobar si un producto y otro hacer oferta
+		public Product matchOffer(ArrayList products) {
+			Product result=null;
+			for(int i=0;i<products.size();i++) {
+				for(int j=0;j<bundlePack.size();j++) {
+					if(products.get(i).equals(bundlePack.get(j))) {
+						result=(Product) products.get(i);
+						i=products.size();
 						j=bundlePack.size();
 						yesOffer=true;
 					}	
 				}
 			}
-				return valid;
+			return result;
 		}
 
 	

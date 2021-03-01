@@ -107,7 +107,7 @@ public abstract class Product implements iProduct {
 
 	public boolean equals(Object obj) {
 		boolean result = false;
-		if (this == obj)
+		if (this == obj&&obj!=null)
 			result = true;
 		else if (this.getClass() == obj.getClass()) {
 			Product p = (Product) obj;

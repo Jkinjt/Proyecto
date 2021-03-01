@@ -258,15 +258,20 @@ public class Repository {
 
 	// Método que nos va a permitir buscar en la lista una determinada bebida por su
 	// nombre
-	public drink searhDrinks(String name) {
-		boolean valid = false;
+	public drink searchDrinks(String name) {
 		drink d1 = null;
-
-		for (int i = 0; i < products.size(); i++) {
-			if (name.equals(d1.getName()) && products.contains(d1)) {
-				valid = true;
+		if(name!=null) {
+			
+			for (int i = 0; i < products.size(); i++) {
+				if (products.get(i) instanceof drink && products.get(i).getName().equalsIgnoreCase(name)) {
+				d1=(drink) products.get(i);
+				i=products.size();
+				}
 			}
+			
 		}
+		
+		
 
 		return d1;
 	}
@@ -274,16 +279,19 @@ public class Repository {
 	// Método que nos va a permitir buscar en la lista una determinada comida por su
 	// nombre
 	public food searchFood(String name) {
-		boolean valid = false;
-		food f1 = null;
-
-		for (int i = 0; i < products.size(); i++) {
-			if (name.equals(f1.getName()) && products.contains(f1)) {
-				valid = true;
+		food f = null;
+		if(name!=null) {
+			for (int i = 0; i < products.size(); i++) {
+				if (products.get(i)instanceof food && products.get(i).getName().equalsIgnoreCase(name)) {
+				f=(food) products.get(i);
+				i=products.size();
+				}
 			}
 		}
 
-		return f1;
+		
+
+		return f;
 	}
 
 	@Override

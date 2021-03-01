@@ -98,6 +98,22 @@ public class RepositoryTest {
 		assertFalse(rp.deleteProduct(d3));
 	}
 	
+	@Test
+	public void searchProductTest() {
+		assertEquals(f1, rp.searchProduct("kebab"));
+		assertEquals(d2, rp.searchProduct("Fanta"));
+	}
+	@Test
+	public void searchDrinkTest() {
+		assertEquals(null, rp.searchDrinks("kebab"));
+		assertEquals(d2, rp.searchDrinks("Fanta"));
+	}
+	@Test
+	public void searchFoodTest() {
+		assertEquals(f1, rp.searchFood("kebab"));
+		assertEquals(null, rp.searchFood("Fanta"));
+		
+	}
 	
 
 	
