@@ -32,7 +32,6 @@ class OrderTest {
 		repositorio.añadirorden(order2);
 		repositorio.añadirorden(order3);
 		repositorio.añadirorden(order4);
-		repositorio.modificarorden(repositorio.getOrdersByClient("0001"));
 		
 		List<Order> n =repositorio.getallorder();
 		System.out.println(n);

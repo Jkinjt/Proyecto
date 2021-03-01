@@ -50,9 +50,9 @@ public class menuOrdenes {
 
 			case 2:
 				// añadir o remover
-
 				
-
+				
+				
 				break;
 			// ----------------------------------------------------------
 
