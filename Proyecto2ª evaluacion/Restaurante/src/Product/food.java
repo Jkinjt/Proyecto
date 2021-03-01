@@ -39,20 +39,19 @@ public class food extends Product {
 	}
 	
 	//Metodo para comprobar si un producto y otro hacer oferta
-	public boolean matchOffer(ArrayList products) {
-		double descuento;
-		boolean valid=false;
+	public Product matchOffer(ArrayList products) {
+		Product result=null;
 		for(int i=0;i<products.size();i++) {
 			for(int j=0;j<bundlePack.size();j++) {
 				if(products.get(i).equals(bundlePack.get(j))) {
-					valid=true;
+					result=(Product) products.get(i);
 					i=products.size();
 					j=bundlePack.size();
 					yesOffer=true;
 				}	
 			}
 		}
-		return valid;
+		return result;
 	}
 
 	//Método para añadir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
