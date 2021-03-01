@@ -7,6 +7,8 @@ public class menuClientes {
 	static RepositoryClients c= RepositoryClients.getSingletonInstance();
 	static herramientas h=new herramientas();
 	static MensajesClient m=new MensajesClient();
+	static MenuPrincipalCliente mp=new MenuPrincipalCliente();
+	static MenuEdicionCliente me=new MenuEdicionCliente();
 	public static void menuclientesprincipal() {
 		 
 	}
@@ -19,22 +21,27 @@ public class menuClientes {
 			switch (opcion) {
 			case 1:
 				//modificar nombre
+				me.updateName(h.stringcontrol());
 				break;
 				
 			case 2:
 				//modificar dni
+				me.updateInt(h.intcontrol());
 				break;
 				
 			case 3:
 				//modificar edad
+				me.updateAge(h.intcontrol());
 				break;
 				
 			case 4:
 				//modificar puntos
+				me.updatepoints(h.intcontrol());
 				break;
 				
 			case 5:
 				//modificar direcciones
+				me.updateaddres();
 				break;
 				
 			case 0:
