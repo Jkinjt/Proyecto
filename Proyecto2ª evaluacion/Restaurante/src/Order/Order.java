@@ -102,26 +102,21 @@ public class Order {
 	}
 
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + codigo;
-		return result;
-	}
+	
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Order other = (Order) obj;
-		if (codigo != other.codigo)
-			return false;
-		return true;
+		boolean result=false;
+		if(this==obj)
+			result=true;
+		else if(this.getClass()==obj.getClass()) {
+			Order o=(Order) obj;
+			if(o.getCodigo()==this.codigo) {
+				result=true;
+			}
+		}
+		
+		return result;
 	}
 
 	@Override

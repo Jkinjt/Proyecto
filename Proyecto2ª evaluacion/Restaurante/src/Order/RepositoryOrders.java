@@ -27,10 +27,14 @@ public class RepositoryOrders {
 	}
 
 	// añadir orden al repositorio
-	public void añadirorden(Order p) {
-		registro.add(p);
-		//al aÃ±adir la order al repositorio se actualiza el total que hay que pagar
-		p.setTotal(calculototal(p));
+	public boolean añadirorden(Order p) {
+		boolean result=false;
+		if(p!=null&&!registro.contains(p)) {
+			registro.add(p);
+			//al aÃ±adir la order al repositorio se actualiza el total que hay que pagar
+			p.setTotal(calculototal(p));
+		}
+		return result;
 	}
 
 	// borrar una orden del repositorio
