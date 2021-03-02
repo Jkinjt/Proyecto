@@ -46,8 +46,8 @@ public class RepositoryOrderTest {
 	
 	@Before
 	public void addOrders() {
-		ro.annadirorden(o1);
-		ro.annadirorden(o2);
+		ro.addorden(o1);
+		ro.addorden(o2);
 	}
 	
 	@Before
@@ -62,24 +62,24 @@ public class RepositoryOrderTest {
 }
 	@After
 	public void deleteOrders() {
-		ro.eliminarorde(o1);
-		ro.eliminarorde(o2);
+		ro.eliminarorde(o1.getCodigo());
+		ro.eliminarorde(o2.getCodigo());
 	}
 	@Test
-	public void testAnnadirorden() {
+	public void testaddorden() {
 		
-		assertFalse(ro.annadirorden(null));
-		assertFalse(ro.annadirorden(o1));
-		assertFalse(ro.annadirorden(o2));
-		assertTrue(ro.annadirorden(o3));
+		assertFalse(ro.addorden(null));
+		assertFalse(ro.addorden(o1));
+		assertFalse(ro.addorden(o2));
+		assertTrue(ro.addorden(o3));
 		
 	}
 
 	@Test
 	public void testEliminarorde() {
-	assertTrue(ro.eliminarorde(o1));
-	assertTrue(ro.eliminarorde(o2));
-	assertFalse(ro.eliminarorde(o3));
+	assertTrue(ro.eliminarorde(o1.getCodigo()));
+	assertTrue(ro.eliminarorde(o2.getCodigo()));
+	assertFalse(ro.eliminarorde(o3.getCodigo()));
 	
 	}
 

@@ -132,7 +132,7 @@ public class menuOrdenes {
 			switch (opcionb) {
 			case 1:
 				MensajesOrder.mensajeAddOrRemove();
-				r.añadirorden(r.buscarordencodigo(herramientas.intcontrol()));
+				r.addorden(r.buscarordencodigo(herramientas.intcontrol()));
 				break;
 			case 2:
 				MensajesOrder.mensajeAddOrRemove();

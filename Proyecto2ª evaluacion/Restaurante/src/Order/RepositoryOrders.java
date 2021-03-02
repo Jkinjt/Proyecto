@@ -27,7 +27,7 @@ public class RepositoryOrders {
 	}
 
 	// añadir orden al repositorio
-	public boolean annadirorden(Order p) {
+	public boolean addorden(Order p) {
 		boolean result=false;
 		if(p!=null&&!registro.contains(p)) {
 			registro.add(p);
@@ -40,10 +40,10 @@ public class RepositoryOrders {
 	}
 
 	// borrar una orden del repositorio
-	public boolean eliminarorde(Order p) {
+	public boolean eliminarorde(int codigo) {
 		boolean eliminado = false;
 		for (int i = 0; i < registro.size() && eliminado == false; i++) {
-			if (registro.get(i).getCodigo()==p.getCodigo()) {
+			if (registro.get(i).getCodigo()==codigo) {
 				registro.remove(i);
 				eliminado = true;
 			}
