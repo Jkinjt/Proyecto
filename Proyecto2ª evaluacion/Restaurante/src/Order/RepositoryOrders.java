@@ -39,7 +39,7 @@ public class RepositoryOrders {
 		return result;
 	}
 
-	// borrar una orden del repositorio
+	// borrar una orden del repositorio por codigo
 	public boolean eliminarorde(int codigo) {
 		boolean eliminado = false;
 		for (int i = 0; i < registro.size() && eliminado == false; i++) {
