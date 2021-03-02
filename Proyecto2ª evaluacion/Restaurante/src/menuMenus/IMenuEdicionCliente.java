@@ -14,6 +14,6 @@ public interface IMenuEdicionCliente {
 	public int updatepoints(int puntos);
 	
 	//modificar direccion
-	public String[] updateaddres(String[] direcciones);
+	public String[] updateaddres();
 	
 }

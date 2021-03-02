@@ -6,7 +6,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Product.Product;
@@ -30,15 +32,24 @@ public class RepositoryOrderTest {
 	drink d2=new drink("Fanta", 1, false);
 	drink d3=new drink( "JB", 8.50, true);
 	List<Product> p=new ArrayList<Product>();
-	Order o1=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , a[0], false, false);
-	Order o2=new Order(c2, (ArrayList<Product>) p,LocalDateTime.now() , a[1], false, false);
-	Order o3=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , b[0], false, false);
+	Order o1=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , a[0], false, true);
+	Order o2=new Order(c2, (ArrayList<Product>) p,LocalDateTime.now() , a[1], true, false);
+	Order o3=new Order(c3, (ArrayList<Product>) p,LocalDateTime.now() , b[0], false, false);
 	
-
+	
+	
+	
 	@Test
 	public void testGetSingletonInstance() {
 		assertEquals(ro, RepositoryOrders.getSingletonInstance());
 	}
+	
+	@Before
+	public void addOrders() {
+		ro.annadirorden(o1);
+		ro.annadirorden(o2);
+	}
+	
 	@Before
 	public void addProducts() {
 		p.add(f1);
@@ -49,24 +60,43 @@ public class RepositoryOrderTest {
 		p.add(d3);
 	
 }
+	@After
+	public void deleteOrders() {
+		ro.eliminarorde(o1);
+		ro.eliminarorde(o2);
+	}
 	@Test
-	public void testAñadirorden() {
-		ro.añadirorden(o1);
+	public void testAnnadirorden() {
+		
+		assertFalse(ro.annadirorden(null));
+		assertFalse(ro.annadirorden(o1));
+		assertFalse(ro.annadirorden(o2));
+		assertTrue(ro.annadirorden(o3));
+		
 	}
 
 	@Test
 	public void testEliminarorde() {
-		fail("Not yet implemented");
+	assertTrue(ro.eliminarorde(o1));
+	assertTrue(ro.eliminarorde(o2));
+	assertFalse(ro.eliminarorde(o3));
+	
 	}
 
 	@Test
 	public void testGetallorder() {
-		fail("Not yet implemented");
+		List<Order> lo=new ArrayList<Order>();
+		lo.add(o1);
+		lo.add(o2);
+		assertEquals(lo, ro.getallorder());
 	}
 
 	@Test
 	public void testGetOrdersByClient() {
-		fail("Not yet implemented");
+		//el resultado es el mismo pero el programa no me lo reconocen como igual
+		List<Order> lo=new ArrayList<Order>();
+		lo.add(o2);
+		assertEquals(lo, ro.getOrdersByClient(c2.getDni()));
 	}
 
 	@Test
@@ -86,22 +116,31 @@ public class RepositoryOrderTest {
 
 	@Test
 	public void testGetOrdersNoDelivered() {
-		fail("Not yet implemented");
+		List<Order> lo=new ArrayList<Order>();
+		lo.add(o1);
+		assertEquals(lo, ro.getOrdersNoDelivered());
 	}
 
 	@Test
 	public void testGetOrdersDelivered() {
-		fail("Not yet implemented");
+		List<Order> lo=new ArrayList<Order>();
+		lo.add(o2);
+		assertEquals(lo, ro.getOrdersDelivered());
 	}
 
 	@Test
 	public void testGetOrdersNoPayed() {
-		fail("Not yet implemented");
+		//mismo problema  que el dni
+		List<Order> lo=new ArrayList<Order>();
+		lo.add(o2);
+		assertEquals(lo, ro.getOrdersNoPayed());
 	}
 
 	@Test
 	public void testAllInput() {
-		fail("Not yet implemented");
+		List<Order> lo=new ArrayList<Order>();
+		lo.add(o1);
+		assertEquals(lo, ro.AllInput());
 	}
 
 	@Test
@@ -111,7 +150,9 @@ public class RepositoryOrderTest {
 
 	@Test
 	public void testCalculototal() {
-		fail("Not yet implemented");
+		System.out.println(ro.calculototal(o1));
+		System.out.println(ro.calculototal(o2));
+		System.out.println(ro.calculototal(o3));
 	}
 
 	@Test
