@@ -40,10 +40,10 @@ public class RepositoryOrders {
 	}
 
 	// borrar una orden del repositorio por codigo
-	public boolean eliminarorde(int codigo) {
+	public boolean eliminarorde(Order codigo) {
 		boolean eliminado = false;
 		for (int i = 0; i < registro.size() && eliminado == false; i++) {
-			if (registro.get(i).getCodigo()==codigo) {
+			if (registro.get(i).getCodigo()==codigo.getCodigo()) {
 				registro.remove(i);
 				eliminado = true;
 			}

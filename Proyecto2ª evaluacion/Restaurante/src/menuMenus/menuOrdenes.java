@@ -136,7 +136,7 @@ public class menuOrdenes {
 				break;
 			case 2:
 				MensajesOrder.mensajeAddOrRemove();
-				r.eliminarorde(herramientas.intcontrol());
+				r.eliminarorde(r.buscarordencodigo(herramientas.intcontrol()));
 				break;
 
 			default:

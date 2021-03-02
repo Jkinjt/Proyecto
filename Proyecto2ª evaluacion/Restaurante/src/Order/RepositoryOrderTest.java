@@ -62,8 +62,8 @@ public class RepositoryOrderTest {
 }
 	@After
 	public void deleteOrders() {
-		ro.eliminarorde(o1.getCodigo());
-		ro.eliminarorde(o2.getCodigo());
+		ro.eliminarorde(o1);
+		ro.eliminarorde(o2);
 	}
 	@Test
 	public void testaddorden() {
@@ -77,9 +77,9 @@ public class RepositoryOrderTest {
 
 	@Test
 	public void testEliminarorde() {
-	assertTrue(ro.eliminarorde(o1.getCodigo()));
-	assertTrue(ro.eliminarorde(o2.getCodigo()));
-	assertFalse(ro.eliminarorde(o3.getCodigo()));
+	assertTrue(ro.eliminarorde(o1));
+	assertTrue(ro.eliminarorde(o2));
+	assertFalse(ro.eliminarorde(o3));
 	
 	}
 
