@@ -99,6 +99,7 @@ public class RepositoryOrderTest {
 		assertEquals(lo, ro.getOrdersByClient(c2.getDni()));
 	}
 
+	//¿que debe recibir la orden para que coincida?
 	@Test
 	public void testGetOrdersByDate() {
 		fail("Not yet implemented");
@@ -106,7 +107,8 @@ public class RepositoryOrderTest {
 
 	@Test
 	public void testModificarordenString() {
-		fail("Not yet implemented");
+		o1.setClient(c2);
+		ro.modificarorden(c1.getDni());
 	}
 
 	@Test
