@@ -1,5 +1,6 @@
 package menuMenus;
 
+import client.Client;
 import client.RepositoryClients;
 import repositoryUtils.herramientas;
 
@@ -21,7 +22,7 @@ public class menuClientes {
 		switch (opcion) {
 		case 1:
 			//editar cliente
-			menueditarcliente();
+			menueditarcliente(c.searchClientByDni(h.stringcontrol()));
 			break;
 		case 2:
 			//add or remove
@@ -46,7 +47,7 @@ public class menuClientes {
 		} while (opcion!=0);
 	}
 	//menu para editar un cliente
-	public static void menueditarcliente() {
+	public static void menueditarcliente(Client c) {
 		int opcion=-1;
 		
 		do {
@@ -55,6 +56,7 @@ public class menuClientes {
 			switch (opcion) {
 			case 1:
 				//modificar nombre
+				
 				me.updateName(h.stringcontrol());
 				break;
 				
