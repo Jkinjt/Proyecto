@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,9 +104,13 @@ public class RepositoryOrderTest {
 	//¿que debe recibir la orden para que coincida?
 	@Test
 	public void testGetOrdersByDate() {
+		//mirar como hacer los  patrones
 		LocalDateTime hoy=LocalDateTime.now();
-		LocalDateTime ho1=hoy.format(dd, mm, yyyy);
+		DateTimeFormatter formater=DateTimeFormatter.ofPattern("dd mm uuuu");
+		String ho1=hoy.format(formater);
+		
 		System.out.println(hoy.toString());
+		System.out.println(ho1);
 		
 	}
 
