@@ -22,6 +22,7 @@ public class menuClientes {
 		switch (opcion) {
 		case 1:
 			//editar cliente
+			m.pedidodni();
 			menueditarcliente(c.searchClientByDni(h.stringcontrol()));
 			break;
 		case 2:
@@ -57,12 +58,12 @@ public class menuClientes {
 			case 1:
 				//modificar nombre
 				
-				me.updateName(h.stringcontrol());
+				c.setName(me.updateName(h.stringcontrol()));
 				break;
 				
 			case 2:
 				//modificar dni
-				me.updateInt(h.intcontrol());
+			c.setDni(me.updateInt(h.stringcontrol()));	
 				break;
 				
 			case 3:

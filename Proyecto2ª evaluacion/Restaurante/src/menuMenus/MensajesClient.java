@@ -17,6 +17,13 @@ public class MensajesClient {
 		System.out.println("+-----------------------------+");
 		
 	}
+	//-------------------------------------------------
+	//insertar datos
+	public static void pedidodni() {
+		System.out.println("+------------------------------------+");
+		System.out.println("|  ~~Introduzca el dni del cliente~~ |");
+		System.out.println("+------------------------------------+");
+	}
 	//------------------------------------
 	//menu editar
 	public static void menueditar() {

@@ -13,9 +13,10 @@ static Client c=new Client(null, null, 0, null);
 	}
 
 	@Override
-	public int updateInt(int dni) {
+	public String updateInt(String dni) {
 		// TODO Auto-generated method stub
-		return 0;
+	
+		return dni;
 	}
 
 	@Override

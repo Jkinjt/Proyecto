@@ -5,7 +5,7 @@ public interface IMenuEdicionCliente {
 	public String updateName(String Name);
 	
 	//modifcar dni
-	public int updateInt(int dni);
+	public String updateInt(String dni);
 
 	//modificar edad
 	public int updateAge(int edad);
