@@ -15,6 +15,7 @@ import Product.Product;
 import Product.drink;
 import Product.food;
 import client.Client;
+import menuMenus.menuOrdenes;
 
 public class RepositoryOrderTest {
 	RepositoryOrders ro= RepositoryOrders.getSingletonInstance();
@@ -72,6 +73,7 @@ public class RepositoryOrderTest {
 		assertFalse(ro.addorden(o1));
 		assertFalse(ro.addorden(o2));
 		assertTrue(ro.addorden(o3));
+		
 		
 	}
 

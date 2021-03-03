@@ -8,7 +8,7 @@ public class MensajesOrder {
 		System.out.println("+---------------------------+");
 		System.out.println("| 1-Modificar Orden         |");
 		System.out.println("+---------------------------+");
-		System.out.println("| 2-Añadir o eliminar orden |");
+		System.out.println("| 2-AÃ±adir o eliminar orden |");
 		System.out.println("+---------------------------+");
 		System.out.println("| 3-Ver todas las ordenes   |");
 		System.out.println("+---------------------------+");
@@ -36,7 +36,7 @@ public class MensajesOrder {
 		System.out.println("+------------------+");
 		System.out.println("| Elige una opcion |");
 		System.out.println("+------------------+");
-		System.out.println("| 1-Añadir Orden   |");
+		System.out.println("| 1-AÃ±adir Orden   |");
 		System.out.println("+------------------+");
 		System.out.println("| 2-Eliminar orden |");
 		System.out.println("+------------------+");
@@ -117,12 +117,12 @@ public class MensajesOrder {
 	}
 
 	// -------------------------------------------------------------
-	// --------------------añadir o eliminar--------------------------
+	// --------------------aÃ±adir o eliminar--------------------------
 	// -------------------------------------------------------------
 	public static void addorremove() {
 	
 		System.out.println("+------------------+");
-		System.out.println("| 1-Añadir orden   |");
+		System.out.println("| 1-AÃ±adir orden   |");
 		System.out.println("+------------------+");
 		System.out.println("| 2-Eliminar orden |");
 		System.out.println("+------------------+");
