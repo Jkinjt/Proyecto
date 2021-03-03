@@ -1,6 +1,7 @@
 package Order;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -12,6 +13,7 @@ import menuMenus.menuOrdenes;
 import repositoryUtils.herramientas;
 
 public class RepositoryOrders {
+	final static DateTimeFormatter formater=DateTimeFormatter.ofPattern("dd mm uuuu");
 	private List<Order> registro = new ArrayList<>();
 	public static RepositoryOrders unico;
 
@@ -72,8 +74,9 @@ public class RepositoryOrders {
 	// mostrar todas las ordenes de una fecha
 	public List<Order> getOrdersByDate(String date) {
 		List<Order> result = null;
-		if (date != null && registro != null) {
+		if (date != null && registro != null) {			
 			for (int i = 0; i < registro.size(); i++) {
+				String temporal=registro.get(i).getDate().format(formater);
 				if (registro.get(i).getDate().equals(date)) {
 					result.add(registro.get(i));
 				}
@@ -171,6 +174,7 @@ public class RepositoryOrders {
 	}
 	
 	//actualiza el pago total de la orden
+	//¿esto no seria mejor hacerlo en el  carrito para que  ya pase el precio total?
 	
 	public double calculototal(Order orden) {
 		double total=0;
