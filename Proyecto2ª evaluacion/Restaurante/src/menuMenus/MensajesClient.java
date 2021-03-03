@@ -63,6 +63,15 @@ public class MensajesClient {
 		System.out.println("+--------------------+");
 	}
 	
+	public static void insertardatos() {
+		System.out.println("+----------------------------------------------+");
+		System.out.println("| Por favor inserte los datos del nuevo cliente|");
+		System.out.println("+----------------------------------------------+");
+	}
+	public static void nombre() {
+		
+	}
+	
 	//------------------------------------
 	//menu mostrar
 	public static void menumostrar() {

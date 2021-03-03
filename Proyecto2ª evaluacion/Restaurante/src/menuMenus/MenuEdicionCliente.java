@@ -1,10 +1,12 @@
 package menuMenus;
 
 import client.Client;
+import client.RepositoryClients;
 import repositoryUtils.herramientas;
 
 public class MenuEdicionCliente  implements IMenuEdicionCliente{
-static Client c=new Client(null, null, 0, null);
+static Client c=null;
+static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 	@Override
 	public String updateName(String Name) {
 		// TODO Auto-generated method stub
@@ -33,7 +35,7 @@ static Client c=new Client(null, null, 0, null);
 
 	@Override
 	public String[] updateaddres() {
-		String[] direcciones=null;
+		String[] direcciones=new String[c.getAddress().length+1];
 		boolean listo=false;
 		do {
 			

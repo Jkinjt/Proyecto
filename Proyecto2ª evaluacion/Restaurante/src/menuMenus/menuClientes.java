@@ -1,11 +1,16 @@
 package menuMenus;
 
+
+
+import java.util.Iterator;
+import java.util.List;
+
 import client.Client;
 import client.RepositoryClients;
 import repositoryUtils.herramientas;
 
 public class menuClientes {
-	static RepositoryClients c= RepositoryClients.getSingletonInstance();
+	static RepositoryClients Rc= RepositoryClients.getSingletonInstance();
 	static herramientas h=new herramientas();
 	static MensajesClient m=new MensajesClient();
 	static MenuPrincipalCliente mp=new MenuPrincipalCliente();
@@ -23,7 +28,7 @@ public class menuClientes {
 		case 1:
 			//editar cliente
 			m.pedidodni();
-			menueditarcliente(c.searchClientByDni(h.stringcontrol()));
+			menueditarcliente(Rc.searchClientByDni(h.stringcontrol()));
 			break;
 		case 2:
 			//add or remove
@@ -106,9 +111,12 @@ public class menuClientes {
 			switch (opcion) {
 			case 1:
 				//añadir cliente
+				addcliente();
 				break;
 			case 2:
 				//eliminar cliente
+				m.insertardni();
+				Rc.deleteClient(Rc.searchClientByDni(h.stringcontrol()));
 				break;
 			case 0:
 				m.salida();
@@ -119,6 +127,52 @@ public class menuClientes {
 			
 		} while (opcion!=0);
 	}
+	
+	public static void addcliente() {
+		String dni=null;
+		String name=null;
+		int edad=0;
+		List<String> lista=null;
+		boolean continuar=false;
+		//inserte dni
+		dni=h.stringcontrol();
+		//inserte nombre
+		name=h.stringcontrol();
+		//inserte edad
+		edad=h.intcontrol();
+		// inserte direcciones
+		do {
+			int opcion=0;
+			lista.add(h.stringcontrol());
+			
+				//mensaje de continuar si/no
+			opcion=h.intcontrol();
+			if(opcion==1) {
+				continuar=true;
+			}
+		}while (continuar==false);
+				
+		String[] direcciones= new String[lista.size()];
+		direcciones=lista.toArray(direcciones);
+		
+		Client nuevoc=new Client(dni, name, edad, direcciones);
+		
+		Rc.addClient(nuevoc);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public static void MenuShowClients() {
 		int opcion=-1;
