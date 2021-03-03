@@ -19,6 +19,12 @@ public class menuOrdenes {
 		ArrayList<Product> productos = new ArrayList<Product>();
 		Client nClient;
 		int opcion = -1;// opcion de seleccion de menu
+		
+		
+		/*
+		 * ------------------------------------------------------
+		 */
+		
 		do {
 			MensajesOrder.menuPrincicipal();
 			// insertar el valor
