@@ -171,6 +171,7 @@ public class RepositoryOrders {
 	}
 	
 	//actualiza el pago total de la orden
+	//¿esto no seria mejor hacerlo en el  carrito para que  ya pase el precio total?
 	
 	public double calculototal(Order orden) {
 		double total=0;

@@ -2,6 +2,7 @@ package Order;
 
 import static org.junit.Assert.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -102,7 +103,10 @@ public class RepositoryOrderTest {
 	//¿que debe recibir la orden para que coincida?
 	@Test
 	public void testGetOrdersByDate() {
-		fail("Not yet implemented");
+		LocalDateTime hoy=LocalDateTime.now();
+		LocalDateTime ho1=hoy.format(dd, mm, yyyy);
+		System.out.println(hoy.toString());
+		
 	}
 
 	@Test
