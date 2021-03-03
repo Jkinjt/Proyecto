@@ -12,9 +12,43 @@ public class menuClientes {
 	public static void menuclientesprincipal() {
 		 
 	}
+	//menu principal
+	public static void MenuPrincipal() {
+		int opcion=-1;
+		do {
+			m.menuinicio();
+			opcion=h.intcontrol();
+		switch (opcion) {
+		case 1:
+			//editar cliente
+			menueditarcliente();
+			break;
+		case 2:
+			//add or remove
+			MenuAddOrRemove();
+			break;
+		case 3:
+			//show clients
+			MenuShowClients();
+			break;
+		case 0:
+			m.salida();
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			break;
+		default:
+			break;
+		}	
+		} while (opcion!=0);
+	}
 	//menu para editar un cliente
 	public static void menueditarcliente() {
 		int opcion=-1;
+		
 		do {
 			m.menueditar();
 			opcion=h.intcontrol();
@@ -45,7 +79,13 @@ public class menuClientes {
 				break;
 				
 			case 0:
-				
+				m.salida();
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 				
 			default:
@@ -55,7 +95,7 @@ public class menuClientes {
 		
 	}
 	
-	public static void addOrRemove() {
+	public static void MenuAddOrRemove() {
 		int opcion=-1;
 		do {
 			m.menuAddOrRemove();
@@ -77,7 +117,7 @@ public class menuClientes {
 		} while (opcion!=0);
 	}
 	
-	public static void showclients() {
+	public static void MenuShowClients() {
 		int opcion=-1;
 		do {
 			m.menumostrar();
@@ -91,6 +131,12 @@ public class menuClientes {
 				break;
 			case 0:
 				m.salida();
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			default:
 				break;

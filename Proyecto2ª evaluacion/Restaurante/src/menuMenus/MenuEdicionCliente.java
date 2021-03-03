@@ -1,9 +1,10 @@
 package menuMenus;
 
+import client.Client;
 import repositoryUtils.herramientas;
 
 public class MenuEdicionCliente  implements IMenuEdicionCliente{
-
+static Client c=new Client(null, null, 0, null);
 	@Override
 	public String updateName(String Name) {
 		// TODO Auto-generated method stub

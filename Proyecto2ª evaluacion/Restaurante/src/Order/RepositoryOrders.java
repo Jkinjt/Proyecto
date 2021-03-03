@@ -82,7 +82,7 @@ public class RepositoryOrders {
 		return result;
 	}
 
-	// modificar una orden por cliente
+	/*// modificar una orden por cliente
 	public void modificarorden(String dnicliente) {
 		boolean encontrado = false;
 		for (int i = 0; i < registro.size() && encontrado == false; i++) {
@@ -102,7 +102,7 @@ public class RepositoryOrders {
 				encontrado = true;
 			}
 		}
-	}
+	}*/
 
 	// mostrar todas las ordenes no enviadas
 	public List<Order> getOrdersNoDelivered() {
