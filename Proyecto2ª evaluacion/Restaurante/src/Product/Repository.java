@@ -70,6 +70,21 @@ public class Repository {
 		return products;
 
 	}
+	
+	public UUID todosId() {
+		ArrayList<Product> products=new ArrayList<Product>();	
+		Product p=null;
+		return p.getId();
+	}
+	
+	public double todosPrecio() {
+		ArrayList<Product> products=new ArrayList<Product>();	
+		Product p=null;
+		return p.getPrice();
+	}
+ 
+
+	
 
 	// Método que nos va a permitir obtener todas las bebidas que se encuentren en
 	// la lista
@@ -81,9 +96,7 @@ public class Repository {
 			}
 			
 		}
-		return result;
-	
-		
+		return result;	
 	}
 
 	// Método que nos va a permitir obtener todas las comidas que se encuentren en
@@ -206,11 +219,9 @@ public class Repository {
 				}
 			}
 		}
-
-		
-
 		return f;
 	}
+	
 
 	@Override
 	public String toString() {

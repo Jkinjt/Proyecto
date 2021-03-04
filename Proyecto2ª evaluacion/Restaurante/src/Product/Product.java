@@ -31,6 +31,9 @@ public abstract class Product implements iProduct {
 		this.forCeliac = forCeliac;
 
 	}
+	public Product() {
+		
+	}
 
 	public ArrayList<Product> getBundlePack() {
 

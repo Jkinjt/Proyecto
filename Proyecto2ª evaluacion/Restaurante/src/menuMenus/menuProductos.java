@@ -1,23 +1,19 @@
 package menuMenus;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.UUID;
+
 import Product.Product;
 import Product.Repository;
 import Product.drink;
 import Product.food;
-import client.RepositoryClients;
-import Product.Repository;
-
 import repositoryUtils.herramientas;
 
 public class menuProductos {
+
 	static Repository c= Repository.getSingletonInstance();
 	static herramientas h=new herramientas();
 	static mensajesProduct m=new mensajesProduct();
-	static ArrayList<Product> products = new ArrayList<Product>();
+	ArrayList<Product> products = new ArrayList<Product>();
 	
 	public static void menuclientesprincipal() {
 		menuInicio();
@@ -57,7 +53,7 @@ public class menuProductos {
 	//EditProduct
 	public static void editProduct(){
 		int opcion=-1;
-		
+		Product pp=null;
 		do {
 			m.menueditar();
 			opcion=h.intcontrol();
@@ -80,11 +76,12 @@ public class menuProductos {
 				break;
 			//añadir a bundlePack
 			case 5:
-				addToBudlePAck(null);
+				h.imprimirconintro("Inserte el producto");
+				pp.anadirObejeto(pp);
 				break;
 			//quitar del bundlePack
 			case 6:
-				removeFromBundlePack(null);
+				pp.eliminarObejeto(null);
 				break;
 			//salir del menu
 			case 0:
@@ -107,11 +104,11 @@ public class menuProductos {
 		switch (opcion) {
 		//añadir producto
 		case 1:
-			addProduct(null);
+			c.addProduct(null);
 			break;
 		//remover producto	
 		case 2:
-			deleteProduct(null);
+			c.deleteProduct(null);
 			break;
 		//salir
 		case 0:
@@ -125,7 +122,7 @@ public class menuProductos {
    }
 	
 	//ShowProducts
-	public static void showProducts() {
+	public static void showProducts(){
 	int opcion=-1;
 	do {
 	m.menumostrar();
@@ -138,35 +135,35 @@ public class menuProductos {
 		break;
 		//mostrar todos los productos
 		case 1:
-			
+			c.getAllProducts();
 			break;
 		//mostrar todas las bebidad alcoholicas
 		case 2:
-			
+			c.getAlcoholicDrinks();
 			break;
 		//mostrar todas las bebidad no alcoholicas
 		case 3:
-			
+			c.getNoAlcoholicDrinks();
 			break;
 		//mostrar toda la comida
 		case 4:
-			
+			c.getAllFood();
 			break;
 		//mostrar toda la comida vegana
 		case 5:
-			
+			c.AllForVeganFood();
 			break;
 		//mostrar todas las comidas con ofera (dentro del bundlePack)
 		case 6:
-			
+			c.getBundleProducts(null);
 			break;
 		//mostrar todas las id de los productos
 		case 7:
-			
+			c.todosId();
 			break;
 		//mostrar precio de los productos
 		case 8:
-			
+			c.todosPrecio();
 			break;
 
 	default:
@@ -280,58 +277,4 @@ public class menuProductos {
 			}
 		}
 	}
-
-	
-	public static boolean addToBudlePAck(Product p) {
-		ArrayList<Product> bundlePack = new ArrayList<>();
-		boolean valid=false;
-		if(p!=null) {
-			bundlePack.add(p);
-			valid=true;
-		}
-		
-		return valid;
-	}
-
-	
-	public static boolean removeFromBundlePack(Product p) {
-		ArrayList<Product> bundlePack = new ArrayList<>();
-			boolean valid=false;
-			if(p!=null) {
-				bundlePack.remove(p);
-				valid=true;
-		}
-				
-			return valid;
-	}
-
-	//METODOS PARA menuAddOrRemove
-	public static boolean addProduct(Product p) {
-		Repository c= Repository.getSingletonInstance();
-		ArrayList<Product> products = new ArrayList<Product>();
-		boolean valid = false;
-		if (p != null) {
-			//en el if usa la función que has creado de buscar producto
-			//para commprobar si hay alguien asi reutilizas código
-			if (products.size() < 1 || p.getName() == null) {
-				products.add(p);
-				valid = true;
-			}
-		}
-
-		return valid;
-	}
-	public static boolean deleteProduct(Product p) {
-		Repository c= Repository.getSingletonInstance();
-		ArrayList<Product> products = new ArrayList<Product>();
-		boolean valid = false;
-
-		for (int i = 0; i < products.size(); i++) {
-			if (products.get(i) != null && products.get(i).equals(p) && products.contains(p)) {
-				products.remove(i);
-				valid = true;
-			}
-		}
-		return valid; 
-	}
-	}
+}

@@ -71,9 +71,9 @@ public class mensajesProduct {
 			System.out.println("+------------------------------+");
 			System.out.println("| 6-Mostrar toda la comida con oferta|");
 			System.out.println("+------------------------------+");
-			System.out.println("| 7-Mostrar id del producto|");
+			System.out.println("| 7-Id de todos los productos|");
 			System.out.println("+------------------------------+");
-			System.out.println("| 8-Mostrar precio del producto|");
+			System.out.println("| 8-Precios de todos los productos|");
 			System.out.println("+------------------------------+");
 			System.out.println("| 0-Salir                      |");
 			System.out.println("+------------------------------+");
