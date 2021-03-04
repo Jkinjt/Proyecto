@@ -62,7 +62,7 @@ public class RepositoryOrders {
 	public List<Order> getOrdersByClient(String dni) {
 		List<Order> result =new ArrayList<Order>();
 		if (dni != null && registro != null) {
-			for (int i = 0; i < registro.size() && result == null; i++) {
+			for (int i = 0; i < registro.size() ; i++) {
 				if (registro.get(i).getClient().getDni().equals(dni)) {
 					result.add( registro.get(i));
 				}
@@ -77,8 +77,9 @@ public class RepositoryOrders {
 		if (date != null && registro != null) {			
 			for (int i = 0; i < registro.size(); i++) {
 				String temporal=registro.get(i).getDate().format(formater);
-				if (registro.get(i).getDate().equals(date)) {
+				if (temporal.equals(date)) {
 					result.add(registro.get(i));
+					
 				}
 			}
 		}
@@ -160,13 +161,30 @@ public class RepositoryOrders {
 	}
 
 	// mostrar todos los pedidos entre dos fechas
-	public List<Order> getInputByDate(LocalDateTime ini, LocalDateTime end) {
-		List<Order> result = null;
-		if (registro != null) {
+	public List<Order> getInputByDate(String ini, String end) {
+		List<Order> result =new ArrayList<Order>();
+		if (ini!=null&&end!=null && registro != null) {
 			for (int i = 0; i < registro.size(); i++) {
-				if ((registro.get(i).getDate().isBefore(end) || registro.get(i).getDate().isAfter(ini))
+				String temporal=registro.get(i).getDate().format(formater);
+				if ((-1<temporal.compareTo(ini) &&1>temporal.compareTo(end))
 						&& registro.get(i).isPayed() == true) {
 					result.add(registro.get(i));
+					
+				}
+			}
+		}
+		return result;
+	}
+	
+	public List<Order> getNotPayedByDate(String ini, String end) {
+		List<Order> result =new ArrayList<Order>();
+		if (ini!=null&&end!=null && registro != null) {
+			for (int i = 0; i < registro.size(); i++) {
+				String temporal=registro.get(i).getDate().format(formater);
+				if ((-1<temporal.compareTo(ini) &&1>temporal.compareTo(end))
+						&& registro.get(i).isPayed() != true) {
+					result.add(registro.get(i));
+					
 				}
 			}
 		}

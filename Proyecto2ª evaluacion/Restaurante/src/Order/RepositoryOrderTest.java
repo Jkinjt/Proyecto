@@ -67,6 +67,7 @@ public class RepositoryOrderTest {
 	public void deleteOrders() {
 		ro.eliminarorde(o1);
 		ro.eliminarorde(o2);
+		ro.eliminarorde(o3);
 	}
 	@Test
 	public void testaddorden() {
@@ -97,7 +98,6 @@ public class RepositoryOrderTest {
 
 	@Test
 	public void testGetOrdersByClient() {
-		//el resultado es el mismo pero el programa no me lo reconocen como igual
 		List<Order> lo=new ArrayList<Order>();
 		lo.add(o2);
 		assertEquals(lo, ro.getOrdersByClient(c2.getDni()));
@@ -119,7 +119,7 @@ public class RepositoryOrderTest {
 	@Test
 	public void testModificarordenString() {
 		o1.setClient(c2);
-		ro.modificarorden(c1.getDni());
+		//ro.modificarorden(c1.getDni());
 	}
 
 	@Test
@@ -158,7 +158,14 @@ public class RepositoryOrderTest {
 
 	@Test
 	public void testGetInputByDate() {
-		fail("Not yet implemented");
+		List<Order> lo=new ArrayList<Order>();
+		lo.add(o1);		
+		assertEquals(lo, ro.getInputByDate("01 03 2021", "30 03 2021"));
+	}
+	public void testGetNotPayedByDate() {
+		List<Order> lo=new ArrayList<Order>();
+		lo.add(o2);		
+		assertEquals(lo, ro.getNotPayedByDate("01 03 2021", "30 03 2021"));
 	}
 
 	@Test
@@ -170,7 +177,7 @@ public class RepositoryOrderTest {
 
 	@Test
 	public void testBuscarordencodigo() {
-		fail("Not yet implemented");
+		
 	}
 
 }
