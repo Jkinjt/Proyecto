@@ -134,18 +134,27 @@ public class menuClientes {
 		int edad=0;
 		List<String> lista=null;
 		boolean continuar=false;
+		
 		//inserte dni
+		m.dni();
 		dni=h.stringcontrol();
+		
 		//inserte nombre
+		m.nombre();
 		name=h.stringcontrol();
+		
 		//inserte edad
+		m.edad();
 		edad=h.intcontrol();
+		
 		// inserte direcciones
 		do {
+			m.direcciones();
 			int opcion=0;
 			lista.add(h.stringcontrol());
 			
 				//mensaje de continuar si/no
+			m.continuar();
 			opcion=h.intcontrol();
 			if(opcion==1) {
 				continuar=true;

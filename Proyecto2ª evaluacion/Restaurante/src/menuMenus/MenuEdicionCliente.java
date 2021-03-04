@@ -1,11 +1,14 @@
 package menuMenus;
 
+import java.util.List;
+
 import client.Client;
 import client.RepositoryClients;
 import repositoryUtils.herramientas;
 
 public class MenuEdicionCliente  implements IMenuEdicionCliente{
 static Client c=null;
+static herramientas h=new herramientas();
 static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 	@Override
 	public String updateName(String Name) {
@@ -35,11 +38,21 @@ static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 
 	@Override
 	public String[] updateaddres() {
-		String[] direcciones=new String[c.getAddress().length+1];
-		boolean listo=false;
+		List<String> lista=null;
+		boolean continuar=false;
 		do {
+			int opcion=0;
+			lista.add(h.stringcontrol());
 			
-		} while (listo=false);
+				//mensaje de continuar si/no
+			opcion=h.intcontrol();
+			if(opcion==1) {
+				continuar=true;
+			}
+		}while (continuar==false);
+				
+		String[] direcciones= new String[lista.size()];
+		direcciones=lista.toArray(direcciones);
 		return direcciones;
 	}
 
