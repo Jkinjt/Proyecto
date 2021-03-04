@@ -40,12 +40,6 @@ public class Repository {
 				products.add(p);
 				valid = true;
 			}
-			/*
-			 * for(int i=0;i<products.size();i++) { if(products.get(i)==null && !valid) {
-			 * products.add(p); p=(Product) products.get(i);
-			 * 
-			 * } }
-			 */
 		}
 
 		return valid;
@@ -88,15 +82,7 @@ public class Repository {
 			
 		}
 		return result;
-		/*
-		drink d = null;
-		boolean valid = false;
-		for (int i = 0; i < products.size(); i++) {
-			if (products.contains(d)) {
-				valid = true;
-			}
-		}
-		*/
+	
 		
 	}
 
@@ -112,18 +98,6 @@ public class Repository {
 		}
 		
 		return result;
-		
-		/*
-		food f = null;
-		boolean valid = false;
-		for (int i = 0; i < products.size(); i++) {
-			if (products.contains(f)) {
-				valid = true;
-			}
-		}
-
-		return products.contains(f);
-	*/
 	}
 
 	// Método que nos va a permitir obtener todas las bebidas no alcohólicas que se
@@ -139,19 +113,6 @@ public class Repository {
 			
 		}
 		return result;
-		/*
-		drink d = null;
-
-		boolean valid = false;
-
-		for (int i = 0; i < products.size(); i++) {
-			if (products.equals(!d.isAlcoholic())) {
-				valid = true;
-			}
-		}
-
-		return products.equals(!d.isAlcoholic());
-		*/
 	}
 
 	// Método que nos va a permitir obtener todas las bebidas alcohólicas que se
@@ -168,18 +129,6 @@ public class Repository {
 			
 		}
 		return result;
-		/*
-		drink d = null;
-
-		boolean valid = false;
-		for (int i = 0; i < products.size(); i++) {
-			if (products.equals(d.getAlcoholic())) {
-				valid = true;
-			}
-		}
-
-		return products.equals(d.getAlcoholic());
-		*/
 	}
 
 	// Método que nos va a permitir obtener todas las comidas veganas que se
@@ -196,18 +145,6 @@ public class Repository {
 		}
 		
 		return result;
-		/*
-		food f = null;
-
-		boolean valid = false;
-		for (int i = 0; i < products.size(); i++) {
-			if (products.equals(f.isForVegans())) {
-				valid = true;
-			}
-		}
-
-		return products.equals(f.isForVegans());
-		*/
 	}
 
 	// Método que nos va a permitir obtener todas las productos que hagan ofertas
@@ -219,18 +156,6 @@ public class Repository {
 			result=p.getBundlePack();			
 		}
 		return result;
-		
-		/*
-		boolean valid = false;
-
-		for (int i = 0; i < products.size(); i++) {
-			if (products.contains(p.getBundlePack() != false) && p != null) {
-				valid = true;
-			}
-		}
-
-		return products.contains(p.getBundlePack());
-	*/
 	}
 
 	// Método que nos va a permitir buscar en la lista un determinado producto por
@@ -245,13 +170,6 @@ public class Repository {
 				}
 			}
 		}
-		/*
-		boolean valid = false;
-		for (int i = 0; i < products.size(); i++) {
-			if (name.equals(p.getName()) && products.contains(p)) {
-				valid = true;
-			}
-		}*/
 
 		return p;
 	}
