@@ -29,16 +29,21 @@ public class menuClientes {
 		case 1:
 			//editar cliente
 			mp.UpdateClient();
+
 			
 			break;
 		case 2:
 			//add or remove
+
 			mp.addorremoveClient();
 			break;
 		case 3:
 			//show clients
 			mp.showclients();
+
+			
 			break;
+		
 		case 0:
 			m.salida();
 			try {
