@@ -101,10 +101,10 @@ public abstract class Product implements iProduct {
 	}
 	//tostring basic
 	public String toStringbasic() {
-		return  "+-------------------------+"+"\n"+
+		return  "+-----------------------------------------------+"+"\n"+
 				"| Product=" +getName()+ "/n"+
 				"| Precio="+getPrice()+"\n"+
-				"+-------------------------+";
+				"+-----------------------------------------------+";
 				
 	}
 

@@ -123,8 +123,9 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Orden \n Cliente:\n" 
-	+ client.toStringbasic() +
+
+		return "Orden \n"+
+		" Cliente:\n" + client.toStringbasic() +
 	"\nProductos:\n" + lista(product) +
 	"\ntotal=" + total +
 	"\nFecha=" + date +
@@ -132,22 +133,27 @@ public class Order {
 	"\nEstado envio=" + delivered +
 	"\nEstado pago=" + payed + 
 	"\nCodigo=" + codigo ;
+
+		
 	}
 	
 	//to string limitado
 	public String toStringbasic() {
-		return  "+-------------------------+"+"\n"+
-				"| Client=" + client.toStringbasic() +"\n"+  
-				"| Product" + product +"\n"+
-				"| address=" + address +"\n"+
-				"| Codigo=" + codigo +"\n"+
-				"+-------------------------+";
+
+
+		return  "Orden \n"+
+				"Cliente:\n" + client.toStringbasic() +"\n"+  
+				"Productos:" + product +"\n"+
+				"Direcciones:" + address +"\n"+
+				"Codigo=" + codigo +"\n";
 	}
 	public static String lista(List<Product> productos) {
-		String lista="";
+		String listado="";
 		for (Product product : productos) {
-			lista+=product.toStringbasic()+"\n";
+			listado+=product.toStringbasic()+"\n";
 		}
-		return lista;
+		
+		return listado;
 	}
+
 }

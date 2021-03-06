@@ -49,8 +49,10 @@ public class OrderTest {
 		Order o1=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , a[0], false, false);
 		Order o2=new Order(c2, (ArrayList<Product>) p,LocalDateTime.now() , a[1], false, false);
 		Order o3=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , b[0], false, false);
+
 		System.out.println(o1.toStringbasic());
 		//System.out.println(o2.toString());
 		//System.out.println(o3.toString());
+
 	}
 }

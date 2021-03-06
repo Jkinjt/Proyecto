@@ -72,10 +72,10 @@ public class Client extends Person {
 	}
 	
 	public String toStringbasic() {
-		return "+-------------------------+"+"\n"+
+		return  "+---------------------------------------------------+"+"\n"+
 				"| Name="  + name+"\n"+
 				"| Direccion=" + Arrays.toString(address)+  "\n"+
-				"+-------------------------+";
+				"+---------------------------------------------------+";
 	}
 
 }
