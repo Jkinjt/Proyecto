@@ -2,6 +2,8 @@ package menuMenus;
 
 import java.util.UUID;
 
+import Product.Product;
+
 public interface IMenuProduct {
 	//mostrar id
 	public  UUID showId (Product p);
