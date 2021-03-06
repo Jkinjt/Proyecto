@@ -4,6 +4,7 @@ import java.util.List;
 
 import client.Client;
 import client.RepositoryClients;
+import mesage.MensajesClient;
 import repositoryUtils.herramientas;
 
 public class MenuPrincipalCliente implements IMenuPrincipalCliente {
@@ -13,36 +14,28 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 	static MenuPrincipalCliente mp = new MenuPrincipalCliente();
 	static MenuEdicionCliente me = new MenuEdicionCliente();
 
-	@Override
-	public Client SearhClientBydni(int dni) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public void showclients() {
 		// TODO Auto-generated method stub
-		
+	MenuShowClients();
 	}
-
-
-
 
 	@Override
 	public void UpdateClient() {
 		m.pedidodni();
-		 Rc.searchClientByDni(h.stringcontrol());
+		 menueditarcliente(Rc.searchClientByDni(h.stringcontrol()));
 		
 	}
 	
-
 	@Override
 	public void addorremoveClient() {
-		// TODO Auto-generated method stub
+		MenuAddOrRemove();
 
 	}
 
-	// menu para editar un cliente
+	// submenu para editar un cliente
 	public static void menueditarcliente(Client c) {
 		int opcion = -1;
 
@@ -92,7 +85,7 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 		} while (opcion != 0);
 
 	}
-
+	//submenu añadir or eliminar
 	public static void MenuAddOrRemove() {
 		int opcion = -1;
 		do {
@@ -117,7 +110,7 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 
 		} while (opcion != 0);
 	}
-
+	//añadir un cliente nuevo
 	public static void addcliente() {
 		String dni = null;
 		String name = null;
@@ -158,7 +151,7 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 
 		Rc.addClient(nuevoc);
 	}
-
+	//submenu mostrar clientes
 	public static void MenuShowClients() {
 		int opcion = -1;
 		do {

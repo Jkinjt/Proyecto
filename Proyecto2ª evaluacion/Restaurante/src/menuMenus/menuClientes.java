@@ -10,8 +10,8 @@ import client.RepositoryClients;
 import mesage.MensajesClient;
 import repositoryUtils.herramientas;
 
-public class menuClientes implements IClienteMenu{
-	static RepositoryClients Rc= RepositoryClients.getSingletonInstance();
+public class menuClientes {
+	
 	static herramientas h=new herramientas();
 	static MensajesClient m=new MensajesClient();
 	static MenuPrincipalCliente mp=new MenuPrincipalCliente();
@@ -28,16 +28,16 @@ public class menuClientes implements IClienteMenu{
 		switch (opcion) {
 		case 1:
 			//editar cliente
-			m.pedidodni();
-			menueditarcliente(Rc.searchClientByDni(h.stringcontrol()));
+			mp.UpdateClient();
+			
 			break;
 		case 2:
 			//add or remove
-			MenuAddOrRemove();
+			mp.addorremoveClient();
 			break;
 		case 3:
 			//show clients
-			MenuShowClients();
+			mp.showclients();
 			break;
 		case 0:
 			m.salida();
@@ -53,161 +53,5 @@ public class menuClientes implements IClienteMenu{
 		}	
 		} while (opcion!=0);
 	}
-	//menu para editar un cliente
-	public static void menueditarcliente(Client c) {
-		int opcion=-1;
-		
-		do {
-			m.menueditar();
-			opcion=h.intcontrol();
-			switch (opcion) {
-			case 1:
-				//modificar nombre
-				
-				c.setName(me.updateName(h.stringcontrol()));
-				break;
-				
-			case 2:
-				//modificar dni
-			c.setDni(me.updateInt(h.stringcontrol()));	
-				break;
-				
-			case 3:
-				//modificar edad
-				me.updateAge(h.intcontrol());
-				break;
-				
-			case 4:
-				//modificar puntos
-				me.updatepoints(h.intcontrol());
-				break;
-				
-			case 5:
-				//modificar direcciones
-				me.updateaddres();
-				break;
-				
-			case 0:
-				m.salida();
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				break;
-				
-			default:
-				break;
-			}
-		} while (opcion!=0);
-		
-	}
-	
-	public static void MenuAddOrRemove() {
-		int opcion=-1;
-		do {
-			m.menuAddOrRemove();
-			opcion=h.intcontrol();
-			switch (opcion) {
-			case 1:
-				//añadir cliente
-				addcliente();
-				break;
-			case 2:
-				//eliminar cliente
-				m.insertardni();
-				Rc.deleteClient(Rc.searchClientByDni(h.stringcontrol()));
-				break;
-			case 0:
-				m.salida();
-				break;
-			default:
-				break;
-			}
-			
-		} while (opcion!=0);
-	}
-	
-	public static void addcliente() {
-		String dni=null;
-		String name=null;
-		int edad=0;
-		List<String> lista=null;
-		boolean continuar=false;
-		
-		//inserte dni
-		m.dni();
-		dni=h.stringcontrol();
-		
-		//inserte nombre
-		m.nombre();
-		name=h.stringcontrol();
-		
-		//inserte edad
-		m.edad();
-		edad=h.intcontrol();
-		
-		// inserte direcciones
-		do {
-			m.direcciones();
-			int opcion=0;
-			lista.add(h.stringcontrol());
-			
-				//mensaje de continuar si/no
-			m.continuar();
-			opcion=h.intcontrol();
-			if(opcion==1) {
-				continuar=true;
-			}
-		}while (continuar==false);
-				
-		String[] direcciones= new String[lista.size()];
-		direcciones=lista.toArray(direcciones);
-		
-		Client nuevoc=new Client(dni, name, edad, direcciones);
-		
-		Rc.addClient(nuevoc);
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	public static void MenuShowClients() {
-		int opcion=-1;
-		do {
-			m.menumostrar();
-			opcion=h.intcontrol();
-			switch (opcion) {
-			case 1:
-				//mostrar todos los clientes
-				break;
-			case 2:
-				//mostrar el cliente que tenga el mismo dni
-				break;
-			case 0:
-				m.salida();
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-				break;
-			default:
-				break;
-			}
-		} while (opcion!=0);
-	}
+
 }
