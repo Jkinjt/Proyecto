@@ -15,7 +15,7 @@ public class food extends Product {
 	
 	
 	//atributos de la clase comida
-	boolean forVegans=true;
+	private boolean forVegans=true;
 	
 	//Constructor de food
 	public food( String name,double price,boolean forVegans) {

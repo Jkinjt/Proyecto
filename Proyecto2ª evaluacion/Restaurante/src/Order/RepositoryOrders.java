@@ -13,7 +13,7 @@ import menuMenus.menuOrdenes;
 import repositoryUtils.herramientas;
 
 public class RepositoryOrders {
-	final static DateTimeFormatter formater=DateTimeFormatter.ofPattern("dd mm uuuu");
+	private final static DateTimeFormatter formater=DateTimeFormatter.ofPattern("dd mm uuuu");
 	private List<Order> registro = new ArrayList<>();
 	public static RepositoryOrders unico;
 
