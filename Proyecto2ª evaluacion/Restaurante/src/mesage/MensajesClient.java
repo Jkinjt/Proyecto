@@ -1,4 +1,4 @@
-package menuMenus;
+package mesage;
 
 public class MensajesClient {
 	// ------------------------------------

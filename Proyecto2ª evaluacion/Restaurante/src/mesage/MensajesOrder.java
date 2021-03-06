@@ -1,4 +1,4 @@
-package menuMenus;
+package mesage;
 
 public class MensajesOrder {
 	// meter todos los mensajes de los menus aqui
