@@ -1,5 +1,5 @@
 package menuMenus;
 
-public class MenuRepositoryClient {
+public class MenuRepositoryClient implements IMenuClientRepository{
 
 }

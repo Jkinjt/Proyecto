@@ -10,7 +10,7 @@ import client.RepositoryClients;
 import mesage.MensajesClient;
 import repositoryUtils.herramientas;
 
-public class menuClientes {
+public class menuClientes implements IClienteMenu{
 	static RepositoryClients Rc= RepositoryClients.getSingletonInstance();
 	static herramientas h=new herramientas();
 	static MensajesClient m=new MensajesClient();
