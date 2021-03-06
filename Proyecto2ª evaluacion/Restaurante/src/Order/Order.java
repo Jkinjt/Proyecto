@@ -3,6 +3,8 @@ package Order;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 import client.Client;
 import Product.Product;
 
@@ -121,18 +123,31 @@ public class Order {
 
 	@Override
 	public String toString() {
-		return "Order [client=" + client + ", product=" + product + ", total=" + total + ", date=" + date + ", address="
-				+ address + ", delivered=" + delivered + ", payed=" + payed + ", codigo=" + codigo + "]";
+		return "Orden \n Cliente:\n" 
+	+ client.toStringbasic() +
+	"\nProductos:\n" + lista(product) +
+	"\ntotal=" + total +
+	"\nFecha=" + date +
+	"\nDireccion="+ address + 
+	"\nEstado envio=" + delivered +
+	"\nEstado pago=" + payed + 
+	"\nCodigo=" + codigo ;
 	}
 	
 	//to string limitado
 	public String toStringbasic() {
 		return  "+-------------------------+"+"\n"+
-				"| Client=" + client +"\n"+  
+				"| Client=" + client.toStringbasic() +"\n"+  
 				"| Product" + product +"\n"+
 				"| address=" + address +"\n"+
 				"| Codigo=" + codigo +"\n"+
 				"+-------------------------+";
 	}
-
+	public static String lista(List<Product> productos) {
+		String lista="";
+		for (Product product : productos) {
+			lista+=product.toStringbasic()+"\n";
+		}
+		return lista;
+	}
 }
