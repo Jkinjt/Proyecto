@@ -7,15 +7,13 @@ public interface IMenuPrincipalCliente {
 	public Client SearhClientBydni(int dni);
 	
 	//buscar cliente por nombre
-	public Client SearhClientByname(String name);
+	public  void showclients();
 	
 	//actualizar cliente
-	public Client UpdateClient(Client client);
+	public  void UpdateClient();
 	
-	// añadir cliente
-	public void addClient(Client cliente);
+	// añadir cliente o remober
+	public void addorremoveClient();
 	
-	// eliminar cliente
 	
-	public void removeClient(Client cliente);
 } 
