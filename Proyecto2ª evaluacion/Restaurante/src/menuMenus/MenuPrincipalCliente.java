@@ -162,6 +162,7 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 			switch (opcion) {
 			case 1:
 				// mostrar todos los clientes
+				
 				break;
 			case 2:
 				// mostrar el cliente que tenga el mismo dni
