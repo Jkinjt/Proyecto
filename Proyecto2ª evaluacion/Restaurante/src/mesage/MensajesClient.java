@@ -115,7 +115,11 @@ public class MensajesClient {
 		System.out.println("| 0-Salir                      |");
 		System.out.println("+------------------------------+");
 	}
-
+	public static void buscarpordni() {
+		System.out.println("+-----------------------------+");
+		System.out.println("| Inserte el DNI del cliente  |");
+		System.out.println("+-----------------------------+");
+	}
 	// ------------------------------------
 	public static void salida() {
 		System.out.println("+------------+");
