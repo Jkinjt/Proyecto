@@ -1,20 +1,25 @@
 package client;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
+
+import Order.Order;
+
 public class Client extends Person {
+	private static int  nClient=0;
 	protected String[] address;
-	protected int[] orders;
+	protected List<Order> orders;
 	protected int points;
-	protected static int  nClient=0;
+	
 	protected int id;
 	
 	public Client(String dni, String name, int age, String[] address) {
 		super(dni, name, age);
 		this.address = address;
-		id=nClient;
-		nClient++;
+		id=++nClient;
 	}
 	
 	public int getId() {
@@ -33,11 +38,11 @@ public class Client extends Person {
 		this.address = address;
 	}
 	
-	public int[] getOrders() {
+	public List<Order> getOrders() {
 		return orders;
 	}
 	
-	public void setOrders(int[] orders) {
+	public void setOrders(ArrayList<Order> orders) {
 		this.orders = orders;
 	}
 	
@@ -67,7 +72,7 @@ public class Client extends Person {
 	}
 	@Override
 	public String toString() {
-		return "Client [name=" + name + ", orders=" + Arrays.toString(orders) + ", points="
+		return "Client [name=" + name + ", orders=" + orders.toString() + ", points="
 				+ points + ", address=" + Arrays.toString(address)+ ", dni=" + dni    + ", age=" + age + "]";
 	}
 	

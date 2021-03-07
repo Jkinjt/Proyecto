@@ -16,7 +16,7 @@ public class drink extends Product {
 	
 	
 	//atributos de la clase drink
-	boolean Alcoholic;
+	private boolean Alcoholic;
 	 
 	 //Constructor de drink
 	public drink( String name, double price, boolean alcoholic) {

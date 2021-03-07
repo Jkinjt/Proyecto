@@ -14,7 +14,7 @@ import java.util.UUID;
 //Clase repositorio donde se guardan los productos y todo lo relacionado con ello
 public class Repository {
 	// atributos de la clase producto
-	ArrayList<Product> products = new ArrayList<Product>();
+	private ArrayList<Product> products = new ArrayList<Product>();
 	public static Repository unico;
 
 	// crea un repositorio unico
@@ -70,13 +70,13 @@ public class Repository {
 		return products;
 
 	}
-	
+	//¿esto que hace?
 	public UUID todosId() {
 		ArrayList<Product> products=new ArrayList<Product>();	
 		Product p=null;
 		return p.getId();
 	}
-	
+	//¿Y esto?
 	public double todosPrecio() {
 		ArrayList<Product> products=new ArrayList<Product>();	
 		Product p=null;
