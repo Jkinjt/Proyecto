@@ -1,6 +1,8 @@
 package client;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable {
 	protected String dni;
 	protected String name;
 	protected int age;

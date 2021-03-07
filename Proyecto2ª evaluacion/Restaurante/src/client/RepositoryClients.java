@@ -1,12 +1,13 @@
 package client;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 
 
-public class RepositoryClients {
+public class RepositoryClients implements Serializable {
 	private List<Client> client;
 	public static RepositoryClients pointer;
 
@@ -25,7 +26,7 @@ public class RepositoryClients {
 		return client;
 	}
 
-	private void setClient(List<Client> client) {
+	public void setClient(List<Client> client) {
 		this.client = client;
 
 	}

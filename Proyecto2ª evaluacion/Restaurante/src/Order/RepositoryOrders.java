@@ -1,5 +1,6 @@
 package Order;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ import client.Client;
 import menuMenus.menuOrdenes;
 import repositoryUtils.herramientas;
 
-public class RepositoryOrders {
+public class RepositoryOrders implements Serializable {
 	private final static DateTimeFormatter formater=DateTimeFormatter.ofPattern("dd mm uuuu");
 	private List<Order> registro = new ArrayList<>();
 	public static RepositoryOrders unico;
@@ -26,6 +27,12 @@ public class RepositoryOrders {
 			unico = new RepositoryOrders();
 		}
 		return unico;
+	}
+	
+	
+
+	public void setRegistro(List<Order> registro) {
+		this.registro = registro;
 	}
 
 	// añadir orden al repositorio

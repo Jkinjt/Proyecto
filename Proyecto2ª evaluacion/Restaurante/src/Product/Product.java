@@ -1,5 +1,6 @@
 package Product;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.HashSet;
@@ -13,7 +14,7 @@ import client.Person;
  */
 
 // Clase producto que se implementa de la interface iProduct
-public abstract class Product implements iProduct {
+public abstract class Product implements iProduct, Serializable {
 
 	// atributos de la clase producto
 	protected UUID id;

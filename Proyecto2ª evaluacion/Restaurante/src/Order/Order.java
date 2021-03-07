@@ -1,5 +1,6 @@
 package Order;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,7 +9,7 @@ import java.util.List;
 import client.Client;
 import Product.Product;
 
-public class Order {
+public class Order implements Serializable{
 	private Client client;
 	private ArrayList<Product> product;
 	private double total;

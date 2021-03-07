@@ -1,6 +1,8 @@
 package Product;
 
 import Product.drink;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.UUID;
@@ -12,7 +14,7 @@ import java.util.UUID;
  */
 
 //Clase repositorio donde se guardan los productos y todo lo relacionado con ello
-public class Repository {
+public class Repository implements Serializable {
 	// atributos de la clase producto
 	private ArrayList<Product> products = new ArrayList<Product>();
 	public static Repository unico;
@@ -44,6 +46,10 @@ public class Repository {
 
 		return valid;
 
+	}
+	
+	public void setProducts(ArrayList<Product> products) {
+		this.products = products;
 	}
 
 	// Método que nos va a permitir eliminar un producto de la lista de productos

@@ -6,7 +6,9 @@ import static org.junit.Assert.assertSame;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -19,8 +21,9 @@ import client.Client;
 public class OrderTest {
 	RepositoryOrders ro= RepositoryOrders.getSingletonInstance();
 	
-	String[] a= {"Calle falsa 1234", "Plaza Ocurrencia  87"};
-	String[] b= {"Plaza Ocurrencia  87"};
+	Set<String> a=new HashSet<>();
+	Set<String> b=new HashSet<>();
+	
 	Client c1=new Client("1A","Juan",15,a);
 	Client c2=new Client("2B","Pedro",15,null);
 	Client c3=new Client("3C","Antonio",20,b);
@@ -35,6 +38,9 @@ public class OrderTest {
 	
 	@Before
 	public void addProducts() {
+		a.add("Calle falsa 123");
+		a.add("Calle verdadera 321");
+		b.add("Plaza alguien 8");
 		p.add(f1);
 		p.add(f2);
 		p.add(f3);
