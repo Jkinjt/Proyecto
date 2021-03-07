@@ -138,12 +138,12 @@ public class ControladorMenuOrdenes {
 				break;
 			case 6:
 				//mostrar entre dos fechas
-							h.imprimir(r.getInputByDate(null, null));
+							h.imprimir(r.getInputByDate(h.stringcontrol(), h.stringcontrol()));
 				break;
 			case 7:		
 				//mostrar en una fecha
 				
-				h.imprimir(r.getOrdersByDate(null));
+				h.imprimir(r.getOrdersByDate(h.stringcontrol()));
 				break;
 			case 8:
 				//mostrar por cliente
