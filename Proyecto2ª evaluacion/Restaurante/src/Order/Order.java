@@ -144,7 +144,7 @@ public class Order implements Serializable{
 
 		return  "Orden \n"+
 				"Cliente:\n" + client.toStringbasic() +"\n"+  
-				"Productos:" + product +"\n"+
+				"Productos:" + lista(product) +"\n"+
 				"Direcciones:" + address +"\n"+
 				"Codigo=" + codigo +"\n";
 	}
