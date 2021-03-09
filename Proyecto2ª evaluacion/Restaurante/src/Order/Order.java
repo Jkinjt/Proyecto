@@ -131,8 +131,8 @@ public class Order implements Serializable{
 	"\ntotal=" + total +
 	"\nFecha=" + date +
 	"\nDireccion="+ address + 
-	"\nEstado envio=" + delivered +
-	"\nEstado pago=" + payed + 
+	"\nEstado envio=" + SiOrNot(delivered) +
+	"\nEstado pago=" + SiOrNot(payed) + 
 	"\nCodigo=" + codigo ;
 
 		
@@ -155,6 +155,15 @@ public class Order implements Serializable{
 		}
 		
 		return listado;
+	}
+	public String SiOrNot(boolean estado) {
+		String mensaje=null;
+		if(estado==false) {
+			mensaje="Si";
+		}else if (estado==true){
+			mensaje="no";
+		}
+		return mensaje;
 	}
 
 }
