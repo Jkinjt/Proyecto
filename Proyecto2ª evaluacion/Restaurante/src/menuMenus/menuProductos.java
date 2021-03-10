@@ -9,7 +9,7 @@ import Product.food;
 import mesage.mensajesProduct;
 import repositoryUtils.herramientas;
 
-public class menuProductos implements IMenuProduct {
+public class menuProductos /*implements IMenuProduct*/ {
 
 	static Repository c= Repository.getSingletonInstance();
 	static herramientas h=new herramientas();
