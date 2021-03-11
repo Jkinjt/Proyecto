@@ -149,7 +149,7 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 		String[] direcciones = new String[lista.size()];
 		direcciones = lista.toArray(direcciones);
 
-		Client nuevoc = new Client(dni, name, edad, direcciones);
+		Client nuevoc =null;
 
 		Rc.addClient(nuevoc);
 

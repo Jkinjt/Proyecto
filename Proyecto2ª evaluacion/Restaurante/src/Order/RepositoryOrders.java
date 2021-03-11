@@ -43,7 +43,7 @@ public class RepositoryOrders implements Serializable {
 			result=true;
 			//al añadir la order al repositorio se actualiza el total que hay que pagar
 			
-			//p.setTotal(calculototal(p));
+			p.setTotal(calculototal(p));
 		}
 		return result;
 	}

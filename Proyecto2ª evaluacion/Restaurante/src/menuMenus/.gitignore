@@ -11,3 +11,13 @@
 /MenuEdicionCliente.class
 /MenuPrincipalCliente.class
 /menuProductosTest.class
+/ControladorMenuOrdenes.class
+/IClienteMenu.class
+/IMainMenuRepostoryProducts.class
+/IMenuClientRepository.class
+/IMenuProduct.class
+/MenuPrincipalProducto.class
+/MenuRepositoryClient.class
+/MenuRepositoryProduct.class
+/TestMenuCliente.class
+/TestMenuOrdenes.class
