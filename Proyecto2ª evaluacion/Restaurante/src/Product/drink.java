@@ -1,6 +1,7 @@
 package Product;
 import Product.Repository;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -11,7 +12,7 @@ import java.util.UUID;
  */
 
 	//Clase drink heredada de product
-public class drink extends Product {
+public class drink extends Product implements Serializable	 {
 	
 	
 	

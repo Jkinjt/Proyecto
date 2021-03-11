@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Set;
 
 import Order.Order;
+import Order.RepositoryOrders;
 import Product.Product;
+import Product.Repository;
 import Product.drink;
 import Product.food;
 import client.Client;
@@ -17,10 +19,13 @@ import repositoryUtils.RepositorySaveAndLoad;
 public class Ejecutable {
 	
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException {
 		RepositorySaveAndLoad snl;
 		snl=RepositorySaveAndLoad.getSingletoonInstance();
 		RepositoryClients rc =RepositoryClients.getSingletonInstance();
+		RepositoryOrders ro=RepositoryOrders.getSingletonInstance();
+		Repository rp=Repository.getSingletonInstance();
+		/*
 		List<Product> p=new ArrayList<Product>();
 		List<Order> o=new ArrayList<>();
 		
@@ -47,23 +52,31 @@ public class Ejecutable {
 		p.add(d2);
 		p.add(d3);
 		//Ordenes
-		Order o1=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() ,null, false, false);
-		Order o2=new Order(c2, (ArrayList<Product>) p,LocalDateTime.now() , null, false, false);
-		Order o3=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , null, false, false);
+		Order o1=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() ,c1.getAddress().get(0), false, false);
+		Order o2=new Order(c2, (ArrayList<Product>) p,LocalDateTime.now() , c2.getAddress().get(0), false, false);
+		Order o3=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , c1.getAddress().get(1), false, false);
 		o.add(o1);
 		o.add(o2);
-		c1.setOrders((ArrayList<Order>) o);;
+		c1.setOrders((ArrayList<Order>) o);
+		c2.setOrders((ArrayList<Order>) o);
 		rc.addClient(c1);
 		rc.addClient(c2);
-		snl.saveClient("Clientes.txt");
+		ro.addorden(o1);
+		ro.addorden(o2);
+		rp.addProduct(d3);
+		rp.addProduct(f3);
+		snl.saveClient(rc.getClient());
+		snl.saveOrders("Orders.txt");
+		snl.saveProducts("Products.txt");
+		*/
+		//System.out.println(rc.toString());
+		snl.loadOrders("Products.txt");
+		rc.setClient(snl.loadClient());
+		snl.loadProduct("Products.txt");
 		System.out.println(rc.toString());
-		try {
-			snl.loadClient("Clientes.txt");
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println(rc.toString());
+		//System.out.println(ro.toString());
+		//System.out.println(rp.toString());
+		
 		
 		
 		

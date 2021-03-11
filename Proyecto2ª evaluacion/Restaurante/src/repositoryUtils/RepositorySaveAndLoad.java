@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import Order.Order;
@@ -32,14 +33,14 @@ public class RepositorySaveAndLoad {
 		return _instance;
 	}
 
-	public void saveClient(String url) {
-		if (url != null) {
+	public void saveClient(List<Client> l) {
+		if (l != null) {
 			FileOutputStream f;
 
 			try {
-				f = new FileOutputStream(url);
+				f = new FileOutputStream("Clientes.txt");
 				ObjectOutputStream of = new ObjectOutputStream(f);
-				of.writeObject(repositoryClient.getClient());
+				of.writeObject(l);
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -51,14 +52,16 @@ public class RepositorySaveAndLoad {
 
 	}
 
-	public void loadClient(String url) throws ClassNotFoundException {
-		if (url != null) {
+	public List<Client> loadClient() throws ClassNotFoundException {
+		List<Client> result=null;
+		
 			FileInputStream f;
 			try {
-				f = new FileInputStream(url);
+				f = new FileInputStream("Clientes.txt");
 				ObjectInputStream of = new ObjectInputStream(f);
-				repositoryClient.setClient((List<Client>) of.readObject());
-
+				//repositoryClient.setClient((List<Client>) of.readObject());
+				result=((List<Client>) of.readObject());
+				return result;
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -66,7 +69,8 @@ public class RepositorySaveAndLoad {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		
+		return result;
 
 	}
 
@@ -115,7 +119,7 @@ public class RepositorySaveAndLoad {
 				f = new FileOutputStream(url);
 				ObjectOutputStream of;
 				of = new ObjectOutputStream(f);
-				of.writeObject(of);
+				of.writeObject(repositoryProduct.getAllProducts());
 			} catch (FileNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();

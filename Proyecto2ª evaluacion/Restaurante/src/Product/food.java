@@ -1,5 +1,6 @@
 package Product;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -11,7 +12,7 @@ import java.util.UUID;
 
 
 //clase food que hereda de la clase Product
-public class food extends Product {
+public class food extends Product implements Serializable{
 	
 	
 	//atributos de la clase comida
