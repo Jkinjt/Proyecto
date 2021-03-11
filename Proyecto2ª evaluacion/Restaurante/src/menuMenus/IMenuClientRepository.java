@@ -4,7 +4,7 @@ import client.Client;
 
 public interface IMenuClientRepository {
 	//buscar cliente por dni
-	public Client SearhClientBydni(int dni);
+	public Client SearhClientBydni(String dni);
 	
 	//buscar cliente por nombre
 	public Client SearhClientByname(String name);

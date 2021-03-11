@@ -21,7 +21,7 @@ public interface IMainMenuRepostoryProducts {
 	public List<food> showAllFood();
 	
 	//mostrar bebidas no alcoholicas
-	public List<drink> showAllNonAlcholic(drink d);
+	public List<drink> showAllNonAlcholic();
 	
 	//mostrar comidas veganas
 	public food showAllVeganFood();

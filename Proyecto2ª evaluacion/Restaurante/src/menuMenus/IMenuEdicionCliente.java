@@ -1,11 +1,13 @@
 package menuMenus;
 
+import java.util.List;
+
 public interface IMenuEdicionCliente {
 	//modificar nombre
 	public String updateName(String Name);
 	
 	//modifcar dni
-	public String updateInt(String dni);
+	public String updateDni(String dni);
 
 	//modificar edad
 	public int updateAge(int edad);
@@ -14,6 +16,6 @@ public interface IMenuEdicionCliente {
 	public int updatepoints(int puntos);
 	
 	//modificar direccion
-	public String[] updateaddres();
+	public List<String> updateaddres(String address);
 	
 }
