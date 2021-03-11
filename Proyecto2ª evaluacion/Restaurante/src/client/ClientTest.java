@@ -2,8 +2,10 @@ package client;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Before;
@@ -11,8 +13,8 @@ import org.junit.Test;
 
 
 public class ClientTest {
-	Set<String> a=new HashSet<>();
-	Set<String> b=new HashSet<>();
+	List<String> a=new ArrayList<String>();
+	List<String> b=new ArrayList<String>();
 	
 	
 	

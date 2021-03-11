@@ -2,7 +2,9 @@ package client;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Before;
@@ -10,8 +12,8 @@ import org.junit.Test;
 
 public class RepositoryClientTest {
 	RepositoryClients rc =RepositoryClients.getSingletonInstance();
-	Set<String> a=new HashSet<>();
-	Set<String> b=new HashSet<>();
+	List<String> a=new ArrayList<String>();
+	List<String> b=new ArrayList<String>();
 	Client c1 = new Client("1A", "Juan", 15, a);
 	Client c2 = new Client("2B", "Pedro", 15, null);
 	Client c3 = new Client("3C", "Antonio", 20, b);
