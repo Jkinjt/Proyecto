@@ -24,8 +24,8 @@ public class Ejecutable {
 		List<Product> p=new ArrayList<Product>();
 		List<Order> o=new ArrayList<>();
 		
-		Set<String> a=new HashSet<>();
-		Set<String> b=new HashSet<>();
+		List<String> a=new ArrayList<String>();
+		List<String> b=new ArrayList<String>();
 		a.add("Calle falsa 123");
 		a.add("Calle verdadera 321");
 		b.add("Plaza alguien 8");

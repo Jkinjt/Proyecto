@@ -13,13 +13,13 @@ import Order.Order;
 
 public class Client extends Person {
 	private static int  nClient=0;
-	protected Set<String> address=new HashSet<String>();
+	protected List<String> address=new ArrayList<String>();
 	protected List<Order> orders;
 	protected int points;
 	
 	protected int id;
 	
-	public Client(String dni, String name, int age, Set<String> address) {
+	public Client(String dni, String name, int age, List<String> address) {
 		super(dni, name, age);
 		this.address = address;
 		id=++nClient;
@@ -33,11 +33,11 @@ public class Client extends Person {
 		this.id = id;
 	}
 
-	public Set<String> getAddress() {
+	public List<String> getAddress() {
 		return address;
 	}
 	
-	public void setAddress(Set<String> address) {
+	public void setAddress(List<String> address) {
 		this.address = address;
 	}
 	

@@ -22,8 +22,8 @@ import menuMenus.menuOrdenes;
 public class RepositoryOrderTest {
 	RepositoryOrders ro= RepositoryOrders.getSingletonInstance();
 	
-	String[] a= {"Calle falsa 1234", "Plaza Ocurrencia  87"};
-	String[] b= {"Plaza Ocurrencia  87"};
+	List<String> a=new ArrayList<String>();
+	List<String> b=new ArrayList<String>();
 	Client c1=new Client("1A","Juan",15,a);
 	Client c2=new Client("2B","Pedro",15,null);
 	Client c3=new Client("3C","Antonio",20,b);
@@ -35,9 +35,9 @@ public class RepositoryOrderTest {
 	drink d2=new drink("Fanta", 1, false);
 	drink d3=new drink( "JB", 8.50, true);
 	List<Product> p=new ArrayList<Product>();
-	Order o1=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , a[0], false, true);
-	Order o2=new Order(c2, (ArrayList<Product>) p,LocalDateTime.now() , a[1], true, false);
-	Order o3=new Order(c3, (ArrayList<Product>) p,LocalDateTime.now() , b[0], false, false);
+	Order o1=new Order(c1, (ArrayList<Product>) p,LocalDateTime.now() , a.get(0), false, true);
+	Order o2=new Order(c2, (ArrayList<Product>) p,LocalDateTime.now() , a.get(1), true, false);
+	Order o3=new Order(c3, (ArrayList<Product>) p,LocalDateTime.now() , b.get(0), false, false);
 	
 	
 	

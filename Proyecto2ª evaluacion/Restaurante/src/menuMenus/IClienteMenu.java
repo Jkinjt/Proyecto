@@ -1,5 +1,7 @@
 package menuMenus;
 
+import java.util.List;
+
 public interface IClienteMenu {
 	//modificar nombre
 	public String updateName(String Name);
@@ -14,6 +16,6 @@ public interface IClienteMenu {
 	public int updatepoints(int puntos);
 	
 	//modificar direccion
-	public String[] updateaddres(String[] direcciones);
+	public List<String> updateaddres(List<String> direcciones);
 	
 }
