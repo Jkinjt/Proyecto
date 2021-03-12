@@ -4,9 +4,7 @@ import mesage.MensajesMenuInicio;
 import repositoryUtils.herramientas;
 
 public class MenuInicio {
-public static void main(String[] args) {
-	MenuInicio();
-}	
+
 	static herramientas h=new herramientas();
 	static MensajesMenuInicio m= new MensajesMenuInicio();
 	static menuClientes ci=new menuClientes();
