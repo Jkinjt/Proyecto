@@ -66,16 +66,16 @@ public class Ejecutable {
 		rp.addProduct(d3);
 		rp.addProduct(f3);
 		snl.saveClient(rc.getClient());
-		snl.saveOrders("Orders.txt");
-		snl.saveProducts("Products.txt");
+		snl.saveOrders(ro.getallorder());
+		snl.saveProducts(rp.getAllProducts());
 		*/
 		//System.out.println(rc.toString());
-		snl.loadOrders("Products.txt");
+		ro.setRegistro(snl.loadOrders());
 		rc.setClient(snl.loadClient());
-		snl.loadProduct("Products.txt");
+		rp.setProducts((ArrayList<Product>) snl.loadProduct());
 		System.out.println(rc.toString());
-		//System.out.println(ro.toString());
-		//System.out.println(rp.toString());
+		System.out.println(ro.toString());
+		System.out.println(rp.toString());
 		
 		
 		

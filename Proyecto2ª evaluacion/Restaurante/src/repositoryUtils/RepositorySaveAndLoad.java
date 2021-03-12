@@ -74,15 +74,15 @@ public class RepositorySaveAndLoad {
 
 	}
 
-	public void saveOrders(String url) {
-		if (url != null) {
+	public void saveOrders(List<Order> l) {
+		if (l != null) {
 			FileOutputStream f;
 
 			try {
-				f = new FileOutputStream(url);
+				f = new FileOutputStream("Orders.txt");
 				ObjectOutputStream of;
 				of = new ObjectOutputStream(f);
-				of.writeObject(repositoryOrders.getallorder());
+				of.writeObject(l);
 
 			} catch (FileNotFoundException e2) {
 				// TODO Auto-generated catch block
@@ -95,31 +95,32 @@ public class RepositorySaveAndLoad {
 		}
 	}
 
-	public void loadOrders(String url) {
-		if (url != null) {
+	public List<Order> loadOrders() {
+		List<Order> result=null;
 			FileInputStream f;
 
 			try {
-				f = new FileInputStream(url);
+				f = new FileInputStream("Orders.txt");
 				ObjectInputStream of = new ObjectInputStream(f);
-				repositoryOrders.setRegistro((List<Order>) of.readObject());
+				result=(List<Order>) of.readObject();
 
 			} catch (ClassNotFoundException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		return result;
+		
 	}
 
-	public void saveProducts(String url) {
-		if (url != null) {
+	public void saveProducts(List<Product> l) {
+		if (l != null) {
 			FileOutputStream f;
 
 			try {
-				f = new FileOutputStream(url);
+				f = new FileOutputStream("Productos.txt");
 				ObjectOutputStream of;
 				of = new ObjectOutputStream(f);
-				of.writeObject(repositoryProduct.getAllProducts());
+				of.writeObject(l);
 			} catch (FileNotFoundException e2) {
 				// TODO Auto-generated catch block
 				e2.printStackTrace();
@@ -130,20 +131,21 @@ public class RepositorySaveAndLoad {
 		}
 
 	}
-	public void loadProduct(String url) {
-		if(url!=null) {
-			
+	public List<Product> loadProduct() {
+		
+			List<Product> result=null;
 			
 			try {
-				FileInputStream f=new FileInputStream(url);
+				FileInputStream f=new FileInputStream("Products.txt");
 				ObjectInputStream of;
 					of = new ObjectInputStream(f);
-				repositoryProduct.setProducts((ArrayList<Product>) of.readObject());
+				result=(ArrayList<Product>) of.readObject();
 			} catch (ClassNotFoundException | IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			return result;
 		}
-	}
+	
 
 }
