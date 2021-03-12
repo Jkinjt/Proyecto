@@ -7,9 +7,11 @@ import client.Client;
 import client.RepositoryClients;
 
 import mesage.MensajesClient;
+import repositoryUtils.RepositorySaveAndLoad;
 import repositoryUtils.herramientas;
 
 public class MenuPrincipalCliente implements IMenuPrincipalCliente {
+	static RepositorySaveAndLoad snl=RepositorySaveAndLoad.getSingletoonInstance();
 	static RepositoryClients Rc = RepositoryClients.getSingletonInstance();
 	static herramientas h = new herramientas();
 	static MensajesClient m = new MensajesClient();
@@ -25,14 +27,15 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 	@Override
 	public void UpdateClient() {
 		m.pedidodni();
+		
 		menueditarcliente(Rc.searchClientByDni(h.stringcontrol()));
-
+		snl.saveClient(Rc.getClient());
 	}
 
 	@Override
 	public void addorremoveClient() {
 		MenuAddOrRemove();
-
+		snl.saveClient(Rc.getClient());
 	}
 
 	// submenu para editar un cliente

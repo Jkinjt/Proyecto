@@ -41,9 +41,7 @@ public class RepositoryOrders implements Serializable {
 		if(p!=null&&!registro.contains(p)) {
 			registro.add(p);
 			result=true;
-			//al añadir la order al repositorio se actualiza el total que hay que pagar
 			
-			p.setTotal(calculototal(p));
 		}
 		return result;
 	}
@@ -93,27 +91,7 @@ public class RepositoryOrders implements Serializable {
 		return result;
 	}
 
-	/*// modificar una orden por cliente
-	public void modificarorden(String dnicliente) {
-		boolean encontrado = false;
-		for (int i = 0; i < registro.size() && encontrado == false; i++) {
-			if (registro.get(i).getClient().getDni() == dnicliente) {
-				menuOrdenes.menumodificaciones(registro.get(i));
-				encontrado = true;
-			}
-		}
-	}
 
-	// modificar una orden existentente por codigo
-	public void modificarorden(int o) {
-		boolean encontrado = false;
-		for (int i = 0; i < registro.size() && encontrado == false; i++) {
-			if (registro.get(i).getCodigo() == o) {
-				menuOrdenes.menumodificaciones(registro.get(i));
-				encontrado = true;
-			}
-		}
-	}*/
 
 	// mostrar todas las ordenes no enviadas
 	public List<Order> getOrdersNoDelivered() {
@@ -212,6 +190,24 @@ public class RepositoryOrders implements Serializable {
 					}					
 					encontrado=true;
 				}
+			}
+		}
+		return total;
+	}
+	public Double totalhoy(int dia) {
+		double total=0;
+		for (int i = 0; i < registro.size(); i++) {
+			if(registro.get(i).getDate().getDayOfMonth()==dia) {
+				total+=registro.get(i).getTotal();
+			}
+		}
+		return total;
+	}
+	public Double totalmes(int mes) {
+		double total=0;
+		for (int i = 0; i < registro.size(); i++) {
+			if (registro.get(i).getDate().getMonthValue()==mes) {
+				total+=registro.get(i).getTotal();
 			}
 		}
 		return total;

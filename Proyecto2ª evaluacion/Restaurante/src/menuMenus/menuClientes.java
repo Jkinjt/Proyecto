@@ -8,10 +8,11 @@ import java.util.List;
 import client.Client;
 import client.RepositoryClients;
 import mesage.MensajesClient;
+import repositoryUtils.RepositorySaveAndLoad;
 import repositoryUtils.herramientas;
 
 public class menuClientes {
-	
+	static RepositorySaveAndLoad snl=RepositorySaveAndLoad.getSingletoonInstance();
 	static herramientas h=new herramientas();
 	static MensajesClient m=new MensajesClient();
 	static MenuPrincipalCliente mp=new MenuPrincipalCliente();
@@ -22,6 +23,7 @@ public class menuClientes {
 	//menu principal
 	public static void MenuPrincipal() {
 		int opcion=-1;
+		snl.loadClient();
 		do {
 			m.menuinicio();
 			opcion=h.intcontrol();
@@ -29,7 +31,7 @@ public class menuClientes {
 		case 1:
 			//editar cliente
 			mp.UpdateClient();
-
+			
 			
 			break;
 		case 2:
