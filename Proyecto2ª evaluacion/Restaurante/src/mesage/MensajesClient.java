@@ -126,4 +126,10 @@ public class MensajesClient {
 		System.out.println("| ~SALIENDO~ |");
 		System.out.println("+------------+");
 	}
+	//--------------------------------------------
+	public static void insertdata() {
+		System.out.println("+-----------------------+");
+		System.out.println("| Inserte el nuevo dato |");
+		System.out.println("+-----------------------+");
+	}
 }

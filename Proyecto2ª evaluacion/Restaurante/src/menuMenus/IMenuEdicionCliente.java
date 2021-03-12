@@ -4,18 +4,18 @@ import java.util.List;
 
 public interface IMenuEdicionCliente {
 	//modificar nombre
-	public String updateName(String Name);
+	public void updateName();
 	
 	//modifcar dni
-	public String updateDni(String dni);
+	public void updateDni();
 
 	//modificar edad
-	public int updateAge(int edad);
+	public void updateAge();
 	
 	//modificar puntos
-	public int updatepoints(int puntos);
+	public void updatepoints( );
 	
 	//modificar direccion
-	public List<String> updateaddres(String address);
+	public String[] updateaddres();
 	
 }

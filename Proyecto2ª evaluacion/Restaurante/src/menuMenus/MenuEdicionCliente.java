@@ -4,36 +4,43 @@ import java.util.List;
 
 import client.Client;
 import client.RepositoryClients;
+import mesage.MensajesClient;
 import repositoryUtils.herramientas;
 
 public class MenuEdicionCliente  implements IMenuEdicionCliente{
 static Client c=null;
 static herramientas h=new herramientas();
+static MenuPrincipalCliente me = new MenuPrincipalCliente();
+static MensajesClient m = new MensajesClient();
 static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 	@Override
-	public String updateName(String Name) {
+	public void updateName() {
 		// TODO Auto-generated method stub
+		m.insertdata();
+		c.setName(h.stringcontrol());
 		
-		return Name;
 	}
 
 	@Override
-	public String updateInt(String dni) {
+	public void updateDni() {
 		// TODO Auto-generated method stub
-	
-		return dni;
+		m.insertdata();
+		c.setDni(h.stringcontrol());
 	}
 
 	@Override
-	public int updateAge(int edad) {
+	public void updateAge() {
 		// TODO Auto-generated method stub
-		return 0;
+		m.insertdata();
+		c.setAge(h.intcontrol());
 	}
 
 	@Override
-	public int updatepoints(int puntos) {
+	public void updatepoints() {
 		// TODO Auto-generated method stub
-		return 0;
+		m.insertdata();
+		c.setPoints(h.intcontrol());
+
 	}
 
 	@Override

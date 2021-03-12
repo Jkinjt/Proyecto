@@ -48,23 +48,23 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 			switch (opcion) {
 			case 1:
 				// modificar nombre
-				//
-				c.setName(me.updateName(h.stringcontrol()));
+				me.updateName();
+			
 				break;
 
 			case 2:
 				// modificar dni
-				c.setDni(me.updateInt(h.stringcontrol()));
+				me.updateDni();
 				break;
 
 			case 3:
 				// modificar edad
-				me.updateAge(h.intcontrol());
+				h.intcontrol();
 				break;
 
 			case 4:
 				// modificar puntos
-				me.updatepoints(h.intcontrol());
+				me.updatepoints();
 				break;
 
 			case 5:

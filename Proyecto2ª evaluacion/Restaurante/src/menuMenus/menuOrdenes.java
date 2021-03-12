@@ -57,6 +57,12 @@ public class menuOrdenes {
 					co.menumodificaciones(r.buscarordencodigo(h.intcontrol()));
 					break;
 				case 0:
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					menuprincipal();
 					break;
 				default:
@@ -69,20 +75,43 @@ public class menuOrdenes {
 
 			case 2:
 				// añadir o remover
-				
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				co.menuAddOrRemove();
 				snl.saveOrders(r.getallorder());
 				break;
 			// ----------------------------------------------------------
 
 			case 3:
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				co.menusmostrar();
 				break;
 			// -------------------------------------------------------------
 			case 0:
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				MensajesOrder.salida();
 				break;
 			default:
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				menuprincipal();
 				break;
 			}
