@@ -1,6 +1,7 @@
 package mesage;
 
 public class MensajesMenuInicio {
+	
 	public static void MainMenu() {
 		System.out.println("+-------------------------+");
 		System.out.println("| 1-Realizar Pedido       |");

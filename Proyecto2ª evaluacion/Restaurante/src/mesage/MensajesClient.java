@@ -1,6 +1,9 @@
 package mesage;
 
+import repositoryUtils.herramientas;
+
 public class MensajesClient {
+	static herramientas h= new herramientas();
 	// ------------------------------------
 	// menu inicio
 	public static void menuinicio() {
@@ -9,7 +12,7 @@ public class MensajesClient {
 		System.out.println("+-----------------------------+");
 		System.out.println("| 1-Modificar un cliente      |");
 		System.out.println("+-----------------------------+");
-		System.out.println("| 2-Añadir o eliminar cliente |");
+		System.out.println("| 2-Anadir o eliminar cliente |");
 		System.out.println("+-----------------------------+");
 		System.out.println("| 3-Mostrar CLientes          |");
 		System.out.println("+-----------------------------+");
@@ -59,7 +62,7 @@ public class MensajesClient {
 		System.out.println("+--------------------+");
 		System.out.println("| Elige una opcion   |");
 		System.out.println("+--------------------+");
-		System.out.println("| 1-Añadir cliente   |");
+		System.out.println("| 1-Anadir cliente   |");
 		System.out.println("+--------------------+");
 		System.out.println("| 2-Eliminar cliente |");
 		System.out.println("+--------------------+");
@@ -98,7 +101,7 @@ public class MensajesClient {
 	}
 	public static void continuar() {
 		System.out.println("+--------------------------------------+");
-		System.out.println("| ¿Desea añadir mas direcciones? Si/no |");
+		System.out.println("| ¿Desea anadir mas direcciones? Si/no |");
 		System.out.println("+--------------------------------------+");
 	}
 
@@ -122,9 +125,7 @@ public class MensajesClient {
 	}
 	// ------------------------------------
 	public static void salida() {
-		System.out.println("+------------+");
-		System.out.println("| ~SALIENDO~ |");
-		System.out.println("+------------+");
+		h.Salida();
 	}
 	//--------------------------------------------
 	public static void insertdata() {

@@ -31,17 +31,19 @@ public class menuClientes {
 		switch (opcion) {
 		case 1:
 			//editar cliente
+			h.cargando();
 			mp.UpdateClient();
 			
 			
 			break;
 		case 2:
 			//add or remove
-
+			h.cargando();
 			mp.addorremoveClient();
 			break;
 		case 3:
 			//show clients
+			h.cargando();
 			mp.showclients();
 
 			
@@ -49,12 +51,7 @@ public class menuClientes {
 		
 		case 0:
 			m.salida();
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		
 			break;
 		default:
 			break;

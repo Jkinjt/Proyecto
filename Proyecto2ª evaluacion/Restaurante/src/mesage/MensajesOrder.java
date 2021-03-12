@@ -1,6 +1,9 @@
 package mesage;
 
+import repositoryUtils.herramientas;
+
 public class MensajesOrder {
+	static herramientas h= new herramientas();
 	// meter todos los mensajes de los menus aqui
 	public static void menuPrincicipal() {
 		System.out.println("+---------------------------+");
@@ -8,7 +11,7 @@ public class MensajesOrder {
 		System.out.println("+---------------------------+");
 		System.out.println("| 1-Modificar Orden         |");
 		System.out.println("+---------------------------+");
-		System.out.println("| 2-Añadir o eliminar orden |");
+		System.out.println("| 2-Anadir o eliminar orden |");
 		System.out.println("+---------------------------+");
 		System.out.println("| 3-Ver todas las ordenes   |");
 		System.out.println("+---------------------------+");
@@ -36,7 +39,7 @@ public class MensajesOrder {
 		System.out.println("+------------------+");
 		System.out.println("| Elige una opcion |");
 		System.out.println("+------------------+");
-		System.out.println("| 1-Añadir Orden   |");
+		System.out.println("| 1-Anadir Orden   |");
 		System.out.println("+------------------+");
 		System.out.println("| 2-Eliminar orden |");
 		System.out.println("+------------------+");
@@ -65,6 +68,8 @@ public class MensajesOrder {
 		System.out.println("| 7-Mostrar todas las ordenes de una fecha en concreto |");
 		System.out.println("+------------------------------------------------------+");
 		System.out.println("| 8-Mostrar todas las ordenes de un cliente            |");
+		System.out.println("+------------------------------------------------------+");
+		System.out.println("| 9-Mostrar todo el dinero en caja                     |");
 		System.out.println("+------------------------------------------------------+");
 		System.out.println("| 0-Salir                                              |");
 		System.out.println("+------------------------------------------------------+");
@@ -122,7 +127,7 @@ public class MensajesOrder {
 	public static void addorremove() {
 	
 		System.out.println("+------------------+");
-		System.out.println("| 1-Añadir orden   |");
+		System.out.println("| 1-Anadir orden   |");
 		System.out.println("+------------------+");
 		System.out.println("| 2-Eliminar orden |");
 		System.out.println("+------------------+");
@@ -143,8 +148,6 @@ public class MensajesOrder {
 	// -----------------------------------------------------------
 
 	public static void salida() {
-		System.out.println("+----------+");
-		System.out.println("| SALIENDO |");
-		System.out.println("+----------+");
+		h.Salida();
 	}
 }

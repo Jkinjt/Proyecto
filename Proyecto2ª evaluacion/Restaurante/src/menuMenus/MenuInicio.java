@@ -4,7 +4,9 @@ import mesage.MensajesMenuInicio;
 import repositoryUtils.herramientas;
 
 public class MenuInicio {
-	
+public static void main(String[] args) {
+	MenuInicio();
+}	
 	static herramientas h=new herramientas();
 	static MensajesMenuInicio m= new MensajesMenuInicio();
 	static menuClientes ci=new menuClientes();
@@ -19,45 +21,25 @@ public class MenuInicio {
 			case 1:
 				//carrito
 				m.cargando();
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 				
 				break;
 			case 2:
 				//menu clientes
 				m.cargando();
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}	
+				
 				ci.MenuPrincipal();
 				break;
 			case 3:
 				//menu productos
 				m.cargando();
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 				p.menuInicio();
 				break;
 			case 4:
 				//menu ordenes
 				m.cargando();
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 				o.menuprincipal();
 				break;
 			case 0:
@@ -71,6 +53,7 @@ public class MenuInicio {
 				break;
 				
 			default:
+				MenuInicio();
 				break;
 			}
 		}while(opcion!=0);

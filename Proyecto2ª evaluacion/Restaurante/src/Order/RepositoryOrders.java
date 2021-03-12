@@ -177,7 +177,7 @@ public class RepositoryOrders implements Serializable {
 	}
 	
 	//actualiza el pago total de la orden
-	//¿esto no seria mejor hacerlo en el  carrito para que  ya pase el precio total?
+	
 	
 	public double calculototal(Order orden) {
 		double total=0;
@@ -194,24 +194,7 @@ public class RepositoryOrders implements Serializable {
 		}
 		return total;
 	}
-	public Double totalhoy(int dia) {
-		double total=0;
-		for (int i = 0; i < registro.size(); i++) {
-			if(registro.get(i).getDate().getDayOfMonth()==dia) {
-				total+=registro.get(i).getTotal();
-			}
-		}
-		return total;
-	}
-	public Double totalmes(int mes) {
-		double total=0;
-		for (int i = 0; i < registro.size(); i++) {
-			if (registro.get(i).getDate().getMonthValue()==mes) {
-				total+=registro.get(i).getTotal();
-			}
-		}
-		return total;
-	}
+	
 	public Order buscarordencodigo(int codigo) {
 		Order order=null;
 		boolean encontrado=false;
@@ -222,5 +205,13 @@ public class RepositoryOrders implements Serializable {
 			}
 		}
 		return order;
+	}
+	//cash total
+	public double cashtotal() {
+		double total=0;
+		for (Order order : registro) {
+			total+=order.getTotal();
+		}
+		return total;
 	}
 }

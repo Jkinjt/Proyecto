@@ -117,5 +117,56 @@ public class herramientas {
 		} while (!valid);
 		return result;
 	}
-
+	/**
+	 * mensaje mostrado cuando se esta cargando un listado
+	 */
+	public static void cargando() {
+		int temporizador=0;
+		System.out.println("+-------------------+");
+		System.out.print(  "| CARGANDO: ");
+		do {
+			try {
+				Thread.sleep(350);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}System.out.print(".");
+			temporizador++;
+		} while (temporizador!=7);
+		
+		try {
+			Thread.sleep(350);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}System.out.print(" |\n");
+		
+		System.out.println("+-------------------+"+"\n");
+	}
+	/**
+	 * mensaje de salida
+	 */
+	public static void Salida() {
+		int temporizador=0;
+		System.out.println("+-------------------+");
+		System.out.print(  "| Saliendo ");
+		do {
+			try {
+				Thread.sleep(350);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}System.out.print(".");
+			temporizador++;
+		} while (temporizador!=8);
+		
+		try {
+			Thread.sleep(350);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}System.out.print(" |\n");
+		
+		System.out.println("+-------------------+"+"\n");
+	}
 }

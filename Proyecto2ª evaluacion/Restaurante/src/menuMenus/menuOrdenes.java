@@ -49,20 +49,17 @@ public class menuOrdenes {
 				switch (opciona) {
 				case 1:// buscar por nombre
 					MensajesOrder.insertarc();
-					//en progreso
+					
+					h.cargando();
 					co.menumodificaciones(r.buscarordencodigo(h.intcontrol()));
 					break;
 				case 2: // buscar por dni
 					MensajesOrder.insertarn();
+					h.cargando();
 					co.menumodificaciones(r.buscarordencodigo(h.intcontrol()));
 					break;
 				case 0:
-					try {
-						Thread.sleep(3000);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+					h.Salida();
 					menuprincipal();
 					break;
 				default:
@@ -75,34 +72,19 @@ public class menuOrdenes {
 
 			case 2:
 				// añadir o remover
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				h.cargando();
 				co.menuAddOrRemove();
 				snl.saveOrders(r.getallorder());
 				break;
 			// ----------------------------------------------------------
 
 			case 3:
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				h.cargando();
 				co.menusmostrar();
 				break;
 			// -------------------------------------------------------------
 			case 0:
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 				MensajesOrder.salida();
 				break;
 			default:

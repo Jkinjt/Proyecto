@@ -149,6 +149,9 @@ public class ControladorMenuOrdenes {
 				//mostrar por cliente
 				h.imprimir(r.getOrdersByClient(herramientas.stringcontrol()));
 				break;
+			case 9:
+				h.imprimir(r.cashtotal());
+				break;
 			case 0:
 				MensajesOrder.salida();
 				try {
