@@ -7,10 +7,11 @@ import Product.Repository;
 import Product.drink;
 import Product.food;
 import mesage.mensajesProduct;
+import repositoryUtils.RepositorySaveAndLoad;
 import repositoryUtils.herramientas;
 
 public class menuProductos /*implements IMenuProduct*/ {
-
+	static RepositorySaveAndLoad snl=RepositorySaveAndLoad.getSingletoonInstance();
 	static Repository c= Repository.getSingletonInstance();
 	static herramientas h=new herramientas();
 	static mensajesProduct m=new mensajesProduct();
@@ -32,10 +33,12 @@ public class menuProductos /*implements IMenuProduct*/ {
 		//modificar producto
 		case 1:
 			 editProduct();
+			 snl.saveProducts(c.getAllProducts());
 			break;
 		//anadir o eliminar producto
 		case 2:
 			addORremove();
+			 snl.saveProducts(c.getAllProducts());
 			break;
 		//mostrar producto	
 		case 3:

@@ -13,6 +13,7 @@ import repositoryUtils.herramientas;
 
 public class menuClientes {
 	static RepositorySaveAndLoad snl=RepositorySaveAndLoad.getSingletoonInstance();
+	static RepositoryClients rc = RepositoryClients.getSingletonInstance();
 	static herramientas h=new herramientas();
 	static MensajesClient m=new MensajesClient();
 	static MenuPrincipalCliente mp=new MenuPrincipalCliente();
@@ -23,7 +24,7 @@ public class menuClientes {
 	//menu principal
 	public static void MenuPrincipal() {
 		int opcion=-1;
-		snl.loadClient();
+		
 		do {
 			m.menuinicio();
 			opcion=h.intcontrol();

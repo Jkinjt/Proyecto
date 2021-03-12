@@ -11,10 +11,12 @@ import Product.Repository;
 import client.Client;
 import client.RepositoryClients;
 import mesage.MensajesOrder;
+import repositoryUtils.RepositorySaveAndLoad;
 import repositoryUtils.herramientas;
 
 public class menuOrdenes {
 	// menu principal
+	static RepositorySaveAndLoad snl=RepositorySaveAndLoad.getSingletoonInstance();
 	static RepositoryOrders r = RepositoryOrders.getSingletonInstance();
 	static RepositoryClients c = RepositoryClients.getSingletonInstance();
 	static Repository p = Repository.getSingletonInstance();
@@ -60,15 +62,16 @@ public class menuOrdenes {
 				default:
 					break;
 				}
-			
+			snl.saveOrders(r.getallorder());
 				break;
+				
 			// ----------------------------------------------------------
 
 			case 2:
 				// añadir o remover
 				
 				co.menuAddOrRemove();
-				
+				snl.saveOrders(r.getallorder());
 				break;
 			// ----------------------------------------------------------
 
