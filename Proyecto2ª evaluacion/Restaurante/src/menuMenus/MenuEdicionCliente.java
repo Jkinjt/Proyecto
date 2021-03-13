@@ -44,7 +44,7 @@ static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 	}
 
 	@Override
-	public String[] updateaddres() {
+	public List<String> updateaddres() {
 		List<String> lista=null;
 		boolean continuar=false;
 		do {
@@ -58,9 +58,8 @@ static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 			}
 		}while (continuar==false);
 				
-		String[] direcciones= new String[lista.size()];
-		direcciones=lista.toArray(direcciones);
-		return direcciones;
+		
+		return lista;
 	}
 
 }
