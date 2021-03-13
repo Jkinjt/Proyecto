@@ -138,4 +138,9 @@ public class MensajesClient {
 		System.out.println("| ¿Continuar? SI/NO |");
 		System.out.println("+-------------------+");	
 	}
+	public static void dentro() {
+		System.out.println("+------------------+");
+		System.out.println("| Cliente Guardado |");
+		System.out.println("+------------------+");		
+	}
 }

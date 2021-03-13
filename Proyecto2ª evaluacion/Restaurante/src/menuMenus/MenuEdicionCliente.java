@@ -50,7 +50,7 @@ static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 		do {
 			int opcion=0;
 			lista.add(h.stringcontrol());
-			
+			m.continuar();
 				//mensaje de continuar si/no
 			opcion=h.intcontrol();
 			if(opcion==1) {

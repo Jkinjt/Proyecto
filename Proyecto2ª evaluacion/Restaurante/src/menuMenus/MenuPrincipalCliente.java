@@ -140,7 +140,6 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 			m.direcciones();
 			int opcion = 0;
 			lista.add(h.stringcontrol());
-
 			// mensaje de continuar si/no
 			m.continuar();
 			opcion = h.intcontrol();
@@ -149,12 +148,12 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 			}
 		} while (continuar == false);
 
-		String[] direcciones = new String[lista.size()];
-		direcciones = lista.toArray(direcciones);
+		
 
-		Client nuevoc =null;
-
+		Client nuevoc = new Client(dni, name, edad, lista);
+		h.cargando();
 		Rc.addClient(nuevoc);
+		m.dentro();
 
 	}
 
@@ -175,12 +174,7 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 				break;
 			case 0:
 				m.salida();
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				
 				break;
 			default:
 				break;
