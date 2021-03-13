@@ -2,6 +2,7 @@ package menuMenus;
 
 import java.util.ArrayList;
 
+
 import Product.Product;
 import Product.Repository;
 import Product.drink;
@@ -17,7 +18,7 @@ public class menuProductos /*implements IMenuProduct*/ {
 	static mensajesProduct m=new mensajesProduct();
 	ArrayList<Product> products = new ArrayList<Product>();
 	
-	public static void menuclientesprincipal() {
+	public static void menuProductprincipal() {
 		menuInicio();
 	}
 	
@@ -32,20 +33,24 @@ public class menuProductos /*implements IMenuProduct*/ {
 		switch (opcion) {
 		//modificar producto
 		case 1:
-			 editProduct();
+			h.cargando(); 
+			editProduct();
 			 snl.saveProducts(c.getAllProducts());
 			break;
 		//anadir o eliminar producto
 		case 2:
+			h.cargando();
 			addORremove();
 			 snl.saveProducts(c.getAllProducts());
 			break;
 		//mostrar producto	
 		case 3:
+			h.cargando();
 			showProducts();
 			break;
 		//salir
 		case 0:
+			h.Salida();
 			m.salida();
 			break;
 
@@ -89,6 +94,7 @@ public class menuProductos /*implements IMenuProduct*/ {
 				break;
 			//salir del menu
 			case 0:
+				h.Salida();
 				m.salida();	
 				break;
 		
@@ -116,6 +122,7 @@ public class menuProductos /*implements IMenuProduct*/ {
 			break;
 		//salir
 		case 0:
+			h.Salida();
 			m.salida();
 			break;
 
@@ -135,6 +142,7 @@ public class menuProductos /*implements IMenuProduct*/ {
 	switch (opcion) {
 		//salir
 		case 0:
+			h.Salida();
 			m.salida();
 		break;
 		//mostrar todos los productos

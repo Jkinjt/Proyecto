@@ -2,6 +2,8 @@ package repositoryUtils;
 
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class herramientas {
 
@@ -169,4 +171,40 @@ public class herramientas {
 		
 		System.out.println("+-------------------+"+"\n");
 	}
+	
+	public static String ageControl() {
+		String r="";
+		boolean valid=false;
+		do {
+			Pattern p=Pattern.compile("^[1-9]{2}?[0-2]$");
+			Matcher m=p.matcher(r);
+			if(m.matches()) {
+				System.out.println("Edad válida");
+			}else{
+				System.out.println("La edad introducida no es correcta");
+			}	
+		}while(!valid);
+	 
+		
+		return r;
+	}
+	
+	
+	public static String nameControl() {
+		String result = "";
+		boolean valid = false;
+		do {
+			try {
+				result = teclado.nextLine();
+				valid = true;
+
+			} catch (Exception ex) {
+				herramientas.imprimirconintro("+----------------------------------------------+");
+				herramientas.imprimirconintro("| Error desconocido , inserte un nombre valido |");
+				herramientas.imprimirconintro("+----------------------------------------------+");
+			}
+		} while (!valid);
+		return result;
+	}
+	
 }
