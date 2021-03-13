@@ -14,6 +14,7 @@ import Product.drink;
 import Product.food;
 import client.Client;
 import client.RepositoryClients;
+import menuMenus.MenuInicio;
 import repositoryUtils.RepositorySaveAndLoad;
 
 public class Ejecutable {
@@ -25,6 +26,10 @@ public class Ejecutable {
 		RepositoryClients rc =RepositoryClients.getSingletonInstance();
 		RepositoryOrders ro=RepositoryOrders.getSingletonInstance();
 		Repository rp=Repository.getSingletonInstance();
+		ro.setRegistro(snl.loadOrders());
+		rc.setClient(snl.loadClient());
+		rp.setProducts((ArrayList<Product>) snl.loadProduct());
+		MenuInicio.MenuInicio();
 		/*
 		List<Product> p=new ArrayList<Product>();
 		List<Order> o=new ArrayList<>();
@@ -70,9 +75,7 @@ public class Ejecutable {
 		snl.saveProducts(rp.getAllProducts());
 		*/
 		//System.out.println(rc.toString());
-		ro.setRegistro(snl.loadOrders());
-		rc.setClient(snl.loadClient());
-		rp.setProducts((ArrayList<Product>) snl.loadProduct());
+		
 		System.out.println(rc.toString());
 		System.out.println(ro.toString());
 		System.out.println(rp.toString());
