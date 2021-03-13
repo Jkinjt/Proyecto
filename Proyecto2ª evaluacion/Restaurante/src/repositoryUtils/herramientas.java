@@ -1,6 +1,7 @@
 package repositoryUtils;
 
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -207,4 +208,33 @@ public class herramientas {
 		return result;
 	}
 	
+	public static String priceControl() {
+		
+		DecimalFormat df = new DecimalFormat("#.00");
+		String result = df.format(0.00);
+		
+		boolean valid = false;
+		do {
+			try {
+				result = teclado.next();
+				valid = true;
+
+			}  catch (IllegalStateException ex) {
+				teclado = new Scanner(System.in);
+				herramientas.imprimirconintro("+-------------------------------------+");
+				herramientas.imprimirconintro("| Error, introduzca el valor de nuevo |");
+				herramientas.imprimirconintro("+-------------------------------------+");
+			} catch (NumberFormatException ex) {
+				herramientas.imprimirconintro("+----------------------------------------+");
+				herramientas.imprimirconintro("| Error de lectura, introduzca dos decimales |");
+				herramientas.imprimirconintro("+----------------------------------------+");
+			} catch (Exception ex) {
+				ex.printStackTrace();
+				herramientas.imprimirconintro("+-------------------------------------+");
+				herramientas.imprimirconintro("| Error desconocido , pruebe otra vez |");
+				herramientas.imprimirconintro("+-------------------------------------+");
+			}
+		} while (!valid);
+		return result;
+	}
 }

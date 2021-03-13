@@ -50,7 +50,6 @@ public class menuClientes {
 			break;
 		
 		case 0:
-			h.Salida();
 			m.salida();
 		
 			break;
