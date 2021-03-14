@@ -11,7 +11,7 @@ import Product.Product;
 
 public class Order implements Serializable{
 	private Client client;
-	private ArrayList<Product> product;
+	private List<Product> product;
 	private double total;
 	private LocalDateTime date;
 	private String address;
@@ -22,7 +22,7 @@ public class Order implements Serializable{
 
 	
 
-	public Order(Client client, ArrayList<Product> product,  LocalDateTime date, String address,
+	public Order(Client client, List<Product> product,   String address,
 			boolean delivered, boolean payed) {
 		super();
 		this.client = client;
@@ -46,8 +46,14 @@ public class Order implements Serializable{
 
 	
 
-	public ArrayList<Product> getProduct() {
+	
+
+	public List<Product> getProduct() {
 		return product;
+	}
+
+	public void setProduct(List<Product> product) {
+		this.product = product;
 	}
 
 	public void setProduct(ArrayList<Product> product) {

@@ -13,9 +13,8 @@ public class Chart {
 	private Client client;
 	private List<Product> products=new ArrayList<Product>();
 	private double total;
-	private LocalDateTime date;
-	private boolean delivered;
-	private boolean payed;
+	
+
 	private String addres;
 	
 	private Chart(Client client) {
@@ -37,21 +36,12 @@ public class Chart {
 	public double getTotal() {
 		return total;
 	}
-	public LocalDateTime getDate() {
-		return date;
-	}
-	public boolean isDelivered() {
-		return delivered;
-	}
-	public boolean isPayed() {
-		return payed;
-	}
+	
+	
 	public String getAddres() {
 		return addres;
 	}
-	public void setDate(LocalDateTime date) {
-		this.date = date;
-	}
+	
 	public void setAddres(String addres) {
 		this.addres = addres;
 	}
@@ -106,6 +96,10 @@ public class Chart {
 				
 			}
 		}
+	}
+	@Override
+	public String toString() {
+		return "Chart [client=" + client + ", products=" + products + ", total=" + total + ", addres=" + addres + "]";
 	}
 	
 	

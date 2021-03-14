@@ -1,5 +1,6 @@
 package menuMenus;
 
+import Order.Chart;
 import mesage.MensajesMenuInicio;
 import repositoryUtils.herramientas;
 
@@ -10,6 +11,7 @@ public class MenuInicio {
 	static menuClientes ci=new menuClientes();
 	static menuProductos p= new menuProductos();
 	static menuOrdenes o= new menuOrdenes();
+	static MenuCarrito ca= new MenuCarrito();
 	public static void MenuInicio() {
 		int opcion=-1;
 		do {
@@ -19,7 +21,7 @@ public class MenuInicio {
 			case 1:
 				//carrito
 				m.cargando();
-				
+				ca.menu();
 				
 				break;
 			case 2:
