@@ -38,9 +38,9 @@ public class TestMenuOrdenes {
 	drink d3 = new drink("JB", 8.50, true);
 	
 	List<Product> p = new ArrayList<Product>();
-	Order o1 = new Order(c1, (ArrayList<Product>) p, LocalDateTime.now(), a, false, true);
-	Order o2 = new Order(c2, (ArrayList<Product>) p, LocalDateTime.now(), a, true, false);
-	Order o3 = new Order(c3, (ArrayList<Product>) p, LocalDateTime.now(), b, false, false);
+	Order o1 = new Order(c1,  p, a.get(0), false, true);
+	Order o2 = new Order(c2,  p, a.get(0), true, false);
+	Order o3 = new Order(c3, p, b.get(0), false, false);
 
 	@Test
 	public void testmenu() {

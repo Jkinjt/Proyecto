@@ -22,8 +22,7 @@ public class Order implements Serializable{
 
 	
 
-	public Order(Client client, List<Product> product,   String address,
-			boolean delivered, boolean payed) {
+	public Order(Client client, List<Product> product, String address,boolean delivered, boolean payed) {
 		super();
 		this.client = client;
 		this.product = product;
