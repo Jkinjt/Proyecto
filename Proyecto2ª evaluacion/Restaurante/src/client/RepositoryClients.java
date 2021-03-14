@@ -138,22 +138,6 @@ public class RepositoryClients implements Serializable {
 		return result;
 	}
 
-	public static List<Client> showall() {
-		List<Client> lista=new ArrayList<Client>();
-		for (Client client : lista) {
-			lista.add(client);
-		}
-		return lista;
-	}
-	public  Client showbydni(String dni) {
-		Client result=null;
-		boolean encontrado=false;
-		for (int i = 0; i <client.size() && encontrado!=true; i++) {
-			if (client.get(i).getDni().equals(dni)) {
-				result=client.get(i);
-				encontrado=true;
-			}
-		}
-		return result;
-	}
+	
+	
 }
