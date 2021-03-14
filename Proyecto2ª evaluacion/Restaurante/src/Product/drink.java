@@ -50,6 +50,10 @@ public class drink extends Product implements Serializable	 {
 		}
 
 	
+	public void setAlcoholic(boolean alcoholic) {
+			Alcoholic = alcoholic;
+		}
+
 	//Método para añadir un objeto a la lista de arrays para ir variando las ofertas del getBundlePack
 	public boolean anadirObejeto(Product p) {
 		boolean valid=false;
@@ -74,7 +78,6 @@ public class drink extends Product implements Serializable	 {
 
 	//toString para imprimir la clase bebida
 	public String toString() {
-		return "Alcoholic=" + getAlcoholic()+"/n"+ 
-				super.toString();
+		return super.toString()+"\n+Alcoholic=" + getAlcoholic()+"\n";
 	}
 }

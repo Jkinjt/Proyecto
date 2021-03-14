@@ -16,11 +16,12 @@ import java.util.UUID;
 //Clase repositorio donde se guardan los productos y todo lo relacionado con ello
 public class Repository implements Serializable {
 	// atributos de la clase producto
-	private ArrayList<Product> products = new ArrayList<Product>();
+	private ArrayList<Product> products = new ArrayList<>();
 	public static Repository unico;
 
 	// crea un repositorio unico
 	private Repository() {
+	this.products=new ArrayList<Product>();
 	}
 
 	public static Repository getSingletonInstance() {
@@ -189,7 +190,7 @@ public class Repository implements Serializable {
 				}
 			}
 		}
-
+		
 		return p;
 	}
 

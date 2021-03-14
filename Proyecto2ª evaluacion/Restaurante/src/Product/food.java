@@ -39,6 +39,13 @@ public class food extends Product implements Serializable{
 		
 	}
 	
+	
+	
+	
+	public void setForVegans(boolean forVegans) {
+		this.forVegans = forVegans;
+	}
+
 	//Metodo para comprobar si un producto y otro hacer oferta
 	public Product matchOffer(ArrayList products) {
 		Product result=null;
@@ -79,8 +86,7 @@ public class food extends Product implements Serializable{
 
 	//toString para imprimir la clase comida
 	public String toString() {
-		return "Is For Vegans=" + isForVegans() +"/n"
-			   + super.toString();
+		return super.toString()+"\n+Is For Vegans=" + isForVegans() +"\n" ;
 	}
 	
 	

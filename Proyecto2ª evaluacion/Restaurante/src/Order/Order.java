@@ -147,7 +147,6 @@ public class Order implements Serializable{
 	//to string limitado
 	public String toStringbasic() {
 
-
 		return  "Orden \n"+
 				"Cliente:\n" + client.toStringbasic() +"\n"+  
 				"Productos:" + lista(product) +"\n"+

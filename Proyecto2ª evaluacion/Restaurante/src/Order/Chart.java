@@ -30,6 +30,7 @@ public class Chart {
 	public Client getClient() {
 		return client;
 	}
+	
 	public List<Product> getProducts() {
 		return products;
 	}
@@ -42,6 +43,9 @@ public class Chart {
 		return addres;
 	}
 	
+	public void setClient(Client client) {
+		this.client = client;
+	}
 	public void setAddres(String addres) {
 		this.addres = addres;
 	}

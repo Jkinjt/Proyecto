@@ -86,10 +86,6 @@ public class ControladorMenuOrdenes {
 			switch (opcionb) {
 			case 1:
 				MensajesOrder.mensajeAddOrRemove();
-				r.addorden(r.buscarordencodigo(h.intcontrol()));
-				break;
-			case 2:
-				MensajesOrder.mensajeAddOrRemove();
 				r.eliminarorde(r.buscarordencodigo(herramientas.intcontrol()));
 				break;
 			case 0:
@@ -118,7 +114,7 @@ public class ControladorMenuOrdenes {
 			switch (opcionc) {
 			case 1:
 				//mostrar todas las ordenes
-			h.imprimir(r.getallorder());	
+			System.out.println((r.getallorder()));	
 				break;
 			case 2:
 				//mostrar todas las pagadas

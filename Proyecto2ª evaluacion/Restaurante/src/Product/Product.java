@@ -96,14 +96,14 @@ public abstract class Product implements iProduct, Serializable {
 
 	// toString para imprimir la clase producto.
 	public String toString() {
-		return "Product=" + getName() + "/n" + "Price= " + getPrice() + "/n" + "For celiac= " + forCeliac + "/n" + "id="
+		return "Product=" + getName() + "\n" + "Price= " + getPrice() + "\n" + "For celiac= " + forCeliac + "\n" + "id="
 				+ id;
 
 	}
 	//tostring basic
 	public String toStringbasic() {
 		return  "+-----------------------------------------------+"+"\n"+
-				"| Product=" +getName()+ "/n"+
+				"| Product=" +getName()+ "\n"+
 				"| Precio="+getPrice()+"\n"+
 				"+-----------------------------------------------+";
 				

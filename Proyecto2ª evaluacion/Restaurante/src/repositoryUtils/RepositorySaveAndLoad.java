@@ -115,7 +115,7 @@ public class RepositorySaveAndLoad {
 			FileOutputStream f;
 
 			try {
-				f = new FileOutputStream("Productos.txt");
+				f = new FileOutputStream("Products.txt");
 				ObjectOutputStream of;
 				of = new ObjectOutputStream(f);
 				of.writeObject(l);

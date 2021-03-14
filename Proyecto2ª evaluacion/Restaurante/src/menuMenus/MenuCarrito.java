@@ -16,7 +16,7 @@ import java.util.List;
 public class MenuCarrito {
 	static herramientas h = new herramientas();
 	static MensajesCarrito mc = new MensajesCarrito();
-	static Chart ch = Chart.get_Instance(null);
+	static Chart carrito = Chart.get_Instance(null);
 	static Repository p = Repository.getSingletonInstance();
 	static RepositoryClients rc = RepositoryClients.getSingletonInstance();
 	static RepositoryOrders ro= RepositoryOrders.getSingletonInstance();
@@ -28,9 +28,10 @@ public class MenuCarrito {
 		int opcion = -1;
 		// insertar el cliente del carrito
 		mc.insertar();
-		Chart carrito = Chart.get_Instance(rc.searchClientByName(h.stringcontrol()));
+		carrito.setClient(rc.searchClientByName(h.stringcontrol()));
+		System.out.println(carrito.getClient());
 		do {
-
+			
 			// añadir o eleminar productos del carrito
 			addorremove();
 
@@ -50,7 +51,7 @@ public class MenuCarrito {
 		ro.addorden(nueva);
 	}
 	
-	public static List<Product> addorremove() {
+	public static void addorremove() {
 		int opcion = -1;
 		do {
 			mc.addorremove();
@@ -58,11 +59,11 @@ public class MenuCarrito {
 			switch (opcion) {
 			case 1:
 				mc.inserteproducto();
-				ch.addProduct(p.searchProduct(h.stringcontrol()));
+				carrito.addProduct(p.searchProduct(h.stringcontrol()));
 				break;
 			case 2:
 				mc.inserteproducto();
-				ch.deleteProduct(p.searchProduct(h.stringcontrol()));
+				carrito.deleteProduct(p.searchProduct(h.stringcontrol()));
 				break;
 			case 3:
 				mp.showProducts();
@@ -74,7 +75,7 @@ public class MenuCarrito {
 				break;
 			}
 		} while (opcion != 0);
-		return ch.getProducts();
+		
 	}
 
 	

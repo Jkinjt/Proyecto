@@ -39,9 +39,7 @@ public class MensajesOrder {
 		System.out.println("+------------------+");
 		System.out.println("| Elige una opcion |");
 		System.out.println("+------------------+");
-		System.out.println("| 1-Anadir Orden   |");
-		System.out.println("+------------------+");
-		System.out.println("| 2-Eliminar orden |");
+		System.out.println("| 1-Eliminar orden |");
 		System.out.println("+------------------+");
 		System.out.println("| 0-Salir          |");
 		System.out.println("+------------------+");
