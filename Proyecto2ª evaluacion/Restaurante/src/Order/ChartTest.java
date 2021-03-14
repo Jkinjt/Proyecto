@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.junit.After;
@@ -30,8 +31,12 @@ public class ChartTest  {
 	drink d1=new drink( "Coca cola", 1, false);
 	drink d2=new drink("Fanta", 1, false);
 	drink d3=new drink( "JB", 8.50, true);
+	
 	@Before
 	public void addProducts() {
+		f1.anadirObejeto(d1);
+		d1.anadirObejeto(f1);
+		f2.anadirObejeto(d3);
 		c.addProduct(f1);
 		c.addProduct(f2);
 		c.addProduct(d1);
@@ -73,7 +78,8 @@ public class ChartTest  {
 	@Test
 	public void testTotalCalculation() {
 		c.totalCalculation();
-		assertEquals(10.00, c.getTotal(),0.009);
+		assertEquals(9.4, c.getTotal(),0.009);
+			
 	}
 
 }

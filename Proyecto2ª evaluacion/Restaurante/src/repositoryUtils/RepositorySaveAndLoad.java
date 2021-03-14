@@ -19,9 +19,7 @@ import client.RepositoryClients;
 
 public class RepositorySaveAndLoad {
 	private static RepositorySaveAndLoad _instance;
-	private Repository repositoryProduct = Repository.getSingletonInstance();
-	private RepositoryOrders repositoryOrders = RepositoryOrders.getSingletonInstance();
-	private RepositoryClients repositoryClient = RepositoryClients.getSingletonInstance();
+	
 
 	private RepositorySaveAndLoad() {
 		super();
