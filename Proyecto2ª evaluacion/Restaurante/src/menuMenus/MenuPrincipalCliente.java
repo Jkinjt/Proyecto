@@ -165,12 +165,12 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 			switch (opcion) {
 			case 1:
 				// mostrar todos los clientes
-				System.out.println(Rc.showall());
+				System.out.println(Rc.getClient());
 				break;
 			case 2:
 				// mostrar el cliente que tenga el mismo dni
 				m.buscarpordni();
-				System.out.println(Rc.showbydni(h.stringcontrol()));
+				System.out.println(Rc.searchClientByDni(h.stringcontrol()));
 				break;
 			case 0:
 				m.salida();
