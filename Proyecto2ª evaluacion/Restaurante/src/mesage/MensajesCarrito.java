@@ -35,7 +35,7 @@ public class MensajesCarrito {
 	}
 	public static void datos() {
 		System.out.println("+-----------------------------------------+");
-		System.out.println("| ¿Son correctos estos datos? SI(1)/No(2) |");
+		System.out.println("| ¿Son correctos estos datos? SI(0)/No(1) |");
 		System.out.println("+-----------------------------------------+");
 	}
 }

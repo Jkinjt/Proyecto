@@ -72,12 +72,12 @@ public class herramientas {
 	 * 
 	 * @return devuelve el double
 	 */
-	public static double getdouble() {
+	public static double doublecontrol() {
 		double result = 0;
 		boolean valid = false;
 		do {
 			try {
-				result = teclado.nextDouble();
+				result = Integer.parseInt(teclado.nextLine());
 				valid = true;
 
 			}  catch (IllegalStateException ex) {
@@ -208,15 +208,15 @@ public class herramientas {
 		return result;
 	}
 	
-	public static String priceControl() {
+	public static double priceControl() {
 		
-		DecimalFormat df = new DecimalFormat("#.00");
-		String result = df.format(0.00);
+		
+		double result = 0.0;
 		
 		boolean valid = false;
 		do {
 			try {
-				result = teclado.next();
+				result = teclado.nextDouble();
 				valid = true;
 
 			}  catch (IllegalStateException ex) {

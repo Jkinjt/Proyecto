@@ -8,13 +8,13 @@ import mesage.MensajesClient;
 import repositoryUtils.herramientas;
 
 public class MenuEdicionCliente  implements IMenuEdicionCliente{
-static Client c=null;
+
 static herramientas h=new herramientas();
 static MenuPrincipalCliente me = new MenuPrincipalCliente();
 static MensajesClient m = new MensajesClient();
 static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 	@Override
-	public void updateName() {
+	public void updateName(Client c) {
 		// TODO Auto-generated method stub
 		m.insertdata();
 		c.setName(h.stringcontrol());
@@ -22,21 +22,21 @@ static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 	}
 
 	@Override
-	public void updateDni() {
+	public void updateDni(Client c) {
 		// TODO Auto-generated method stub
 		m.insertdata();
 		c.setDni(h.stringcontrol());
 	}
 
 	@Override
-	public void updateAge() {
+	public void updateAge(Client c) {
 		// TODO Auto-generated method stub
 		m.insertdata();
 		c.setAge(h.intcontrol());
 	}
 
 	@Override
-	public void updatepoints() {
+	public void updatepoints(Client c) {
 		// TODO Auto-generated method stub
 		m.insertdata();
 		c.setPoints(h.intcontrol());
@@ -44,7 +44,7 @@ static RepositoryClients rc=RepositoryClients.getSingletonInstance();
 	}
 
 	@Override
-	public List<String> updateaddres() {
+	public List<String> updateaddres(Client c) {
 		List<String> lista=null;
 		boolean continuar=false;
 		do {

@@ -14,7 +14,7 @@ import Order.Order;
 public class Client extends Person {
 	private static int  nClient=0;
 	protected List<String> address=new ArrayList<String>();
-	protected List<Order> orders;
+	protected List<Order> orders= new ArrayList<Order>();
 	protected int points;
 	
 	protected int id;
@@ -22,6 +22,7 @@ public class Client extends Person {
 	public Client(String dni, String name, int age, List<String> address) {
 		super(dni, name, age);
 		this.address = address;
+		this.orders= new ArrayList<Order>();
 		id=++nClient;
 	}
 	

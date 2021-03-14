@@ -3,11 +3,15 @@ package menuMenus;
 import Order.Chart;
 import Order.Order;
 import Order.RepositoryOrders;
+import Product.Product;
 import Product.Repository;
 import client.Client;
 import client.RepositoryClients;
 import mesage.MensajesCarrito;
 import repositoryUtils.herramientas;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MenuCarrito {
 	static herramientas h = new herramientas();
@@ -45,8 +49,8 @@ public class MenuCarrito {
 		Order nueva= new Order(carrito.getClient(), carrito.getProducts(), carrito.getAddres(), false, false);
 		ro.addorden(nueva);
 	}
-
-	public static void addorremove() {
+	
+	public static List<Product> addorremove() {
 		int opcion = -1;
 		do {
 			mc.addorremove();
@@ -70,6 +74,7 @@ public class MenuCarrito {
 				break;
 			}
 		} while (opcion != 0);
+		return ch.getProducts();
 	}
 
 	

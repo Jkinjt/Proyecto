@@ -101,7 +101,7 @@ public class MensajesClient {
 	}
 	public static void continuar() {
 		System.out.println("+--------------------------------------+");
-		System.out.println("| ¿Desea anadir mas direcciones? Si/no |");
+		System.out.println("| ¿Desea anadir mas direcciones? Si(2)/no(1) |");
 		System.out.println("+--------------------------------------+");
 	}
 

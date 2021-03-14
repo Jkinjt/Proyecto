@@ -69,19 +69,19 @@ public class menuProductos /*implements IMenuProduct*/ {
 			switch (opcion) {
 			//Modificar precio
 			case 1:
-				updatePrice(null);
+				updatePrice(c.searchProduct(h.stringcontrol()));
 			break;
 			//modificar comida vegana
 			case 2:
-				updateVegan(null);
+				updateVegan(c.searchProduct(h.stringcontrol()));
 				break;
 			//update alcohol
 			case 3:
-				updateAlchool(null);
+				updateAlchool(c.searchProduct(h.stringcontrol()));
 				break;
 			//modificar comida celiaca
 			case 4:
-				updateCeliac(null);
+				updateCeliac(c.searchProduct(h.stringcontrol()));
 				break;
 			//añadir a bundlePack
 			case 5:
@@ -90,7 +90,7 @@ public class menuProductos /*implements IMenuProduct*/ {
 				break;
 			//quitar del bundlePack
 			case 6:
-				pp.eliminarObejeto(null);
+				pp.eliminarObejeto(c.searchProduct(h.stringcontrol()));
 				break;
 			//salir del menu
 			case 0:
@@ -114,11 +114,11 @@ public class menuProductos /*implements IMenuProduct*/ {
 		switch (opcion) {
 		//añadir producto
 		case 1:
-			c.addProduct(null);
+			addproduct();
 			break;
 		//remover producto	
 		case 2:
-			c.deleteProduct(null);
+			c.deleteProduct(c.searchProduct(h.stringcontrol()));
 			break;
 		//salir
 		case 0:
@@ -147,35 +147,35 @@ public class menuProductos /*implements IMenuProduct*/ {
 		break;
 		//mostrar todos los productos
 		case 1:
-			c.getAllProducts();
+			System.out.println(c.getAllProducts());
 			break;
 		//mostrar todas las bebidad alcoholicas
 		case 2:
-			c.getAlcoholicDrinks();
+			System.out.println(c.getAlcoholicDrinks());
 			break;
 		//mostrar todas las bebidad no alcoholicas
 		case 3:
-			c.getNoAlcoholicDrinks();
+			System.out.println(c.getNoAlcoholicDrinks());
 			break;
 		//mostrar toda la comida
 		case 4:
-			c.getAllFood();
+			System.out.println(c.getAllFood());
 			break;
 		//mostrar toda la comida vegana
 		case 5:
-			c.AllForVeganFood();
+			System.out.println(c.AllForVeganFood());
 			break;
 		//mostrar todas las comidas con ofera (dentro del bundlePack)
 		case 6:
-			c.getBundleProducts(null);
+			System.out.println(c.getBundleProducts(c.searchProduct(h.stringcontrol())));
 			break;
 		//mostrar todas las id de los productos
 		case 7:
-			c.todosId();
+			System.out.println(c.todosId());
 			break;
 		//mostrar precio de los productos
 		case 8:
-			c.todosPrecio();
+			System.out.println(c.todosPrecio());
 			break;
 
 	default:
@@ -289,4 +289,64 @@ public class menuProductos /*implements IMenuProduct*/ {
 			}
 		}
 	}
+
+public static void addproduct() {
+	int opcion=-1;
+	m.pedir();
+	opcion=h.intcontrol();
+	switch (opcion) {
+	case 1:
+		int opcion2=-1;
+		//bebida
+		m.nombre();
+		String nombre=h.stringcontrol();
+		m.precio();
+		double precio=h.doublecontrol();
+		m.opcion();
+		boolean alcohol=false;
+		opcion2=h.intcontrol();
+		switch (opcion2) {
+		case 2:
+			alcohol=false;
+			break;
+		case 1:
+			alcohol=true;
+			break;
+		default:
+			break;
+		}
+		
+		
+		drink bn= new drink(nombre, precio, alcohol);
+		c.addProduct(bn);
+		break;
+	case 2:
+		//comida
+		int opcion3=-1;
+		//bebida
+		m.nombre();
+		String nombref=h.stringcontrol();
+		m.precio();
+		double preciof=h.doublecontrol();
+		m.opcion2();
+		boolean celiac=false;
+		opcion3=h.intcontrol();
+		switch (opcion3) {
+		case 2:
+			celiac=false;
+			break;
+		case 1:
+			celiac=true;
+			break;
+		default:
+			break;
+		}
+		food fn=new food(nombref, preciof, celiac);
+		c.addProduct(fn);
+		break;
+	default:
+		break;
+	}
+}
+
 }

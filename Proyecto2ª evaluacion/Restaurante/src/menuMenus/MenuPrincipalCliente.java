@@ -48,28 +48,28 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 			switch (opcion) {
 			case 1:
 				// modificar nombre
-				me.updateName();
+				me.updateName(c);
 			
 				break;
 
 			case 2:
 				// modificar dni
-				me.updateDni();
+				me.updateDni(c);
 				break;
 
 			case 3:
 				// modificar edad
-				h.intcontrol();
+				me.updateAge(c);
 				break;
 
 			case 4:
 				// modificar puntos
-				me.updatepoints();
+				me.updatepoints(c);
 				break;
 
 			case 5:
 				// modificar direcciones
-				me.updateaddres();
+				me.updateaddres(c);
 				break;
 
 			case 0:
@@ -120,7 +120,7 @@ public class MenuPrincipalCliente implements IMenuPrincipalCliente {
 		String dni = null;
 		String name = null;
 		int edad = 0;
-		List<String> lista = null;
+		List<String> lista = new ArrayList<String>();
 		boolean continuar = false;
 
 		// inserte dni

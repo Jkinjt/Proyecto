@@ -84,5 +84,21 @@ public class mensajesProduct {
 			System.out.println("| ~SALIENDO~ |");
 			System.out.println("+------------+");
 		}
+		public static void pedir() {
+		 System.out.println("1-Bebida");
+		 System.out.println("2-Comida");
+		}
+		public static void nombre() {
+			System.out.println("introduzca el nombre");
+		}
+		public static void precio() {
+			System.out.println("introduzca el precio");
+		}
+		public static void opcion() {
+			System.out.println("¿Es alchoolica SI(1)/NO(2)?");
+		}
+		public static void opcion2() {
+			System.out.println("¿Es celiaco SI(1)/NO(2)?");
+		}
 	}
 
