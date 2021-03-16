@@ -155,7 +155,7 @@ public class herramientas {
 		System.out.print(  "| Saliendo ");
 		do {
 			try {
-				Thread.sleep(350);
+				Thread.sleep(300);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -164,7 +164,7 @@ public class herramientas {
 		} while (temporizador!=8);
 		
 		try {
-			Thread.sleep(350);
+			Thread.sleep(300);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
