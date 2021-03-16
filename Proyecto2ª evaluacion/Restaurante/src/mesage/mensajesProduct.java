@@ -1,104 +1,127 @@
 package mesage;
 
 public class mensajesProduct {
-	//------------------------------------
-		//menu inicio
-		public static void menuinicio() {
-			System.out.println("+------------------------------+");
-			System.out.println("|     ~~Elige una opcion~~     |");
-			System.out.println("+------------------------------+");
-			System.out.println("| 1-Modificar un producto      |");
-			System.out.println("+------------------------------+");	
-			System.out.println("| 2-Añadir o eliminar producto |");
-			System.out.println("+------------------------------+");
-			System.out.println("| 3-Mostrar productos          |");
-			System.out.println("+------------------------------+");
-			System.out.println("| 0-Salir                      |");
-			System.out.println("+------------------------------+");
-			
-		}
-		//------------------------------------
-		//menu editar
-		public static void menueditar() {
-			System.out.println("+----------------------------------+");
-			System.out.println("|       ~~Elige una opcion~~       |");
-			System.out.println("+----------------------------------+");
-			System.out.println("| 1-Modificar precio               |");
-			System.out.println("+----------------------------------+");
-			System.out.println("| 2-Modificar Comida Vegana        |");
-			System.out.println("+----------------------------------+");
-			System.out.println("| 3-Modificar Bebida Alcoholica    |");
-			System.out.println("+----------------------------------+");
-			System.out.println("| 4-Modificar Comida Celiaca       |");
-			System.out.println("+----------------------------------+");
-			System.out.println("| 5-Añadir producto a Bundle Pack  |");
-			System.out.println("+----------------------------------+");
-			System.out.println("| 6-Remover producto de Bundle Pack|");
-			System.out.println("+----------------------------------+");
-			System.out.println("| 0-Salir                          |");
-			System.out.println("+----------------------------------+");
-		}
-		
-		//menu añadir o eliminar
-		public static void menuAddOrRemove() {
-			
-			System.out.println("+---------------------+");
-			System.out.println("| Elige una opcion    |");
-			System.out.println("+---------------------+");
-			System.out.println("| 1-Añadir producto   |");
-			System.out.println("+---------------------+");
-			System.out.println("| 2-Eliminar producto |");
-			System.out.println("+---------------------+");
-			System.out.println("| 0-Salir             |");
-			System.out.println("+---------------------+");
-		}
-		
-		//------------------------------------
-		//menu mostrar
-		public static void menumostrar() {
-			System.out.println("+--------------------------------------------+");
-			System.out.println("|             ~~Elige una opcion~~           |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 1-Mostrar todos los productos              |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 2-Mostrar todas las bebidad alcoholicas    |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 3-Mostrar todas las bebidad no alcoholicas |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 4-Mostrar toda la comida                   |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 5-Mostrar toda la comida vegana            |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 6-Mostrar toda la comida con oferta        |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 7-Id de todos los productos                |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 8-Precios de todos los productos           |");
-			System.out.println("+--------------------------------------------+");
-			System.out.println("| 0-Salir                                    |");
-			System.out.println("+--------------------------------------------+");
-		}
-		//------------------------------------
-		public static void salida() {
-			System.out.println("+------------+");
-			System.out.println("| ~SALIENDO~ |");
-			System.out.println("+------------+");
-		}
-		public static void pedir() {
-		 System.out.println("1-Bebida");
-		 System.out.println("2-Comida");
-		}
-		public static void nombre() {
-			System.out.println("introduzca el nombre");
-		}
-		public static void precio() {
-			System.out.println("introduzca el precio");
-		}
-		public static void opcion() {
-			System.out.println("¿Es alchoolica SI(1)/NO(2)?");
-		}
-		public static void opcion2() {
-			System.out.println("¿Es celiaco SI(1)/NO(2)?");
-		}
+	// ------------------------------------
+	// menu inicio
+	public static void menuinicio() {
+		System.out.println("+------------------------------+");
+		System.out.println("|     ~~Elige una opcion~~     |");
+		System.out.println("+------------------------------+");
+		System.out.println("| 1-Modificar un producto      |");
+		System.out.println("+------------------------------+");
+		System.out.println("| 2-Añadir o eliminar producto |");
+		System.out.println("+------------------------------+");
+		System.out.println("| 3-Mostrar productos          |");
+		System.out.println("+------------------------------+");
+		System.out.println("| 0-Salir                      |");
+		System.out.println("+------------------------------+");
+
 	}
 
+	// ------------------------------------
+	// menu editar
+	public static void menueditar() {
+		System.out.println("+----------------------------------+");
+		System.out.println("|       ~~Elige una opcion~~       |");
+		System.out.println("+----------------------------------+");
+		System.out.println("| 1-Modificar precio               |");
+		System.out.println("+----------------------------------+");
+		System.out.println("| 2-Modificar Comida Vegana        |");
+		System.out.println("+----------------------------------+");
+		System.out.println("| 3-Modificar Bebida Alcoholica    |");
+		System.out.println("+----------------------------------+");
+		System.out.println("| 4-Modificar Comida Celiaca       |");
+		System.out.println("+----------------------------------+");
+		System.out.println("| 5-Añadir producto a Bundle Pack  |");
+		System.out.println("+----------------------------------+");
+		System.out.println("| 6-Remover producto de Bundle Pack|");
+		System.out.println("+----------------------------------+");
+		System.out.println("| 0-Salir                          |");
+		System.out.println("+----------------------------------+");
+	}
+
+	// menu añadir o eliminar
+	public static void menuAddOrRemove() {
+
+		System.out.println("+---------------------+");
+		System.out.println("| Elige una opcion    |");
+		System.out.println("+---------------------+");
+		System.out.println("| 1-Añadir producto   |");
+		System.out.println("+---------------------+");
+		System.out.println("| 2-Eliminar producto |");
+		System.out.println("+---------------------+");
+		System.out.println("| 0-Salir             |");
+		System.out.println("+---------------------+");
+	}
+
+	// ------------------------------------
+	// menu mostrar
+	public static void menumostrar() {
+		System.out.println("+--------------------------------------------+");
+		System.out.println("|             ~~Elige una opcion~~           |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 1-Mostrar todos los productos              |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 2-Mostrar todas las bebidad alcoholicas    |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 3-Mostrar todas las bebidad no alcoholicas |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 4-Mostrar toda la comida                   |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 5-Mostrar toda la comida vegana            |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 6-Mostrar toda la comida con oferta        |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 7-Id de todos los productos                |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 8-Precios de todos los productos           |");
+		System.out.println("+--------------------------------------------+");
+		System.out.println("| 0-Salir                                    |");
+		System.out.println("+--------------------------------------------+");
+	}
+
+	// ------------------------------------
+	public static void salida() {
+		System.out.println("+------------+");
+		System.out.println("| ~SALIENDO~ |");
+		System.out.println("+------------+");
+	}
+
+	public static void pedirpro() {
+		System.out.println("+---------------------+");
+		System.out.println("| Inserte el producto |");
+		System.out.println("+---------------------+");
+	}
+
+	public static void pedir() {
+		System.out.println("+----------+");
+		System.out.println("| 1-Bebida |");
+		System.out.println("+----------+");
+		System.out.println("| 2-Comida |");
+		System.out.println("+----------+");
+	}
+
+	public static void nombre() {
+		System.out.println("+----------------------+");
+		System.out.println("| Introduzca el nombre |");
+		System.out.println("+----------------------+");
+	}
+
+	public static void precio() {
+		System.out.println("+----------------------+");
+		System.out.println("| Introduzca el precio |");
+		System.out.println("+----------------------+");
+	}
+
+	public static void opcion() {
+		System.out.println("+-----------------+-------------+");
+		System.out.println("| ¿Es alchoolica? | SI(1)/NO(2) |");
+		System.out.println("+-----------------+-------------+");
+	}
+
+	public static void opcion2() {
+		System.out.println("+--------------+------------+");
+		System.out.println("| ¿Es celiaco? | SI(1)/NO(2) |");
+		System.out.println("+--------------+------------+");
+	}
+}
