@@ -86,7 +86,10 @@ public class food extends Product implements Serializable{
 
 	//toString para imprimir la clase comida
 	public String toString() {
-		return super.toString()+"\n+Is For Vegans=" + isForVegans() +"\n" ;
+		return super.toString()+"\n"+
+				    "+---------------------------+"+"\n"+
+					"| Is For Vegans=" + isForVegans() +"\n"+
+					"+---------------------------+"+"\n";
 	}
 	
 	

@@ -11,7 +11,7 @@ public class MensajesOrder {
 		System.out.println("+---------------------------+");
 		System.out.println("| 1-Modificar Orden         |");
 		System.out.println("+---------------------------+");
-		System.out.println("| 2-Anadir o eliminar orden |");
+		System.out.println("| 2-Eliminar orden          |");
 		System.out.println("+---------------------------+");
 		System.out.println("| 3-Ver todas las ordenes   |");
 		System.out.println("+---------------------------+");
@@ -78,7 +78,7 @@ public class MensajesOrder {
 	// -------------------------------------------------------------
 	public static void buscarpor() {
 		System.out.println("+-----------------------------+");
-		System.out.println("|     -Modificar orden por-   |");
+		System.out.println("|   ~~Modificar orden por~~   |");
 		System.out.println("+-----------------------------+");
 		System.out.println("| 1-Buscar por codigo         |");
 		System.out.println("+-----------------------------+");

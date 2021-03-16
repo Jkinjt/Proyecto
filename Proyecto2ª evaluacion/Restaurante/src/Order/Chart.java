@@ -103,7 +103,7 @@ public class Chart {
 	}
 	@Override
 	public String toString() {
-		return "Chart [client=" + client + ", products=" + products + ", total=" + total + ", addres=" + addres + "]";
+		return "Chart [client=" + client.toStringbasic() + ", products=" + products + ", total=" + total + ", addres=" + addres + "]";
 	}
 	
 	

@@ -29,7 +29,7 @@ public class MenuCarrito {
 		// insertar el cliente del carrito
 		mc.insertar();
 		carrito.setClient(rc.searchClientByName(h.stringcontrol()));
-		System.out.println(carrito.getClient());
+		System.out.println(carrito.getClient().toStringbasic());
 		do {
 			
 			// añadir o eleminar productos del carrito
@@ -49,10 +49,12 @@ public class MenuCarrito {
 		} while (opcion != 0);
 		Order nueva= new Order(carrito.getClient(), carrito.getProducts(), carrito.getAddres(), false, false);
 		ro.addorden(nueva);
+		
 	}
 	
 	public static void addorremove() {
 		int opcion = -1;
+		
 		do {
 			mc.addorremove();
 			opcion = h.intcontrol();
@@ -60,6 +62,7 @@ public class MenuCarrito {
 			case 1:
 				mc.inserteproducto();
 				carrito.addProduct(p.searchProduct(h.stringcontrol()));
+				
 				break;
 			case 2:
 				mc.inserteproducto();

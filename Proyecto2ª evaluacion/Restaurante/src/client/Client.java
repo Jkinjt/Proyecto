@@ -113,15 +113,28 @@ public class Client extends Person {
 	}
 	@Override
 	public String toString() {
-		return "Client [name=" + name + ", orders=" + orders.toString() + ", points="
-				+ points + ", address=" + address.toString()+ ", dni=" + dni    + ", age=" + age + "]";
+		return "\n\nCliente:\n"+
+				"+---------------------------+"+"\n"+
+			    "| name=" + name + "|"+"\n"+
+			    "+---------------------------+"+"\n"+ 
+				"| orders=" + orders.toString()+ "|" + "\n"+
+				"+---------------------------+"+"\n"+
+				"| Puntos="+ points+ "|"+"\n"+
+				"+---------------------------+"+"\n"+
+			    "| Direcciones=" + address.toString()+  "|" +"\n"+
+			    "+---------------------------+"+"\n"+
+				"| DNI=" + dni    + "|" +"\n"+
+				"+---------------------------+"+"\n"+
+				"| Edad=" + age + "|" +"\n"+
+				"+---------------------------+";
 	}
 	
 	public String toStringbasic() {
-		return  "+---------------------------------------------------+"+"\n"+
+		return  "\n+-------------------------------------+"+"\n"+
 				"| Name="  + name+"\n"+
+				"+---------------------------------------+" + "\n"+
 				"| Direccion=" + address.toString()+  "\n"+
-				"+---------------------------------------------------+";
+				"+---------------------------------------+";
 	}
 
 }

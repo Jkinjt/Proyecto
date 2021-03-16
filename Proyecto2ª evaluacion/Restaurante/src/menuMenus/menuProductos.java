@@ -50,7 +50,7 @@ public class menuProductos /* implements IMenuProduct */ {
 			// salir
 			case 0:
 				h.Salida();
-				m.salida();
+				
 				break;
 
 			default:

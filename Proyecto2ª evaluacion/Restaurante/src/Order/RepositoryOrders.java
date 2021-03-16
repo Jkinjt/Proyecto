@@ -40,6 +40,7 @@ public class RepositoryOrders implements Serializable {
 		boolean result=false;
 		if(p!=null&&!registro.contains(p)) {
 			registro.add(p);
+			p.setTotal(calculototal(p));
 			result=true;
 			
 		}
@@ -182,16 +183,10 @@ public class RepositoryOrders implements Serializable {
 	public double calculototal(Order orden) {
 		double total=0;
 		boolean encontrado=false;
-		if( registro!=null) {
-			for (int i = 0; i < registro.size() && encontrado==false; i++) {
-				if (registro.get(i)==orden) {
-					for (int j = 0; j < registro.get(i).getProduct().size(); j++) {
-						total+=registro.get(i).getProduct().get(i).getPrice();
-					}					
-					encontrado=true;
-				}
-			}
+		for (int i = 0; i < orden.getProduct().size(); i++) {
+			total+=orden.getProduct().get(i).getPrice();
 		}
+		
 		return total;
 	}
 	

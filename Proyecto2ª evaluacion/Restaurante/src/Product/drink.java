@@ -78,6 +78,9 @@ public class drink extends Product implements Serializable	 {
 
 	//toString para imprimir la clase bebida
 	public String toString() {
-		return super.toString()+"\n+Alcoholic=" + getAlcoholic()+"\n";
+		return super.toString()+"\n"+
+				"+---------------------------+"+"\n"+
+				"| Alcoholic=" + getAlcoholic()+"\n"+
+				"+---------------------------+"+"\n";
 	}
 }

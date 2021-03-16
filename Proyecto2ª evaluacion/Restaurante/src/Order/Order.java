@@ -9,7 +9,7 @@ import java.util.List;
 import client.Client;
 import Product.Product;
 
-public class Order implements Serializable{
+public class Order implements Serializable {
 	private Client client;
 	private List<Product> product;
 	private double total;
@@ -18,12 +18,9 @@ public class Order implements Serializable{
 	private boolean delivered;
 	private boolean payed;
 	private int codigo;
-	private static int contadorc=1;
+	private static int contadorc = 1;
 
-	
-
-	public Order(Client client, List<Product> product,   String address,
-			boolean delivered, boolean payed) {
+	public Order(Client client, List<Product> product, String address, boolean delivered, boolean payed) {
 		super();
 		this.client = client;
 		this.product = product;
@@ -43,10 +40,6 @@ public class Order implements Serializable{
 	public void setClient(Client client) {
 		this.client = client;
 	}
-
-	
-
-	
 
 	public List<Product> getProduct() {
 		return product;
@@ -99,8 +92,6 @@ public class Order implements Serializable{
 	public void setPayed(boolean payed) {
 		this.payed = payed;
 	}
-	
-
 
 	public int getCodigo() {
 		return codigo;
@@ -110,63 +101,75 @@ public class Order implements Serializable{
 		this.codigo = codigo;
 	}
 
-	
-	
-
 	@Override
 	public boolean equals(Object obj) {
-		boolean result=false;
-		if(this==obj)
-			result=true;
-		else if(this.getClass()==obj.getClass()) {
-			Order o=(Order) obj;
-			if(o.getCodigo()==this.codigo) {
-				result=true;
+		boolean result = false;
+		if (this == obj)
+			result = true;
+		else if (this.getClass() == obj.getClass()) {
+			Order o = (Order) obj;
+			if (o.getCodigo() == this.codigo) {
+				result = true;
 			}
 		}
-		
+
 		return result;
 	}
 
 	@Override
 	public String toString() {
 
-		return "Orden \n"+
-		" Cliente:\n" + client.toStringbasic() +
-	"\nProductos:\n" + lista(product) +
-	"\ntotal=" + total +
-	"\nFecha=" + date +
-	"\nDireccion="+ address + 
-	"\nEstado envio=" + SiOrNot(delivered) +
-	"\nEstado pago=" + SiOrNot(payed) + 
-	"\nCodigo=" + codigo ;
+		return "\n\nOrden \n" + 
+				"+---------------------------+"+"\n"+
+				"| Cliente:\n" + client.toStringbasic() + "\n"+
+				"+---------------------------+"+"\n"+
+				"| Productos:\n" + lista(product) +"\n"+
+				"+---------------------------+"+"\n"+
+			    "| Total="+ total +"\n"+
+				"+---------------------------+"+"\n"+
+				"| Fecha=" + date +"\n"+
+				"+---------------------------+"+"\n"+
+				"| Direccion=" + address + "\n"+
+				"+---------------------------+"+"\n"+
+				"| Estado envio=" + SiOrNot(delivered)+"\n"+
+				"+---------------------------+"+"\n"+
+				"| Estado pago=" + SiOrNot(payed) + "\n"+
+				"+---------------------------+"+"\n"+
+				"| Codigo=" + codigo+"\n"+
+				"+---------------------------+"+"\n";
 
-		
 	}
-	
-	//to string limitado
+
+	// to string limitado
 	public String toStringbasic() {
 
-		return  "Orden \n"+
-				"Cliente:\n" + client.toStringbasic() +"\n"+  
-				"Productos:" + lista(product) +"\n"+
-				"Direcciones:" + address +"\n"+
-				"Codigo=" + codigo +"\n";
+		return  "\n\nOrden \n"+
+				"+---------------------------+"+"\n"+
+				"| Cliente:\n" + client.toStringbasic() +"\n"+  
+				"+---------------------------+"+"\n"+
+				"| Productos:" + lista(product) +"\n"+
+				"+---------------------------+"+"\n"+
+				"| Direcciones:" + address +"\n"+
+				"+---------------------------+"+"\n"+
+				"| Codigo=" + codigo +"\n"+
+				"+---------------------------+"+"\n";
 	}
+
 	public static String lista(List<Product> productos) {
-		String listado="";
+		String listado = "";
 		for (Product product : productos) {
-			listado+=product.toStringbasic()+"\n";
+			listado += product.toStringbasic() + "\n";
 		}
-		
+
 		return listado;
 	}
+
 	public String SiOrNot(boolean estado) {
-		String mensaje=null;
-		if(estado==false) {
-			mensaje="Si";
-		}else if (estado==true){
-			mensaje="no";
+		String mensaje = null;
+		if (estado == false) {
+			mensaje = "Si";
+		} else if (estado == true) {
+			mensaje = "no";
 		}
 		return mensaje;
 	}
