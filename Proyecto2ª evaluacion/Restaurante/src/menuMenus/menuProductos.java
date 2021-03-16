@@ -126,11 +126,12 @@ public class menuProductos /* implements IMenuProduct */ {
 				break;
 			// añadir a bundlePack
 			case 5:
-				h.imprimirconintro("Inserte el producto");
+				m.pedirpro();
 				p.anadirObejeto(c.searchProduct(h.stringcontrol()));
 				break;
 			// quitar del bundlePack
 			case 6:
+				m.pedirpro();
 				p.eliminarObejeto(c.searchProduct(h.stringcontrol()));
 				break;
 			// salir del menu
@@ -165,7 +166,7 @@ public class menuProductos /* implements IMenuProduct */ {
 			// salir
 			case 0:
 				h.Salida();
-				m.salida();
+				
 				break;
 
 			default:
