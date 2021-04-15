@@ -1,4 +1,4 @@
-package es.joaquinjimenez.jfx.basic;
+package es.joaquinjimenez.Lectura;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

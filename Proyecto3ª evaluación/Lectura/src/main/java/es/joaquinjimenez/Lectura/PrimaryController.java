@@ -1,4 +1,4 @@
-package es.joaquinjimenez.jfx.basic;
+package es.joaquinjimenez.Lectura;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
