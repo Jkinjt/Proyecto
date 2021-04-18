@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.List;
+import java.util.*;
 
 public class Student extends Person {
 
@@ -28,4 +29,10 @@ public class Student extends Person {
 	public Student() {
 		throw new UnsupportedOperationException();
 	}
+
+	public void setObservations(int observations) {
+		throw new UnsupportedOperationException();
+	}
+
+	
 }

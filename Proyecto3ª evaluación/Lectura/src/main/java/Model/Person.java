@@ -9,6 +9,8 @@ public abstract class Person {
 	protected Date date;
 	private int id;
 
+	protected String surname;
+
 	public String getName() {
 		throw new UnsupportedOperationException();
 	}
